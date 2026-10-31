@@ -1,0 +1,1891 @@
+{
+ "made": "2026-10-31",
+ "seconds": 17.3,
+ "envelopes": 3951,
+ "senders": 65,
+ "model": "gemma4:e2b",
+ "ghosts": [
+  {
+   "key": "neopets.com",
+   "service": "Neopets",
+   "domain": "neopets.com",
+   "joined": "2012-02-12",
+   "last_heard": "2014-12-08",
+   "emails": 15,
+   "silent_years": 11.9,
+   "last_words": {
+    "date": "2014-12-08",
+    "text": "We miss you, Sam"
+   },
+   "proof": {
+    "date": "2012-02-12",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Neopets",
+     "date": "2013-05-05",
+     "count": 26892897,
+     "data": [
+      "Dates of birth",
+      "Email addresses",
+      "Genders",
+      "Geographic locations",
+      "IP addresses",
+      "Names",
+      "Passwords",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Neopets"
+    }
+   ],
+   "leaked": [
+    "Dates of birth",
+    "Email addresses",
+    "Genders",
+    "Geographic locations",
+    "IP addresses",
+    "Names",
+    "Passwords",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://www.neopets.com/help_search.phtml?help_id=4",
+    "difficulty": "hard",
+    "notes": "Send an email to the support@neopets.com stating you wish to delete your account.",
+    "email": "support@neopets.com"
+   },
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "tumblr.com",
+   "service": "Tumblr",
+   "domain": "tumblr.com",
+   "joined": "2012-06-12",
+   "last_heard": "2020-03-11",
+   "emails": 126,
+   "silent_years": 6.6,
+   "last_words": {
+    "date": "2020-03-11",
+    "text": "Your weekly summary"
+   },
+   "proof": {
+    "date": "2012-06-12",
+    "text": "Verify your Tumblr account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "tumblr",
+     "date": "2013-02-28",
+     "count": 65469298,
+     "data": [
+      "Email addresses",
+      "Passwords"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Tumblr"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Passwords"
+   ],
+   "leave": {
+    "url": "https://www.tumblr.com/account/delete",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Automattic",
+     "quote": "Automattic, the makers of WordPress.com, purchased Tumblr from Verizon for ~$3 million, compared to the staggering $1.1 billion Yahoo!",
+     "url": "https://poststatus.com/automattic-has-purchased-tumblr/",
+     "source": "poststatus.com"
+    }
+   }
+  },
+  {
+   "key": "last.fm",
+   "service": "Last.fm",
+   "domain": "last.fm",
+   "joined": "2012-12-27",
+   "last_heard": "2016-10-04",
+   "emails": 29,
+   "silent_years": 10.1,
+   "last_words": {
+    "date": "2016-10-04",
+    "text": "Updates to our Terms of Service"
+   },
+   "proof": {
+    "date": "2012-12-27",
+    "text": "Thanks for joining Last.fm"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.last.fm/settings/account",
+    "difficulty": "easy",
+    "notes": "Scroll to the bottom of the page and click delete user account. On the following page, enter your password. Your account will then be deleted after 14 days.",
+    "email": null
+   },
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "CBS Corporation",
+     "quote": "CBS Corporation has acquired Last.fm for $280 million dollars in cash.",
+     "url": "https://www.billhartzer.com/social-media/cbs-corporation-acquires-lastfm/",
+     "source": "Bill Hartzer"
+    }
+   }
+  },
+  {
+   "key": "linkedin.com",
+   "service": "LinkedIn",
+   "domain": "linkedin.com",
+   "joined": "2013-02-13",
+   "last_heard": "2026-01-19",
+   "emails": 410,
+   "silent_years": 0.8,
+   "last_words": {
+    "date": "2026-01-19",
+    "text": "Your weekly summary"
+   },
+   "proof": {
+    "date": "2013-02-13",
+    "text": "Thanks for joining LinkedIn"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "LinkedIn Scraped Data (2021)",
+     "date": "2021-04-08",
+     "count": 125698496,
+     "data": [
+      "Education levels",
+      "Email addresses",
+      "Genders",
+      "Geographic locations",
+      "Job titles",
+      "Names",
+      "Social media profiles"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/LinkedInScrape"
+    }
+   ],
+   "leaked": [
+    "Education levels",
+    "Email addresses",
+    "Genders",
+    "Geographic locations",
+    "Job titles",
+    "Names",
+    "Social media profiles"
+   ],
+   "leave": {
+    "url": "https://www.linkedin.com/help/linkedin/answer/63",
+    "difficulty": "medium",
+    "notes": "There are reports that LinkedIn continues to email people with a closed account. You may need to contact customer services to delete account instead of just closing it.",
+    "email": null
+   },
+   "score": 3.27,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Microsoft",
+     "quote": "Microsoft bought LinkedIn for $26.2 billion in 2016, paying $196 per share in an all-cash deal.",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESeQHrOzAVsCJsgl4n4oDD3rV2MZsdkI1YNYJqwa31nlKN1Zzk-Xr7LJ5M8Q8HEU_T7JsC8g3J8R5M4USqFqvO9Ncs4vMyIhPLja7Q_7XiIj0R-1c51EDP_9g9BLztKyRzUwLyhJ6E7hsXwiXOuzShzqq3ZkfrgMWDBqI&ved=2ahUKEwj-p-XQ5uSXAxXs1fACHS5uB94QFnoECDkQAQ&uoh=1",
+     "source": "Facebook"
+    }
+   }
+  },
+  {
+   "key": "adobe.com",
+   "service": "Adobe",
+   "domain": "adobe.com",
+   "joined": "2013-08-19",
+   "last_heard": "2026-05-31",
+   "emails": 77,
+   "silent_years": 0.4,
+   "last_words": {
+    "date": "2026-05-31",
+    "text": "Updates to our Terms of Service"
+   },
+   "proof": {
+    "date": "2013-08-19",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": {
+    "date": "2013-11-12",
+    "text": "Your Adobe receipt"
+   },
+   "breaches": [
+    {
+     "name": "Adobe",
+     "date": "2013-10-04",
+     "count": 152445165,
+     "data": [
+      "Email addresses",
+      "Password hints",
+      "Passwords",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Adobe"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Password hints",
+    "Passwords",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://account.adobe.com/privacy/delete-account",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 7.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "quizlet.com",
+   "service": "Quizlet",
+   "domain": "quizlet.com",
+   "joined": "2013-09-03",
+   "last_heard": "2019-07-02",
+   "emails": 18,
+   "silent_years": 7.3,
+   "last_words": {
+    "date": "2019-07-02",
+    "text": "Your 2019 year in review"
+   },
+   "proof": {
+    "date": "2013-09-03",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://quizlet.com/delete-account",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "wattpad.com",
+   "service": "Wattpad",
+   "domain": "wattpad.com",
+   "joined": "2013-09-06",
+   "last_heard": "2017-08-30",
+   "emails": 41,
+   "silent_years": 9.2,
+   "last_words": {
+    "date": "2017-08-30",
+    "text": "Recommended for you"
+   },
+   "proof": {
+    "date": "2013-09-06",
+    "text": "Activate your Wattpad account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Wattpad",
+     "date": "2020-06-29",
+     "count": 268765495,
+     "data": [
+      "Bios",
+      "Dates of birth",
+      "Email addresses",
+      "Genders",
+      "Geographic locations",
+      "IP addresses",
+      "Names",
+      "Passwords",
+      "Social media profiles",
+      "User website URLs",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Wattpad"
+    }
+   ],
+   "leaked": [
+    "Bios",
+    "Dates of birth",
+    "Email addresses",
+    "Genders",
+    "Geographic locations",
+    "IP addresses",
+    "Names",
+    "Passwords",
+    "Social media profiles",
+    "User website URLs",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://www.wattpad.com/settings",
+    "difficulty": "easy",
+    "notes": "Closed accounts are deleted after six months.",
+    "email": null
+   },
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Naver Corp",
+     "quote": "Wattpad has been sold to Naver Corp.",
+     "url": "https://www.facebook.com/iPhoneinCanadaFans/posts/toronto-based-startup-wattpad-has-been-acquired-by-the-south-korean-online-platf/4363623563653950/",
+     "source": "Facebook · iPhoneinCanada.ca"
+    }
+   }
+  },
+  {
+   "key": "dropbox.com",
+   "service": "Dropbox",
+   "domain": "dropbox.com",
+   "joined": "2013-11-10",
+   "last_heard": "2026-06-07",
+   "emails": 65,
+   "silent_years": 0.4,
+   "last_words": {
+    "date": "2026-06-07",
+    "text": "People you may know"
+   },
+   "proof": {
+    "date": "2013-11-10",
+    "text": "Your Dropbox account is ready"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.dropbox.com/account/delete",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 0.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "evernote.com",
+   "service": "Evernote",
+   "domain": "evernote.com",
+   "joined": "2014-02-06",
+   "last_heard": "2020-08-28",
+   "emails": 27,
+   "silent_years": 6.2,
+   "last_words": {
+    "date": "2020-08-28",
+    "text": "Updates to our Terms of Service"
+   },
+   "proof": {
+    "date": "2014-02-06",
+    "text": "Thanks for joining Evernote"
+   },
+   "confident": true,
+   "money": {
+    "date": "2014-10-19",
+    "text": "Your order confirmation"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://help.evernote.com/hc/en-us/articles/360056549574-Permanently-close-your-Evernote-account",
+    "difficulty": "easy",
+    "notes": "Sign in to account settings, click 'Account Status', click 'Close your Evernote Account', read carefully and accept.",
+    "email": null
+   },
+   "score": 4,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Bending Spoons",
+     "quote": "Bending Spoons acquires Evernote, marking the end of an era https://techcrunch.com.",
+     "url": "https://www.linkedin.com/posts/aonetti_bending-spoons-acquires-evernote-marking-activity-6998895127347777537-g8z3",
+     "source": "LinkedIn · Alberto Onetti"
+    }
+   }
+  },
+  {
+   "key": "imgur.com",
+   "service": "Imgur",
+   "domain": "imgur.com",
+   "joined": "2014-04-08",
+   "last_heard": "2018-02-06",
+   "emails": 6,
+   "silent_years": 8.7,
+   "last_words": {
+    "date": "2018-02-06",
+    "text": "Your account security matters"
+   },
+   "proof": {
+    "date": "2014-04-08",
+    "text": "Activate your Imgur account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://imgur.com/account/settings",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "myfitnesspal.com",
+   "service": "MyFitnessPal",
+   "domain": "myfitnesspal.com",
+   "joined": "2014-07-25",
+   "last_heard": "2017-07-16",
+   "emails": 34,
+   "silent_years": 9.3,
+   "last_words": {
+    "date": "2017-07-16",
+    "text": "People you may know"
+   },
+   "proof": {
+    "date": "2014-07-25",
+    "text": "Thanks for joining MyFitnessPal"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "MyFitnessPal",
+     "date": "2018-02-01",
+     "count": 143606147,
+     "data": [
+      "Email addresses",
+      "IP addresses",
+      "Passwords",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/MyFitnessPal"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "IP addresses",
+    "Passwords",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://www.myfitnesspal.com/en/account/confirm_delete",
+    "difficulty": "easy",
+    "notes": "Just login and head to the account settings to click on delete account.",
+    "email": null
+   },
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "",
+     "quote": "said it acquired the nutrition-tracking platform MyFitnessPal for $475 million, expanding the athletic-gear maker's ...",
+     "url": "https://www.wsj.com/articles/under-armour-to-acquire-myfitnesspal-for-475-million-1423086478",
+     "source": "WSJ"
+    }
+   }
+  },
+  {
+   "key": "duolingo.com",
+   "service": "Duolingo",
+   "domain": "duolingo.com",
+   "joined": "2014-12-28",
+   "last_heard": "2026-10-19",
+   "emails": 290,
+   "silent_years": 0.0,
+   "last_words": {
+    "date": "2026-10-19",
+    "text": "What you missed this week"
+   },
+   "proof": {
+    "date": "2014-12-28",
+    "text": "Thanks for joining Duolingo"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Duolingo",
+     "date": "2023-01-24",
+     "count": 2676696,
+     "data": [
+      "Email addresses",
+      "Names",
+      "Spoken languages",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Duolingo"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Names",
+    "Spoken languages",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://drive-thru.duolingo.com/",
+    "difficulty": "easy",
+    "notes": "Scroll down and click \"ERASE PERSONAL DATA\". You will receive an e-mail in which you have to click the link after \"Delete my data link:\". This confirms the erasure of your personal data and account. On Android, just tap your profile then delete account and confirm after 4 seconds",
+    "email": null
+   },
+   "score": 3.0,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "kickstarter.com",
+   "service": "Kickstarter",
+   "domain": "kickstarter.com",
+   "joined": "2015-04-10",
+   "last_heard": "2024-02-10",
+   "emails": 43,
+   "silent_years": 2.7,
+   "last_words": {
+    "date": "2024-02-10",
+    "text": "A new sign-in to your Kickstarter account"
+   },
+   "proof": {
+    "date": "2015-11-18",
+    "text": "Your account security matters"
+   },
+   "confident": true,
+   "money": {
+    "date": "2015-11-29",
+    "text": "Your Kickstarter receipt"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.kickstarter.com/profile/destroy",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 2.9,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "chegg.com",
+   "service": "Chegg",
+   "domain": "chegg.com",
+   "joined": "2015-05-11",
+   "last_heard": "2019-03-27",
+   "emails": 39,
+   "silent_years": 7.6,
+   "last_words": {
+    "date": "2019-03-27",
+    "text": "Reset your Chegg password"
+   },
+   "proof": {
+    "date": "2015-05-11",
+    "text": "Verify your Chegg account"
+   },
+   "confident": true,
+   "money": {
+    "date": "2016-01-15",
+    "text": "Payment received, thank you"
+   },
+   "breaches": [
+    {
+     "name": "Chegg",
+     "date": "2018-04-28",
+     "count": 39721127,
+     "data": [
+      "Email addresses",
+      "Names",
+      "Passwords",
+      "Phone numbers",
+      "Physical addresses",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Chegg"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Names",
+    "Passwords",
+    "Phone numbers",
+    "Physical addresses",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://www.chegg.com/contactus",
+    "difficulty": "hard",
+    "notes": "To close your account, contact support with the email listed, call/message (408)-351-0942, or request assistance via their twitter [@CheggHelp](https://twitter.com/chegghelp). For data deletion, click [here](https://privacyportal-cdn.onetrust.com/dsarwebform/a21a74f4-2f93-44a2-a887-302a9213c997/06b040b7-49eb-464a-b19a-ea35c85c79fc.html).",
+    "email": "closemyaccount@chegg.com"
+   },
+   "score": 9,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "zynga.com",
+   "service": "Zynga",
+   "domain": "zynga.com",
+   "joined": "2015-05-16",
+   "last_heard": "2018-04-22",
+   "emails": 31,
+   "silent_years": 8.5,
+   "last_words": {
+    "date": "2018-04-22",
+    "text": "Updates to our Terms of Service"
+   },
+   "proof": {
+    "date": "2015-05-16",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Zynga",
+     "date": "2019-09-01",
+     "count": 172869660,
+     "data": [
+      "Email addresses",
+      "Passwords",
+      "Phone numbers",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Zynga"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Passwords",
+    "Phone numbers",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://privacy.zynga.com/portal/#/",
+    "difficulty": "medium",
+    "notes": "Select the game you want to delete your account from (if you want to delete the entire account choose zyngagames.com). Log in. Click on the FAQ tab on the top navigation bar. Then click “Go here to request account deletion”. Click the box indicating your understanding and then click Continue. To confirm deletion, click the box, select a reason, and then click Delete My Account. Your account deletion request is now pending. Expect the deletion request to be completed within 30 days of the request.",
+    "email": null
+   },
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Take-Two",
+     "quote": "'Grand Theft Auto' Owner Take-Two Acquires Zynga for $12.7 Billion in Video Game Mega-Merger.",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESiAEB6zswFdOBhap2Y6O9AI7-rZLk0QQqpn5ecXA_CEfzH4ii8w50jBZkpMOSu8GiQqioVhU5hDzyYWyoACRmBKGZtT03S0u_Aui3M4iysW1fbsYONKGHXhLc4uBI1DWdrHyds7nt1PicQO6M8rCOmUEaNgavHiuBTgz5Yf7vulrslto8Yj-5wuOH&ved=2ahUKEwjMroz75-SXAxXlDEQIHd5uOSYQFnoECEUQAQ&uoh=1",
+     "source": "Media Play News"
+    }
+   }
+  },
+  {
+   "key": "patreon.com",
+   "service": "Patreon",
+   "domain": "patreon.com",
+   "joined": "2015-07-17",
+   "last_heard": "2023-05-27",
+   "emails": 46,
+   "silent_years": 3.4,
+   "last_words": {
+    "date": "2023-05-27",
+    "text": "We miss you, Sam"
+   },
+   "proof": {
+    "date": "2015-07-17",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": {
+    "date": "2015-11-11",
+    "text": "Your order confirmation"
+   },
+   "breaches": [
+    {
+     "name": "Patreon",
+     "date": "2015-10-01",
+     "count": 2330382,
+     "data": [
+      "Email addresses",
+      "Passwords",
+      "Payment histories",
+      "Physical addresses",
+      "Private messages",
+      "Website activity"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Patreon"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Passwords",
+    "Payment histories",
+    "Physical addresses",
+    "Private messages",
+    "Website activity"
+   ],
+   "leave": {
+    "url": "https://privacy.patreon.com/policies?modal=take-control",
+    "difficulty": "easy",
+    "notes": "Log in, and open the link. Click 'Erase', and proceed to press buttons. Deletion is delayed by 14 days. Data about the deletion is shared with Transcend Inc.",
+    "email": null
+   },
+   "score": 8.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "dubsmash.com",
+   "service": "Dubsmash",
+   "domain": "dubsmash.com",
+   "joined": "2015-11-02",
+   "last_heard": "2017-03-30",
+   "emails": 6,
+   "silent_years": 9.6,
+   "last_words": {
+    "date": "2017-03-30",
+    "text": "Reset your Dubsmash password"
+   },
+   "proof": {
+    "date": "2015-11-02",
+    "text": "Welcome to Dubsmash!"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Dubsmash",
+     "date": "2018-12-01",
+     "count": 161749950,
+     "data": [
+      "Email addresses",
+      "Geographic locations",
+      "Names",
+      "Passwords",
+      "Phone numbers",
+      "Spoken languages",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Dubsmash"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Geographic locations",
+    "Names",
+    "Passwords",
+    "Phone numbers",
+    "Spoken languages",
+    "Usernames"
+   ],
+   "leave": null,
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Reddit",
+     "quote": "Reddit has acquired short-form video app Dubsmash in an undisclosed cash-and-stock deal to accelerate its video strategy.",
+     "url": "https://www.privsource.com/acquisitions/deal/reddit-acquires-dubsmash-ane_mwSgL8",
+     "source": "PrivSource"
+    }
+   }
+  },
+  {
+   "key": "pinterest.com",
+   "service": "Pinterest",
+   "domain": "pinterest.com",
+   "joined": "2016-02-23",
+   "last_heard": "2024-01-22",
+   "emails": 143,
+   "silent_years": 2.8,
+   "last_words": {
+    "date": "2024-01-22",
+    "text": "New in Pinterest: a better way to explore"
+   },
+   "proof": {
+    "date": "2016-02-23",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://pinterest.com/settings/account-settings/",
+    "difficulty": "medium",
+    "notes": "On the Account Settings, click 'Delete Account', state reason and click 'Next', then 'Send email'. You need to check the e-mail and confirm the deletion.",
+    "email": null
+   },
+   "score": 0.93,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "uber.com",
+   "service": "Uber",
+   "domain": "uber.com",
+   "joined": "2016-03-13",
+   "last_heard": "2026-02-09",
+   "emails": 107,
+   "silent_years": 0.7,
+   "last_words": {
+    "date": "2026-02-09",
+    "text": "People you may know"
+   },
+   "proof": {
+    "date": "2016-03-13",
+    "text": "Your Uber account is ready"
+   },
+   "confident": true,
+   "money": {
+    "date": "2017-03-19",
+    "text": "Your Uber receipt"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://myprivacy.uber.com/privacy/deleteyouraccount",
+    "difficulty": "impossible",
+    "notes": "You can select a reason and supposedly wait 30 days for the account to be deleted, but it never happens.",
+    "email": null
+   },
+   "score": 2.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "spotify.com",
+   "service": "Spotify",
+   "domain": "spotify.com",
+   "joined": "2016-03-26",
+   "last_heard": "2026-02-14",
+   "emails": 132,
+   "silent_years": 0.7,
+   "last_words": {
+    "date": "2026-02-14",
+    "text": "Your Spotify receipt"
+   },
+   "proof": {
+    "date": "2016-03-26",
+    "text": "Welcome to Spotify!"
+   },
+   "confident": true,
+   "money": {
+    "date": "2016-07-30",
+    "text": "Payment received, thank you"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://support.spotify.com/close-account",
+    "difficulty": "medium",
+    "notes": "1. Cancel your subscription at https://www.spotify.com/us/account/subscription/ 2. Public playlists will be anonymised, delete any playlists you want. 3. Go to the provided link, Account ⮕ I want to close my account and follow the instructions. The account can still be restored within 7 days of the request.",
+    "email": null
+   },
+   "score": 2.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "netflix.com",
+   "service": "Netflix",
+   "domain": "netflix.com",
+   "joined": "2016-04-16",
+   "last_heard": "2026-03-13",
+   "emails": 93,
+   "silent_years": 0.6,
+   "last_words": {
+    "date": "2026-03-13",
+    "text": "Reset your Netflix password"
+   },
+   "proof": {
+    "date": "2016-04-16",
+    "text": "Thanks for joining Netflix"
+   },
+   "confident": true,
+   "money": {
+    "date": "2016-09-13",
+    "text": "Invoice for your Netflix order"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.netflix.com/account/security",
+    "difficulty": "medium",
+    "notes": "To delete your account, cancel your active membership, click on the provided link, and scroll down to the 'Delete Account' button. Enter the confirmation code, and your account will be deleted automatically on the day your subscription ends. Accounts without a membership will be deleted automatically after 10 months.",
+    "email": null
+   },
+   "score": 2.2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "snapchat.com",
+   "service": "Snapchat",
+   "domain": "snapchat.com",
+   "joined": "2016-07-23",
+   "last_heard": "2019-02-18",
+   "emails": 7,
+   "silent_years": 7.7,
+   "last_words": {
+    "date": "2019-02-18",
+    "text": "Your weekly summary"
+   },
+   "proof": {
+    "date": "2016-07-23",
+    "text": "Verify your Snapchat account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://accounts.snapchat.com/accounts/delete_account",
+    "difficulty": "easy",
+    "notes": "Enter username and password and click 'Delete'.",
+    "email": null
+   },
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "edmodo.com",
+   "service": "Edmodo",
+   "domain": "edmodo.com",
+   "joined": "2017-03-20",
+   "last_heard": "2020-02-01",
+   "emails": 32,
+   "silent_years": 6.7,
+   "last_words": {
+    "date": "2020-02-01",
+    "text": "We miss you, Sam"
+   },
+   "proof": {
+    "date": "2017-03-20",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Edmodo",
+     "date": "2017-05-11",
+     "count": 43423561,
+     "data": [
+      "Email addresses",
+      "Passwords",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Edmodo"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Passwords",
+    "Usernames"
+   ],
+   "leave": null,
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "NetDragon",
+     "quote": "In April 2018, Edmodo was acquired by NetDragon for $137.5 million, with the goal of creating a larger global learning community.",
+     "url": "https://www.linkedin.com/pulse/key-players-education-technology-edtech-smart-edmodo-ruci-m-a-m-ed-6qgse",
+     "source": "LinkedIn · Armand Ruci"
+    }
+   }
+  },
+  {
+   "key": "udemy.com",
+   "service": "Udemy",
+   "domain": "udemy.com",
+   "joined": "2017-04-17",
+   "last_heard": "2022-11-18",
+   "emails": 87,
+   "silent_years": 4.0,
+   "last_words": {
+    "date": "2022-11-18",
+    "text": "Your weekly summary"
+   },
+   "proof": {
+    "date": "2017-04-17",
+    "text": "Activate your Udemy account"
+   },
+   "confident": true,
+   "money": {
+    "date": "2017-08-25",
+    "text": "Payment received, thank you"
+   },
+   "breaches": [
+    {
+     "name": "Udemy",
+     "date": "2026-04-24",
+     "count": 1401259,
+     "data": [
+      "Email addresses",
+      "Employers",
+      "Job titles",
+      "Names",
+      "Payment methods",
+      "Phone numbers",
+      "Physical addresses"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Udemy"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Employers",
+    "Job titles",
+    "Names",
+    "Payment methods",
+    "Phone numbers",
+    "Physical addresses"
+   ],
+   "leave": {
+    "url": "https://www.udemy.com/user/close-account/",
+    "difficulty": "easy",
+    "notes": "Click 'Close account' and confirm with the 6-digit code sent by email.",
+    "email": null
+   },
+   "score": 6.33,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "",
+     "quote": "(NYSE:COUR) announced Monday it has completed its acquisition of Udemy Inc., creating a combined online learning ...",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESnwEB6zswFStF4mMvrjZ0U-jiit-fZhheQlsw5u75RN4zpZLAIjwGUJXKCBFgTU6mIOjz9hJaLbVkAmRsmAT5aovK1T3kiyDmynAdMBYf4cTLh-_Yp_iwDLy2Y8elw2lJWEVVaHv4xzxfgO9iTPbfk5bawi756NRmVuwqvWu0uzhMP4Ml3fCbS9rXiMevrqvP5bhtV5bPotSeIoekWYeZyT4&ved=2ahUKEwj5j9WC5-SXAxV_GFkFHdbAHFwQFnoECEsQAQ&uoh=1",
+     "source": "Investing.com UK"
+    }
+   }
+  },
+  {
+   "key": "canva.com",
+   "service": "Canva",
+   "domain": "canva.com",
+   "joined": "2017-09-04",
+   "last_heard": "2026-06-12",
+   "emails": 61,
+   "silent_years": 0.4,
+   "last_words": {
+    "date": "2026-06-12",
+    "text": "Your account security matters"
+   },
+   "proof": {
+    "date": "2017-09-04",
+    "text": "Thanks for joining Canva"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Canva",
+     "date": "2019-05-24",
+     "count": 137272116,
+     "data": [
+      "Email addresses",
+      "Geographic locations",
+      "Names",
+      "Passwords",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Canva"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Geographic locations",
+    "Names",
+    "Passwords",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://www.canva.com/settings/login-and-security",
+    "difficulty": "easy",
+    "notes": "At the bottom of the page click on the button that says 'Delete account.' There will be a 14 day waiting period, after this period, all your account data will be deleted.",
+    "email": null
+   },
+   "score": 5.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "coursera.org",
+   "service": "Coursera",
+   "domain": "coursera.org",
+   "joined": "2017-09-25",
+   "last_heard": "2026-09-10",
+   "emails": 85,
+   "silent_years": 0.1,
+   "last_words": {
+    "date": "2026-09-10",
+    "text": "A new sign-in to your Coursera account"
+   },
+   "proof": {
+    "date": "2017-09-25",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": {
+    "date": "2018-06-11",
+    "text": "Payment received, thank you"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.coursera.org/account-settings",
+    "difficulty": "easy",
+    "notes": "Delete account button is at the bottom of the account settings page.",
+    "email": null
+   },
+   "score": 2.03,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "ebay.com",
+   "service": "eBay",
+   "domain": "ebay.com",
+   "joined": "2017-11-25",
+   "last_heard": "2026-10-26",
+   "emails": 75,
+   "silent_years": 0.0,
+   "last_words": {
+    "date": "2026-10-26",
+    "text": "Payment received, thank you"
+   },
+   "proof": {
+    "date": "2017-11-25",
+    "text": "Your eBay account is ready"
+   },
+   "confident": true,
+   "money": {
+    "date": "2018-02-05",
+    "text": "Your eBay subscription renews soon"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://accountsettings.ebay.com/uas",
+    "difficulty": "medium",
+    "notes": "Hover over name on top left, click 'Account settings', click 'Close account' under the Account preferences column, then scroll down and click 'Close account and delete my data'. Select why you are leaving from drop down and continue. Click on checkmark and then click the left button to close your account. If you want an extra safety measure, replace all of your personal info with fake info before closing the account.",
+    "email": null
+   },
+   "score": 2.0,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "steampowered.com",
+   "service": "Steam",
+   "domain": "steampowered.com",
+   "joined": "2018-02-19",
+   "last_heard": "2025-11-22",
+   "emails": 60,
+   "silent_years": 0.9,
+   "last_words": {
+    "date": "2025-11-22",
+    "text": "Your Steam subscription renews soon"
+   },
+   "proof": {
+    "date": "2018-02-19",
+    "text": "Thanks for joining Steam"
+   },
+   "confident": true,
+   "money": {
+    "date": "2019-01-18",
+    "text": "Your Steam receipt"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://help.steampowered.com/en/wizard/HelpDeleteAccount",
+    "difficulty": "hard",
+    "notes": "First you must verify ownership of the account, then Steam Support will respond to confirm your identification. After it is confirmed your account will be locked and then deleted in 30 days. You can cancel the deletion by contacting Steam Support during the 30 days. You can't reuse your account name.",
+    "email": null
+   },
+   "score": 2.3,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "discord.com",
+   "service": "Discord",
+   "domain": "discord.com",
+   "joined": "2018-02-22",
+   "last_heard": "2026-02-10",
+   "emails": 41,
+   "silent_years": 0.7,
+   "last_words": {
+    "date": "2026-02-10",
+    "text": "What you missed this week"
+   },
+   "proof": {
+    "date": "2018-02-22",
+    "text": "Verify your Discord account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://support.discord.com/hc/articles/212500837",
+    "difficulty": "easy",
+    "notes": "While account deletion will go through, it will NOT delete your messages, which you must do manually, or by following this tutorial to ask for deletion of your messages, which requires that you first request your data package: [discorch.org](https://discorch.org). Your account must stay active while awaiting Discord's response. NOTE: Discord will only delete any of your messages in servers and group DMs that you are not a member of; 1-1 DMs must be manually deleted, or automated through same the link above. If you are an owner of any servers, you must either [delete it](https://support.discord.com/hc/articles/213595197), or [transfer ownership](https://support.discord.com/hc/articles/216273938) before you are able to delete your account.",
+    "email": null
+   },
+   "score": 0.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "grammarly.com",
+   "service": "Grammarly",
+   "domain": "grammarly.com",
+   "joined": "2018-03-24",
+   "last_heard": "2023-02-23",
+   "emails": 83,
+   "silent_years": 3.7,
+   "last_words": {
+    "date": "2023-02-23",
+    "text": "Reset your Grammarly password"
+   },
+   "proof": {
+    "date": "2018-03-24",
+    "text": "Your Grammarly account is ready"
+   },
+   "confident": true,
+   "money": {
+    "date": "2018-06-22",
+    "text": "Your order confirmation"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://app.grammarly.com/profile/account",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 3.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "twitch.tv",
+   "service": "Twitch",
+   "domain": "twitch.tv",
+   "joined": "2018-05-15",
+   "last_heard": "2025-04-23",
+   "emails": 66,
+   "silent_years": 1.5,
+   "last_words": {
+    "date": "2025-04-23",
+    "text": "Invoice for your Twitch order"
+   },
+   "proof": {
+    "date": "2018-05-15",
+    "text": "Activate your Twitch account"
+   },
+   "confident": true,
+   "money": {
+    "date": "2019-05-02",
+    "text": "Your Twitch receipt"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.twitch.tv/user/delete-account",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 2.5,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Amazon.com",
+     "quote": "Recently, Amazon.com (NASDAQ: AMZN), the web retailer and cloud computing company, bought Twitch.tv for $970 million.",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESkwEB6zswFejrjdHE0Z_RymIAN6dUyuzUndUvaK8QVSg4w4nj8qvr9j-ENb2SoGMc5_oZuHWARWNeE2LTZQ6_nu-RhT58Ln3PmWmadySn4Zbqqva0tsj0HyELHUxu2kg1hqWeHZJtV7cJC1pRPLkk2VftEFoMcqTOR7wcPYPefowE3Aulu77vy_7nYQgNVUCf3Tyzf9o&ved=2ahUKEwiI-ZaT5-SXAxWRMWIAHQjYOp8QFnoECDsQAQ&uoh=1",
+     "source": "Consultingcase101"
+    }
+   }
+  },
+  {
+   "key": "epicgames.com",
+   "service": "Epic Games",
+   "domain": "epicgames.com",
+   "joined": "2018-06-12",
+   "last_heard": "2024-06-01",
+   "emails": 65,
+   "silent_years": 2.4,
+   "last_words": {
+    "date": "2024-06-01",
+    "text": "We miss you, Sam"
+   },
+   "proof": {
+    "date": "2018-06-12",
+    "text": "Thanks for joining Epic Games"
+   },
+   "confident": true,
+   "money": {
+    "date": "2018-07-09",
+    "text": "Your Epic Games subscription renews soon"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.epicgames.com/help/en-US/epic-accounts-c74/general-support-c79/how-do-i-delete-my-epic-games-account-a3636",
+    "difficulty": "medium",
+    "notes": "Log in to your account. On the \"General Info\" page, scroll to the \"Delete Account\" section, request deletion and follow the steps.",
+    "email": null
+   },
+   "score": 2.8,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "trello.com",
+   "service": "Trello",
+   "domain": "trello.com",
+   "joined": "2019-08-20",
+   "last_heard": "2024-06-20",
+   "emails": 22,
+   "silent_years": 2.4,
+   "last_words": {
+    "date": "2024-06-20",
+    "text": "Your account security matters"
+   },
+   "proof": {
+    "date": "2019-08-20",
+    "text": "Welcome to Trello!"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Trello",
+     "date": "2024-01-16",
+     "count": 15111945,
+     "data": [
+      "Email addresses",
+      "Names",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Trello"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Names",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://trello.com/your/account",
+    "difficulty": "easy",
+    "notes": "Select 'Delete your account?' option to delete your account",
+    "email": null
+   },
+   "score": 3.8,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Atlassian",
+     "quote": "Back in January, Atlassian announced its acquisition of Trello for $425 million, the latest and largest in a series of significant acquisitions ...",
+     "url": "https://www.automation-consultants.com/atlassian-trello-combination-a-summary/",
+     "source": "Automation Consultants"
+    }
+   }
+  },
+  {
+   "key": "zoom.us",
+   "service": "Zoom",
+   "domain": "zoom.us",
+   "joined": "2019-09-12",
+   "last_heard": "2026-08-20",
+   "emails": 30,
+   "silent_years": 0.2,
+   "last_words": {
+    "date": "2026-08-20",
+    "text": "Your weekly summary"
+   },
+   "proof": {
+    "date": "2020-08-17",
+    "text": "A new sign-in to your Zoom account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://zoom.us/account",
+    "difficulty": "easy",
+    "notes": "Login to your account, go to 'Account Profile', click 'Terminate my account'. Enter password in dialog box and confirm.",
+    "email": null
+   },
+   "score": 0.07,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "notion.so",
+   "service": "Notion",
+   "domain": "notion.so",
+   "joined": "2019-12-26",
+   "last_heard": "2026-07-13",
+   "emails": 24,
+   "silent_years": 0.3,
+   "last_words": {
+    "date": "2026-07-13",
+    "text": "Updates to our Terms of Service"
+   },
+   "proof": {
+    "date": "2019-12-26",
+    "text": "Verify your Notion account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.notion.so",
+    "difficulty": "easy",
+    "notes": "Go to \"Settings & members\", then \"My account\", and click \"Delete my account\", type your email address and confirm.",
+    "email": null
+   },
+   "score": 0.1,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "dominos.com",
+   "service": "Domino's",
+   "domain": "dominos.com",
+   "joined": "2020-01-12",
+   "last_heard": "2022-12-01",
+   "emails": 23,
+   "silent_years": 3.9,
+   "last_words": {
+    "date": "2022-12-01",
+    "text": "Reset your Domino's password"
+   },
+   "proof": {
+    "date": "2020-01-12",
+    "text": "Welcome to Domino's!"
+   },
+   "confident": true,
+   "money": {
+    "date": "2021-04-02",
+    "text": "Payment received, thank you"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": null,
+   "score": 3.3,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "shein.com",
+   "service": "Shein",
+   "domain": "shein.com",
+   "joined": "2020-06-19",
+   "last_heard": "2022-06-16",
+   "emails": 35,
+   "silent_years": 4.4,
+   "last_words": {
+    "date": "2022-06-16",
+    "text": "New in Shein: a better way to explore"
+   },
+   "proof": {
+    "date": "2020-06-19",
+    "text": "Thanks for joining Shein"
+   },
+   "confident": true,
+   "money": {
+    "date": "2020-07-25",
+    "text": "Your Shein subscription renews soon"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://shein.com/robot",
+    "difficulty": "hard",
+    "notes": "Click on the link, then click on \"Contact Agent\", select \"Unsubscribe and delete\". Finally fill in the various fields and then press \"Submit\". ⚠️ It is imperative to give a reason for deleting an account for it to work.",
+    "email": null
+   },
+   "score": 3.47,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "figma.com",
+   "service": "Figma",
+   "domain": "figma.com",
+   "joined": "2020-10-16",
+   "last_heard": "2026-09-28",
+   "emails": 20,
+   "silent_years": 0.1,
+   "last_words": {
+    "date": "2026-09-28",
+    "text": "Your account security matters"
+   },
+   "proof": {
+    "date": "2020-10-16",
+    "text": "Your Figma account is ready"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.figma.com/",
+    "difficulty": "easy",
+    "notes": "Log in, click on your profile picture in the top right of the header, click on 'Settings', scroll down to the account section, click on 'Delete account', re-enter your account password, type 'delete my account' into the dialog box, and click on 'Delete account'.",
+    "email": null
+   },
+   "score": 0.03,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "gonitro.com",
+   "service": "Nitro PDF",
+   "domain": "gonitro.com",
+   "joined": "2021-04-22",
+   "last_heard": "2021-04-24",
+   "emails": 2,
+   "silent_years": 5.5,
+   "last_words": {
+    "date": "2021-04-24",
+    "text": "Your weekly summary"
+   },
+   "proof": {
+    "date": "2021-04-22",
+    "text": "Thanks for joining Nitro PDF"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": null,
+   "score": 1.83,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": {
+     "url": "https://community.gonitro.com/topic/19128-how-to-delete-my-nitro-account/",
+     "title": "How to delete my Nitro account?"
+    },
+    "fate": null
+   }
+  },
+  {
+   "key": "robinhood.com",
+   "service": "Robinhood",
+   "domain": "robinhood.com",
+   "joined": "2021-07-12",
+   "last_heard": "2023-05-15",
+   "emails": 12,
+   "silent_years": 3.5,
+   "last_words": {
+    "date": "2023-05-15",
+    "text": "People you may know"
+   },
+   "proof": {
+    "date": "2021-07-12",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Robinhood",
+     "date": "2021-11-03",
+     "count": 5003937,
+     "data": [
+      "Email addresses"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Robinhood"
+    }
+   ],
+   "leaked": [
+    "Email addresses"
+   ],
+   "leave": {
+    "url": "https://robinhood.com/contact",
+    "difficulty": "impossible",
+    "notes": "Support will not disable / delete your login. Individual brokerage or crypto accounts can be deleted, as well as marketing information through self-service option.",
+    "email": null
+   },
+   "score": 4.17,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "coinbase.com",
+   "service": "Coinbase",
+   "domain": "coinbase.com",
+   "joined": "2021-08-05",
+   "last_heard": "2024-07-07",
+   "emails": 14,
+   "silent_years": 2.3,
+   "last_words": {
+    "date": "2024-07-07",
+    "text": "Your 2024 year in review"
+   },
+   "proof": {
+    "date": "2021-08-05",
+    "text": "Welcome to Coinbase!"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.coinbase.com/settings/privacy-rights",
+    "difficulty": "medium",
+    "notes": "Sign in then visit [their website](https://www.coinbase.com/settings/privacy-rights) and request the deletion of all of your data. You will then be directed to [their account activity page](https://www.coinbase.com/settings/account_activity) where you must close your account after withdrawing all funds.",
+    "email": null
+   },
+   "score": 0.77,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "replit.com",
+   "service": "Replit",
+   "domain": "replit.com",
+   "joined": "2022-05-01",
+   "last_heard": "2024-03-28",
+   "emails": 13,
+   "silent_years": 2.6,
+   "last_words": {
+    "date": "2024-03-28",
+    "text": "We miss you, Sam"
+   },
+   "proof": {
+    "date": "2022-05-01",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://replit.com/account/additional-billing-settings",
+    "difficulty": "easy",
+    "notes": "On the linked page click \"Request account deletion\", then \"Yes, Delete my Account\"",
+    "email": null
+   },
+   "score": 0.87,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "vercel.com",
+   "service": "Vercel",
+   "domain": "vercel.com",
+   "joined": "2023-09-17",
+   "last_heard": "2026-04-06",
+   "emails": 14,
+   "silent_years": 0.6,
+   "last_words": {
+    "date": "2026-04-06",
+    "text": "Your weekly summary"
+   },
+   "proof": {
+    "date": "2024-01-26",
+    "text": "A new sign-in to your Vercel account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://vercel.com/account",
+    "difficulty": "easy",
+    "notes": "In the dashboard, click your profile picture on the top right, click \"Settings\", scroll down and then click \"Delete Personal Account\".",
+    "email": null
+   },
+   "score": 0.2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  },
+  {
+   "key": "perplexity.ai",
+   "service": "Perplexity",
+   "domain": "perplexity.ai",
+   "joined": "2024-02-19",
+   "last_heard": "2024-11-30",
+   "emails": 4,
+   "silent_years": 1.9,
+   "last_words": {
+    "date": "2024-11-30",
+    "text": "We miss you, Sam"
+   },
+   "proof": {
+    "date": "2024-02-19",
+    "text": "Thanks for joining Perplexity"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.perplexity.ai/settings/account",
+    "difficulty": "easy",
+    "notes": "In the \"System\" field, select \"Delete Account\" and confirm the action. All data will be permanently deleted 30 days after the account is deleted.",
+    "email": null
+   },
+   "score": 0.63,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
+  }
+ ]
+}
