@@ -100,6 +100,6 @@ python -m unittest tests.test_core
 
 - Breach list: [Have I Been Pwned](https://haveibeenpwned.com/) (CC BY 4.0). Delete links: [JustDeleteMe](https://github.com/jdm-contrib/jdm) (MIT). Details in [`haunted/data/SOURCES.md`](haunted/data/SOURCES.md).
 - Model: [Gemma](https://ai.google.dev/gemma), run with [Ollama](https://ollama.com).
-- Fonts: Bagel Fat One, Instrument Sans, Fragment Mono (SIL Open Font License), in `haunted/ui/fonts`.
+- Fonts: Instrument Serif, Instrument Sans, Fragment Mono (SIL Open Font License), in `haunted/ui/fonts`.
 
 MIT licensed.

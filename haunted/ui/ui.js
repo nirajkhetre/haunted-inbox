@@ -1,7 +1,7 @@
 'use strict';
 // ---------- which ghosts, and how close to morning ----------
 const MATCH = { all: () => true, hacked: x => x.breaches.length > 0, card: x => !!x.money, quiet: x => (x.silent_years || 0) >= 3 };
-const FILTERS = [['all', 'Everyone'], ['hacked', 'Hacked'], ['card', 'Has your card?'], ['quiet', 'Quiet 3+ years']];
+const FILTERS = [['all', 'All'], ['hacked', 'Hacked'], ['card', 'May have your card'], ['quiet', 'Silent 3+ years']];
 const inView = x => MATCH[S.filter](x) && (x.silent_years || 0) >= (S.set.quietOnly || 0);
 const open = () => S.ghosts.filter(x => x.state === 'ghost' || !x.state);
 const nextGhost = () => open().filter(inView).sort((a, b) => b.score - a.score)[0];
@@ -18,7 +18,8 @@ function tally(bump) {
   const t = total ? rest / total : 0, u = 1 - t, sun = $('#sun');
   sun.setAttribute('cx', (u * u * 4 + 2 * u * t * 50 + t * t * 96).toFixed(1)); sun.setAttribute('cy', (u * u * 30 + 2 * u * t * -14 + t * t * 30).toFixed(1));
   $('#arc2').style.strokeDashoffset = (1 - t).toFixed(3);
-  $('#meterText').innerHTML = `<b>${rest}</b> of ${total} at rest`;
+  $('#meterText').innerHTML = `<b>${rest}</b> of ${total} dealt with`;
+  renderRows();
   if (bump) { $('#meter').classList.remove('bump'); void $('#meter').offsetWidth; $('#meter').classList.add('bump'); }
   applySky();
 }
@@ -27,7 +28,7 @@ function applyFilter(move = true) {
   for (const x of S.ghosts) if (x.el) { const on = inView(x); if (x.hid === !on) continue; x.hid = !on; x.el.style.setProperty('--wait', (k++ % 11) * 24 + 'ms'); x.el.classList.toggle('hid', !on); }
   const first = nextGhost(); if (move && first) walkTo(first.x - S.kxOffset());
   if (k) Snd.play('grind', .4);
-  buildRuler(); guide();
+  buildRuler(); guide(); renderRows();
 }
 $('#filters').addEventListener('click', e => { const b = e.target.closest('.f'); if (!b) return; S.filter = b.dataset.f; closeCard(); tally(); applyFilter(); });
 
@@ -41,17 +42,17 @@ function why(x) {
 let sayT = 0;
 function guide() {
   const g = $('#guide'), go = $('#guideGo'); clearTimeout(sayT);
-  if (S.stage !== 'walk' || (S.touring && !S.tourGuide) || !$('#list').hidden) { g.hidden = true; return; }
+  if (S.stage !== 'walk' || S.touring || S.view !== 'grave' || S.inBeats) { g.hidden = true; return; }
   g.hidden = false;
-  if (S.sel) { g.classList.add('quietly'); $('#guideText').textContent = 'Read the stone, then do the two steps on it.'; go.hidden = true; return; }
+  if (S.sel) { g.classList.add('quietly'); $('#guideText').textContent = 'Read the details, then do the two steps.'; go.hidden = true; return; }
   g.classList.remove('quietly');
   const n = nextGhost();
-  if (!n) { $('#guideText').textContent = open().length ? 'Nobody here matches that. Try another group up top.' : 'That was the last one. Go on, get some sleep.'; go.hidden = true; return; }
+  if (!n) { $('#guideText').textContent = open().length ? 'Nothing here matches that. Try another group up top.' : 'That was the last one. Morning.'; go.hidden = true; return; }
   const rest = S.ghosts.length - open().length;
   $('#guideText').innerHTML = `${rest ? 'Next' : 'Start'} with <b>${esc(n.service)}</b>. It ${esc(why(n))}.`;
-  go.hidden = false; go.textContent = 'Take me there'; go.onclick = () => { Snd.wake(); takeTo(n); };
+  go.hidden = false; go.textContent = 'Show me'; go.onclick = () => { Snd.wake(); takeTo(n); };
 }
-function say(text, ms = 3200) { const g = $('#guide'); if (S.stage !== 'walk' || S.touring) return; g.hidden = false; g.classList.remove('quietly'); $('#guideText').textContent = text; $('#guideGo').hidden = true; clearTimeout(sayT); sayT = setTimeout(guide, ms); }
+function say(text, ms = 3200) { const g = $('#guide'); if (S.stage !== 'walk' || S.touring || S.view !== 'grave') return; g.hidden = false; g.classList.remove('quietly'); $('#guideText').textContent = text; $('#guideGo').hidden = true; clearTimeout(sayT); sayT = setTimeout(guide, ms); }
 async function takeTo(x) { walkTo(x.x - (S.W <= 760 ? S.W * .5 : S.W * .34)); await wait(calm() ? 10 : 720); if (S.stage === 'walk') openCard(x); }
 
 // ---------- the card: the stone itself lifts out of the ground and opens ----------
@@ -62,12 +63,12 @@ function cardHTML(x) {
   const u = x.lookup || {}, url = x.leave?.url || u.delete?.url;
   const fate = u.fate ? `<div class="note fate"><h4>${u.fate.fate === 'acquired' ? `Sold${u.fate.by ? ` to ${esc(u.fate.by)}` : ' to another company'}` : 'The company shut down'}</h4><q>${esc(u.fate.quote)}</q><small><a href="${safe(u.fate.url)}" target="_blank" rel="noopener">${esc(u.fate.source)}</a>. Found by web search, so check it. Where did your data go?</small></div>` : '';
   const silent = x.silent_years == null ? '' : x.silent_years < 1 ? 'still writing to you' : `silent for ${x.silent_years} years`, canAsk = (S.web && S.set.web || S.sample) && !x.lookup && url;
-  return `<p class="lies">here lies your account at ${esc(x.domain)}</p><h2 class="gname">${esc(x.service)}</h2>
+  return `<p class="lies">${S.view === 'grave' ? 'here lies your account at' : 'Your account at'} ${esc(x.domain)}</p><h2 class="gname">${esc(x.service)}</h2>
 <p class="dates">${fmtDay(x.joined)} to ${fmtMonth(x.last_heard)}</p><p class="small">${plural(x.emails, 'email')}${silent ? `, ${silent}` : ''}</p>
-${lastWords(x) ? `<p class="words"><small>its last words to you</small><q>${esc(lastWords(x))}</q></p>` : ''}
+${lastWords(x) ? `<p class="words"><small>${S.view === 'grave' ? 'its last words to you' : 'the last message it sent you'}</small><q>${esc(lastWords(x))}</q></p>` : ''}
 ${leak}${fate}
 ${x.money ? `<div class="note card2"><h4>May still have your card</h4><q>${esc(x.money.text)}</q> <small>${fmtDay(x.money.date)}</small></div>` : ''}
-${canAsk ? '<button class="sticker" id="ask">Who owns it now?</button>' : ''}
+${canAsk ? '<button class="sticker" id="ask">Who owns this company now?</button>' : ''}
 <div class="note"><h4>${x.confident ? 'How we know you signed up' : 'The first thing they sent you (we are less sure about this one)'}</h4><q>${esc(x.proof.text)}</q> <small>${fmtDay(x.proof.date)}</small></div>
 ${x.leave?.notes ? `<div class="note"><h4>How to leave</h4>${esc(x.leave.notes.slice(0, 280))}</div>` : ''}
 ${u.delete && !x.leave ? `<div class="note"><h4>Found on their own site</h4>${esc(u.delete.title)}</div>` : ''}
@@ -78,8 +79,9 @@ function actionsHTML(x) {
   const first = url ? `<a class="stone go" href="${safe(url)}" target="_blank" rel="noopener">Close the account<small>${esc(x.domain)}${diff ? `, ${esc(DIFF[diff] || diff)}` : ''}</small></a>`
     : webOn && !x.lookup ? `<button class="stone go" id="ask2">Find the way out<small>Looks for their delete page</small></button>`
     : `<a class="stone go" href="https://duckduckgo.com/?q=${encodeURIComponent(`how to delete ${x.service} account`)}" target="_blank" rel="noopener">Search for the way out<small>Opens a web search for this company</small></a>`;
-  return `<ol class="path"><li><i>1</i>${first}</li><li><i>2</i><button class="stone hold" id="hold"><i class="fill"></i><span>${S.set.hold ? 'Hold once it\'s gone' : 'It\'s gone: lay it to rest'}</span></button></li></ol><button class="quiet" id="keep">I still use this one</button>`;
+  return `<ol class="path"><li><i>1</i>${first}</li><li><i>2</i><button class="stone hold" id="hold"><i class="fill"></i><span>${needHold() ? 'Hold once it\'s closed' : 'Mark as closed'}</span></button></li></ol><button class="keepit" id="keep">I still use this one</button>`;
 }
+const needHold = () => S.set.hold && S.view === 'grave';
 function fillCard(x) {
   const c = $('#card');
   $('#cardbody').innerHTML = cardHTML(x); $('#cardbody').scrollTop = 0;
@@ -98,14 +100,14 @@ function openCard(x) {
   Snd.play('hoo', seed(x.key), .6, .16);
   if (calm()) return;
   const a = x.el.querySelector('.st').getBoundingClientRect(), b = c.getBoundingClientRect();
-  if (!wasOpen) c.animate([{ transform: `translate(${a.left - b.left}px,${a.top - b.top}px) scale(${a.width / b.width},${a.height / b.height})`, offset: 0 }, { transform: 'translate(0,-8px) scale(1.012)', offset: .78 }, { transform: 'none' }], { duration: 620, easing: 'cubic-bezier(.22,.9,.3,1)' });
+  if (!wasOpen && a.width) c.animate([{ transform: `translate(${a.left - b.left}px,${a.top - b.top}px) scale(${a.width / b.width},${a.height / b.height})`, offset: 0 }, { transform: 'translate(0,-8px) scale(1.012)', offset: .78 }, { transform: 'none' }], { duration: 620, easing: 'cubic-bezier(.22,.9,.3,1)' });
   $$('#cardbody>*').slice(0, 7).forEach((el, k) => el.animate([{ transform: 'translateY(16px) scale(.97)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 340, delay: (wasOpen ? 40 : 240) + k * 34, easing: 'cubic-bezier(.2,1,.3,1)', fill: 'backwards' }));
   c.querySelector('.acts').animate([{ transform: 'translateY(100%)' }, { transform: 'none' }], { duration: 420, delay: wasOpen ? 0 : 300, easing: 'cubic-bezier(.2,1.2,.3,1)', fill: 'backwards' });
 }
 function closeCard() {
   const c = $('#card'); if (c.hidden) return;
   const x = S.sel; document.body.classList.remove('focus'); x?.el?.classList.remove('sel'); S.sel = null; guide();
-  const stone = x?.el?.querySelector('.st'), hidden = !stone || x.state === 'gone' || calm();
+  const stone = x?.el?.querySelector('.st'), hidden = !stone || x.state === 'gone' || calm() || !stone.getBoundingClientRect().width;
   if (hidden) { c.hidden = true; return; }
   const a = stone.getBoundingClientRect(), b = c.getBoundingClientRect();
   c.animate([{ transform: 'none' }, { transform: `translate(${a.left - b.left}px,${a.top - b.top}px) scale(${a.width / b.width},${a.height / b.height})` }], { duration: 300, easing: 'cubic-bezier(.5,0,.8,.4)', fill: 'forwards' }).onfinish = e => { c.hidden = true; e.target.cancel(); };
@@ -123,17 +125,17 @@ async function askWeb(x, b) {
 // ---------- laying to rest: hold to light the candles, let go of it for good ----------
 function wireHold(x) {
   const b = $('#hold'), fill = b.querySelector('.fill'), sd = seed(x.key); let anim = null, candles = [], stopHum = () => {};
-  if (!S.set.hold) { b.onclick = () => { lightCandles(); banish(x, candles); }; }
+  if (!needHold()) { b.onclick = () => { lightCandles(); banish(x, candles); }; }
   function lightCandles() { candles = [-46, -24, 24, 46, 0].map((dx, k) => { const c = document.createElement('i'); c.className = 'candle'; c.style.cssText = `left:${dx}px;--i:${k};bottom:${k === 4 ? -26 : -14}px`; x.el.appendChild(c); setTimeout(() => { if (c.isConnected && anim) Snd.play('strike', .06); }, k * 70); return c; }); }
   const start = e => {
-    e.preventDefault(); if (anim || !S.set.hold) return; b.setPointerCapture?.(e.pointerId); lightCandles(); stopHum = Snd.play('hold', sd);
+    e.preventDefault(); if (anim || !needHold()) return; b.setPointerCapture?.(e.pointerId); lightCandles(); stopHum = Snd.play('hold', sd);
     x.el.querySelector('.gh svg').animate([{ transform: 'none' }, { transform: 'scale(1.12,.84) translateY(6px)' }], { duration: 900, easing: 'ease-in', fill: 'forwards' });
     anim = fill.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: calm() ? 60 : 900, easing: 'cubic-bezier(.3,0,.7,1)', fill: 'forwards' });
     anim.onfinish = () => { anim = null; banish(x, candles); };
   };
   const stop = () => { if (!anim) return; anim.cancel(); anim = null; stopHum(); candles.forEach(c => c.remove()); candles = []; x.el.querySelector('.gh svg').getAnimations().forEach(a => a.cancel()); };
   b.addEventListener('pointerdown', start); b.addEventListener('pointerup', stop); b.addEventListener('pointerleave', stop); b.addEventListener('pointercancel', stop);
-  b.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat && S.set.hold) { e.preventDefault(); start(e); } });
+  b.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat && needHold()) { e.preventDefault(); start(e); } });
   b.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') stop(); });
 }
 async function banish(x, candles) {
@@ -162,10 +164,11 @@ async function banish(x, candles) {
   x.eyes = null;
   saveState(x); tally(true); buildRuler(); renderRows();
   const left = open().length;
+  showUndo(x);
   if (!left) return peace();
   guide();
   const n = nextGhost();
-  $('#guideText').innerHTML = `One less. The sky is a little lighter. ${n ? `Next: <b>${esc(n.service)}</b>.` : ''}`;
+  $('#guideText').innerHTML = `Done. The sky is a little lighter. ${n ? `Next: <b>${esc(n.service)}</b>.` : ''}`;
 }
 async function keep(x) {
   closeCard();
@@ -177,16 +180,17 @@ async function keep(x) {
   burst(x.x, x.y - 110, 14, { c: ['#FFC83D', '#FFF3B0'], v: 110, g: 40, r: 4, life: .8, spread: 6.3 });
   Snd.play('tine', 81, .16);
   saveState(x); tally(true); buildRuler(); renderRows();
+  showUndo(x);
   if (!open().length) return peace();
   guide();
-  $('#guideText').textContent = `Good. ${x.service} stays, as a firefly.`;
+  $('#guideText').textContent = `${x.service} stays.`;
 }
 function saveState(x) { if (S.local && !S.sample) post('/api/state', { key: x.key, state: x.state }).catch(() => {}); }
 async function peace() {
   if (S.set.theme === 'auto') S.dawnT = 1;
   Snd.play('morning');
-  await beat('<em>Morning.</em> Your graveyard is at peace.', 3200);
-  say('Sleep well. Run it again next year. You will have signed up for something by then.', 8000);
+  if (S.view === 'grave') await beat('<em>Morning.</em> Your graveyard is at peace.', 3200);
+  say('You have dealt with everything here. Run it again in a year to catch anything new.', 8000);
 }
 
 // ghosts answer when you come close, each in its own voice

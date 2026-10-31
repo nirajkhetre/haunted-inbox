@@ -18,57 +18,79 @@
   <radialGradient id="gBox" cx=".34" cy=".2" r="1"><stop offset="0" stop-color="#8E6BE0"/><stop offset=".55" stop-color="#5E3DB3"/><stop offset="1" stop-color="#3A2470"/></radialGradient>
   <linearGradient id="gCloak" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5A3AA8"/><stop offset="1" stop-color="#2E1B5E"/></linearGradient>
 </defs></svg>
+<div id="scene">
 <canvas id="sky" aria-hidden="true"></canvas>
 <div id="world" aria-label="Your graveyard, one stone for each account"></div>
 <canvas id="night" aria-hidden="true"></canvas>
 <svg id="keeper" viewBox="0 0 150 170" aria-hidden="true"></svg>
+</div>
 
 <header id="bar" hidden>
   <button class="mark" id="home" aria-label="Back to the start"><svg viewBox="0 0 60 66" aria-hidden="true"><path d="M8 32C8 13 18 4 30 4s22 9 22 28v26q-5.5 7-11 0t-11 0-11 0-11 0Z"/><rect x="19" y="23" width="6" height="13" rx="3"/><rect x="35" y="23" width="6" height="13" rx="3"/></svg><span>Haunted Inbox</span></button>
-  <div id="filters" role="group" aria-label="Which ghosts to show"></div>
+  <div class="seg" id="viewSwitch" role="radiogroup" aria-label="View"><button role="radio" data-view="report">Report</button><button role="radio" data-view="grave">Graveyard</button></div>
+  <div id="filters" role="group" aria-label="Which accounts to show"></div>
   <div id="meter" aria-label="How close to morning"><svg viewBox="0 0 100 34" aria-hidden="true"><path class="arc" d="M4 30 Q50 -14 96 30"/><path class="arc2" id="arc2" d="M4 30 Q50 -14 96 30"/><circle id="sun" r="7" cx="4" cy="30"/></svg><span id="meterText"></span></div>
   <div class="tools">
-    <button class="chip" id="listbtn">List</button>
     <button class="chip" id="share">Share</button>
     <button class="chip icon" id="gear" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l1.5 2.5 2.9-.6.5 2.9 2.7 1.2-1.2 2.7 1.2 2.7-2.7 1.2-.5 2.9-2.9-.6L12 20.8l-1.5-2.5-2.9.6-.5-2.9-2.7-1.2 1.2-2.7-1.2-2.7 2.7-1.2.5-2.9 2.9.6Z"/><circle cx="12" cy="12" r="3"/></svg></button>
   </div>
 </header>
 
 <section id="gate">
-  <div id="pitch">
-    <h1><span class="ln" id="l1">You forgot them.</span><span class="ln" id="l2">They didn't forget you.</span></h1>
-    <p class="lede">Every account your past self made is still out there, holding your name, your email, sometimes your card. Haunted Inbox finds them from your own mail, on your own computer, and walks you through them.</p>
-    <div class="cta" id="cta">
-      <button class="env" id="walk">
-        <span class="letter" aria-hidden="true"><svg viewBox="0 0 60 66"><path class="gbody" d="M7 34C7 14 17 4 30 4s23 10 23 30v27q-5.8 7-11.5 0t-11.5 0-11.5 0-11.5 0Z"/><rect x="18" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/><rect x="35" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/></svg></span>
-        <span class="front"><svg class="flap" viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><path d="M2 2 L150 56 L298 2"/></svg><b>Post this letter</b><small>Walk through a sample. Nothing to install.</small></span>
-      </button>
-      <button class="stone" id="own">Scan my own inbox<small>It stays on your computer</small></button>
+  <nav id="topnav"><span class="mark2"><svg viewBox="0 0 60 66" aria-hidden="true"><path d="M8 32C8 13 18 4 30 4s22 9 22 28v26q-5.5 7-11 0t-11 0-11 0-11 0Z"/><rect x="19" y="23" width="6" height="13" rx="3"/><rect x="35" y="23" width="6" height="13" rx="3"/></svg>Haunted Inbox</span><span class="navlinks"><a href="#how">How it works</a><a href="#privacy">Privacy</a><a href="#proof">Results</a><a href="#faq">Questions</a><a href="https://github.com/nirajkhetre/haunted-inbox" target="_blank" rel="noopener">GitHub</a></span></nav>
+  <div id="heroWrap">
+    <div id="pitch">
+      <h1>Find every account you forgot you made.</h1>
+      <p class="hook">You forgot them. They didn't forget you.</p>
+      <p class="lede">Haunted Inbox reads the senders and subject lines in your mail, on your own computer. It lists your old accounts, shows which were hacked after you joined, and takes you to where you can delete them.</p>
+      <div class="cta" id="cta">
+        <button class="env" id="walk">
+          <span class="letter" aria-hidden="true"><svg viewBox="0 0 60 66"><path class="gbody" d="M7 34C7 14 17 4 30 4s23 10 23 30v27q-5.8 7-11.5 0t-11.5 0-11.5 0-11.5 0Z"/><rect x="18" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/><rect x="35" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/></svg></span>
+          <span class="front"><svg class="flap" viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><path d="M2 2 L150 56 L298 2"/></svg><b>See a sample report</b><small>No install. A made-up inbox.</small></span>
+        </button>
+        <button class="stone" id="own">Scan my own inbox<small>Free. It stays on your computer.</small></button>
+      </div>
+      <ul class="facts"><li>Free and open source</li><li>No account or sign-up</li><li>Never opens your messages</li><li>Your mail stays on your computer</li></ul>
     </div>
-    <p class="fine">Only the envelope of each email is read: who, when, and the subject. Never the message.</p>
+    <div id="preview" aria-label="An example report"></div>
+    <svg id="mailbox" viewBox="0 0 420 600" aria-hidden="true">
+      <g id="mbGhost"><path class="gbody" d="M130 150C130 60 170 18 210 18s80 42 80 132v60H130Z" transform="translate(0 110)"/><rect x="178" y="170" width="16" height="32" rx="8" fill="#160C2E"/><rect x="226" y="170" width="16" height="32" rx="8" fill="#160C2E"/></g>
+      <g id="mbBody">
+        <rect x="170" y="430" width="80" height="180" rx="8" fill="#6B4E3D" stroke="#160C2E" stroke-width="7"/>
+        <path d="M56 440V180C56 76 128 26 210 26s154 50 154 154v260q0 10-10 10H66q-10 0-10-10Z" fill="url(#gBox)" stroke="#160C2E" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M84 150C96 96 140 58 196 52" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="10" stroke-linecap="round"/>
+        <rect id="mbSlot" x="88" y="128" width="244" height="104" rx="52" fill="#0B0620" stroke="#160C2E" stroke-width="7"/>
+        <g id="mbEyes"><rect x="162" y="146" width="28" height="68" rx="14" fill="#FFF8EC"/><rect x="230" y="146" width="28" height="68" rx="14" fill="#FFF8EC"/></g>
+        <rect id="mbLid" x="88" y="128" width="244" height="52" rx="26" fill="#5A43A0" stroke="#160C2E" stroke-width="7" opacity="0"/>
+        <text x="210" y="352" text-anchor="middle" font-family="Serif" font-size="58" fill="#FFF8EC">Inbox</text>
+        <path d="M58 450v-26q12-18 28-8 12-14 30 0 18-4 22 34Z" fill="#3E8C63" stroke="#160C2E" stroke-width="5" stroke-linejoin="round"/>
+        <g id="mbFlag"><rect x="356" y="208" width="14" height="118" rx="7" fill="#FFF8EC" stroke="#160C2E" stroke-width="5"/><path d="M366 212h44q6 0 6 6v40q0 6-6 6h-44Z" fill="#FFC83D" stroke="#160C2E" stroke-width="6" stroke-linejoin="round"/></g>
+      </g>
+    </svg>
+    <div id="fence" aria-hidden="true"></div>
   </div>
-  <div id="heroStones" aria-hidden="true"></div>
-  <div id="fence" aria-hidden="true"></div>
-  <svg id="mailbox" viewBox="0 0 420 600" aria-hidden="true">
-    <g id="mbGhost"><path class="gbody" d="M130 150C130 60 170 18 210 18s80 42 80 132v60H130Z" transform="translate(0 110)"/><rect x="178" y="170" width="16" height="32" rx="8" fill="#160C2E"/><rect x="226" y="170" width="16" height="32" rx="8" fill="#160C2E"/></g>
-    <g id="mbBody">
-      <rect x="170" y="430" width="80" height="180" rx="8" fill="#7D5A46" stroke="#160C2E" stroke-width="7"/>
-      <path d="M190 450v130M222 440v150" stroke="#5A3E30" stroke-width="5" stroke-linecap="round"/>
-      <path d="M56 440V180C56 76 128 26 210 26s154 50 154 154v260q0 10-10 10H66q-10 0-10-10Z" transform="translate(7 8)" fill="#160C2E"/>
-      <path d="M56 440V180C56 76 128 26 210 26s154 50 154 154v260q0 10-10 10H66q-10 0-10-10Z" fill="url(#gBox)" stroke="#160C2E" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M84 150C96 96 140 58 196 52" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="12" stroke-linecap="round"/>
-      <rect id="mbSlot" x="88" y="128" width="244" height="104" rx="52" fill="#0B0620" stroke="#160C2E" stroke-width="7"/>
-      <g id="mbEyes"><rect x="162" y="146" width="28" height="68" rx="14" fill="#FFF8EC"/><rect x="230" y="146" width="28" height="68" rx="14" fill="#FFF8EC"/></g>
-      <rect id="mbLid" x="88" y="128" width="244" height="52" rx="26" fill="#6B4AC4" stroke="#160C2E" stroke-width="7" opacity="0"/>
-      <circle cx="104" cy="262" r="18" fill="#FF7DB6" opacity=".7"/><circle cx="316" cy="262" r="18" fill="#FF7DB6" opacity=".7"/>
-      <rect x="120" y="300" width="180" height="76" rx="16" transform="translate(5 6)" fill="#160C2E"/>
-      <rect x="120" y="300" width="180" height="76" rx="16" fill="#FFF8EC" stroke="#160C2E" stroke-width="6"/>
-      <text x="210" y="354" text-anchor="middle" font-family="Bagel" font-size="42" fill="#160C2E">Inbox</text>
-      <path d="M58 450v-26q12-18 28-8 12-14 30 0 18-4 22 34Z" fill="#4FB07A" stroke="#160C2E" stroke-width="5" stroke-linejoin="round"/>
-      <path d="M322 70l-22 28 14 10-18 26" fill="none" stroke="#160C2E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-      <g id="mbFlag"><rect x="356" y="208" width="14" height="118" rx="7" fill="#FFF8EC" stroke="#160C2E" stroke-width="5"/><path d="M366 212h44q6 0 6 6v40q0 6-6 6h-44Z" fill="#FF4F9A" stroke="#160C2E" stroke-width="6" stroke-linejoin="round"/></g>
-    </g>
-  </svg>
+  <div id="more">
+    <section id="how"><h2>How it works</h2><ol class="steps">
+      <li><b>Give it your mail.</b> Drop in a Google Takeout file, or connect with an app password. It asks only for the sender, the date and the subject of each email.</li>
+      <li><b>It finds your accounts.</b> A small open AI model, Gemma, runs on your computer and reads one short summary per sender. Plain code then checks the dates against a public list of hacks.</li>
+      <li><b>You close them, riskiest first.</b> Each account links to where you can delete it. You mark it off when you're done, and you can undo that.</li>
+    </ol></section>
+    <section id="privacy"><h2>What it reads, and where it goes</h2><table class="plain"><tbody>
+      <tr><th>Sender, date and subject</th><td>Stay on your computer. A local model reads them.</td></tr>
+      <tr><th>The message itself</th><td>Never asked for and never read.</td></tr>
+      <tr><th>Your app password</th><td>Kept in memory for the scan, never saved.</td></tr>
+      <tr><th>A dropped mail export</th><td>Deleted as soon as its senders and subjects are read.</td></tr>
+      <tr><th>"Who owns it now?"</th><td>Optional. Sends only the company's public name to a web search, and only when you press it.</td></tr>
+    </tbody></table></section>
+    <section id="proof"><h2>Does it work?</h2><p>Tested on one real inbox of 7,556 emails, with 166 senders marked by hand. The usual advice is to search your mail for "welcome" and "verify".</p><table class="plain nums"><thead><tr><th></th><th>Accounts found</th></tr></thead><tbody><tr><th>Searching for keywords</th><td>65 of 159</td></tr><tr><th>Haunted Inbox</th><td><b>101 of 159</b></td></tr></tbody></table><p><b>It still misses accounts.</b> It missed 58 of those 159, mostly by reading them as newsletters, and it only finds accounts that emailed this address. That's one person's inbox, so treat it as a first result. The tests are <a href="https://github.com/nirajkhetre/haunted-inbox" target="_blank" rel="noopener">in the code</a>, and you can run them yourself.</p></section>
+    <section id="faq"><h2>Questions</h2><dl>
+      <dt>What does it cost?</dt><dd>Nothing. It's open source under the MIT license, and there's no account.</dd>
+      <dt>Will it delete my accounts for me?</dt><dd>No. It takes you to the right page. Closing the account is your decision, on their site.</dd>
+      <dt>If it says an account was hacked, was my data taken?</dt><dd>Not necessarily. It means the company was breached after you joined, according to the public <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned</a> list.</dd>
+      <dt>Why is there a graveyard?</dt><dd>The report is for getting it done. The graveyard is the same accounts laid out by the year you joined, for when you'd like to see how far back it goes. It's optional.</dd>
+      <dt>Where does the data come from?</dt><dd>Hacks from <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned</a>, delete links from <a href="https://justdeleteme.xyz/" target="_blank" rel="noopener">JustDeleteMe</a>, both bundled in the code. Made by Niraj Khetre.</dd>
+    </dl></section>
+  </div>
 </section>
 
 <section id="scanbox" hidden aria-live="polite">
@@ -85,16 +107,17 @@
 <aside id="card" hidden aria-label="About this account"><button class="x" id="cardx" aria-label="Close">
   <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div id="cardbody"></div></aside>
 
-<section id="list" hidden aria-label="All your ghosts as a list"><header><h2>Every ghost, worst first</h2><button class="x" id="listx" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header><div id="rows"></div></section>
+<section id="report" hidden aria-label="Report"><button class="stone small" id="walkBtn">Walk through the graveyard</button><div id="repHead"><div id="repTiles"></div><div id="repNext"></div></div><div id="repTable"></div></section>
 
 <nav id="ruler" hidden aria-label="Walk through the years"><div id="years"></div><i id="thumb"></i></nav>
 
 <section id="settings" hidden aria-label="Settings"><div id="settingsStone"><button class="x" id="setx" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div id="setbody"></div></div></section>
 
 <section id="tour" hidden aria-live="polite">
+  <div id="tourSpot"></div>
   <div id="tourBubble"><p id="tourText"></p><div class="tourActs"><button class="stone primary small" id="tourNext">Next</button></div></div>
   <div id="tourStones" aria-hidden="true"></div>
-  <button class="skip" id="tourSkip"><svg viewBox="0 0 60 66" aria-hidden="true"><path class="gbody" d="M7 34C7 14 17 4 30 4s23 10 23 30v27q-5.8 7-11.5 0t-11.5 0-11.5 0-11.5 0Z"/><rect x="18" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/><rect x="35" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/></svg>Skip the walkthrough</button>
+  <button class="skip" id="tourSkip">Skip the tour</button>
 </section>
 
 <dialog id="scanner">
@@ -102,11 +125,11 @@
   <div id="scanform"></div>
 </dialog>
 
-<p id="samplenote" hidden>A made-up person's inbox. Every hack shown really happened, from a public list.</p>
-<div id="veil" aria-hidden="true"></div>
+<div id="toast" hidden role="status"></div>
 <script src="sound.js"></script>
 <script src="app.js"></script>
 <script src="ui.js"></script>
+<script src="report.js"></script>
 <script src="hero.js"></script>
 <script src="settings.js"></script>
 <script src="tour.js"></script>

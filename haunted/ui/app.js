@@ -12,7 +12,7 @@ const fmtMonth = d => d ? new Date(d + 'T12:00').toLocaleDateString('en-GB', { m
 const safe = u => /^https?:\/\//i.test(u || '') ? esc(u) : '#';
 const plural = (n, a, b = a + 's') => `${n} ${n === 1 ? a : b}`;
 
-const S = { ghosts: [], local: false, web: false, sample: false, stage: 'gate', W: innerWidth, H: innerHeight, cam: 0, camT: 0, vel: 0, dawn: 0, dawnT: 0, mouse: { x: innerWidth * .7, y: innerHeight * .4 }, worldW: innerWidth, sel: null, phase: 0, parts: [], filter: 'all', iris: 1, spot: null, spotT: null, keeperAt: null, kx0: 0, touring: false, set: { theme: 'auto', sound: true, volume: .8, music: true, calm: false, size: 'm', quietOnly: 0, hold: true, web: true, ...store.get('settings', {}) } };
+const S = { ghosts: [], local: false, web: false, sample: false, stage: 'gate', W: innerWidth, H: innerHeight, cam: 0, camT: 0, vel: 0, dawn: 0, dawnT: 0, mouse: { x: innerWidth * .7, y: innerHeight * .4 }, worldW: innerWidth, sel: null, phase: 0, parts: [], filter: 'all', iris: 1, spot: null, spotT: null, keeperAt: null, kx0: 0, touring: false, view: 'report', set: { startIn: 'report', theme: 'auto', sound: false, volume: .8, music: true, calm: false, size: 'm', quietOnly: 0, hold: true, web: true, ...store.get('settings2', {}) } };
 
 // ---------- the sky, the hills, the fog: painted fresh every frame ----------
 const sky = $('#sky'), g = sky.getContext('2d'), night = $('#night'), n = night.getContext('2d');
@@ -51,9 +51,9 @@ function drawSky(now) {
   if (d < .7) for (const s of STARS) { g.globalAlpha = (1 - d / .7) * (.55 + .45 * Math.sin(now / 900 + s.t)); g.fillStyle = '#FFF8EC'; g.fillRect((s.x * W * 1.2 - cam * .02) % (W * 1.2), s.y * H, s.r, s.r); }
   g.globalAlpha = 1;
   // the moon sets as the sun comes up over the same hill
-  const mx = W * .82 - cam * .012, my = H * ((S.stage === 'gate' && W <= 760 ? .06 : .17) + d * .55), sy = H * (.74 - d * .62), sx = W * .24 - cam * .012;
+  const mx = (S.stage === 'gate' ? W * .94 : W * .82) - cam * .012, my = H * ((S.stage === 'gate' ? .13 : .17) + d * .55), sy = H * (.74 - d * .62), sx = W * .24 - cam * .012;
   const face = (cx, cy, r, sleepy) => { const lx = clamp((S.mouse.x - cx) / 600, -1, 1) * r * .06, ly = clamp((S.mouse.y - cy) / 500, -1, 1) * r * .05; g.fillStyle = "#160C2E"; for (const dx of [-.3, .3]) { g.beginPath(); g.roundRect(cx + dx * r - r * .075 + lx, cy - r * .22 + ly + sleepy * r * .14, r * .15, r * .34 * (1 - sleepy * .8), r * .075); g.fill(); } g.fillStyle = "#FFB3CF"; for (const dx of [-.56, .56]) { g.beginPath(); g.arc(cx + dx * r, cy + r * .24, r * .1, 0, 7); g.fill(); } };
-  if (d < .75) { const r = Math.min(W, H) * .075; g.globalAlpha = 1 - d / .75; g.fillStyle = "#FFF2C7"; g.strokeStyle = "#160C2E"; g.lineWidth = 4; g.beginPath(); g.arc(mx, my, r, 0, 7); g.fill(); g.stroke(); g.fillStyle = "#EFDFA6"; for (const [a, b, c] of [[-.45, -.5, .16], [.5, -.38, .11], [.42, .5, .14]]) { g.beginPath(); g.arc(mx + a * r, my + b * r, c * r, 0, 7); g.fill(); } face(mx, my, r, clamp(d * 1.8, 0, 1)); g.globalAlpha = 1; }
+  if (d < .75 && !(S.stage === 'gate' && W <= 1100)) { const r = Math.min(W, H) * .075; g.globalAlpha = 1 - d / .75; g.fillStyle = "#FFF2C7"; g.strokeStyle = "#160C2E"; g.lineWidth = 4; g.beginPath(); g.arc(mx, my, r, 0, 7); g.fill(); g.stroke(); g.fillStyle = "#EFDFA6"; for (const [a, b, c] of [[-.45, -.5, .16], [.5, -.38, .11], [.42, .5, .14]]) { g.beginPath(); g.arc(mx + a * r, my + b * r, c * r, 0, 7); g.fill(); } face(mx, my, r, clamp(d * 1.8, 0, 1)); g.globalAlpha = 1; }
   if (d > .12) { const r = Math.min(W, H) * .1, gl = g.createRadialGradient(sx, sy, r * .4, sx, sy, r * 3.6); gl.addColorStop(0, `rgba(255,214,120,${Math.min(.7, d)})`); gl.addColorStop(1, "rgba(255,214,120,0)"); g.fillStyle = gl; g.fillRect(sx - r * 4, sy - r * 4, r * 8, r * 8); g.fillStyle = "#FFD25E"; g.strokeStyle = "#160C2E"; g.lineWidth = 4; g.beginPath(); g.arc(sx, sy, r, 0, 7); g.fill(); g.stroke(); face(sx, sy, r, clamp(1 - d * 1.6, 0, 1)); }
   hill(.14, base() - H * .1, 34, 340, ramp(FAR, d));
   for (const t of TREES) { const x = (t.x - cam * .3) % (W + 900); if (x > -160) tree(x, base() - H * .035 + 12 * Math.sin(t.x), t.s, ramp(MID, d), d, t.f); }
@@ -77,7 +77,7 @@ function hole(x, y, r, a = 1) {
 }
 function drawNight(now) {
   const { W, H, dawn: d } = S; n.clearRect(0, 0, W, H);
-  const dark = S.stage === 'gate' ? .1 * (1 - d) : .46 * Math.pow(1 - d, 1.25);
+  const dark = S.stage === 'gate' ? .05 * (1 - d) : .46 * Math.pow(1 - d, 1.25);
   if (dark > .01) {
     n.fillStyle = `rgba(7,3,22,${dark})`; n.fillRect(0, 0, W, H);
     n.globalCompositeOperation = 'destination-out';
@@ -86,7 +86,6 @@ function drawNight(now) {
     if (S.sel) hole(S.sel.x - S.cam, S.sel.y - 50, 300, .98);
     n.globalCompositeOperation = 'source-over';
   }
-  if (S.spotT) { const t = S.spot || (S.spot = { ...S.spotT, r: S.spotT.r * 3 }), q = 1 - Math.pow(.004, S.dt); t.x += (S.spotT.x - t.x) * q; t.y += (S.spotT.y - t.y) * q; t.r += (S.spotT.r - t.r) * q; const huge = t.r > Math.max(W, H) * .8; n.fillStyle = `rgba(7,3,22,${huge ? 0 : .78})`; n.globalCompositeOperation = 'source-over'; n.fillRect(0, 0, W, H); if (!huge) { n.globalCompositeOperation = 'destination-out'; hole(t.x, t.y, t.r, 1); n.globalCompositeOperation = 'source-over'; n.strokeStyle = 'rgba(255,200,61,.5)'; n.lineWidth = 2; n.setLineDash([4, 10]); n.beginPath(); n.arc(t.x, t.y, t.r * .86, now / 3200, now / 3200 + 6.3); n.stroke(); n.setLineDash([]); } } else S.spot = null;
   if (S.stage !== 'gate' && d < .85) { const l = S.lantern, gl = n.createRadialGradient(l.x, l.y, 4, l.x, l.y, 190); gl.addColorStop(0, `rgba(255,200,90,${.34 * (1 - d)})`); gl.addColorStop(1, 'rgba(255,200,90,0)'); n.globalCompositeOperation = 'lighter'; n.fillStyle = gl; n.fillRect(l.x - 190, l.y - 190, 380, 380); n.globalCompositeOperation = 'source-over'; }
   for (let k = S.parts.length - 1; k >= 0; k--) {
     const p = S.parts[k]; p.life -= S.dt; if (p.life <= 0) { S.parts.splice(k, 1); continue; }
@@ -214,12 +213,12 @@ function frame(now) {
   $('#world').style.transform = `translate3d(${-S.cam}px,0,0)`;
   const ui = S.dawn >= .5 ? 'day' : 'night'; if (document.documentElement.dataset.ui !== ui) document.documentElement.dataset.ui = ui;
   drawSky(now); drawKeeper(); drawNight(now);
-  if (S.stage === 'gate') heroEyes(now); else placeGuide(); tourFrame();
+  if (S.stage === 'gate') heroEyes(now); else placeGuide();
   if (tick % 4 === 0) { cull(); thumb(); }
   if (tick % 3 === 0) looks();
   requestAnimationFrame(frame);
 }
-function placeGuide() { if (S.W <= 760 || $('#guide').hidden) return; const g = $('#guide'), h = g.offsetHeight; g.style.setProperty('--gx', Math.round(S.kx0 + 74) + 'px'); g.style.setProperty('--gy', Math.round(clamp(ground(S.kx0 + S.cam) + rowGap() * 1.7 - 148 - h * .5, 76, S.H - h - 96)) + 'px'); }
+function placeGuide() { if (S.W <= 760 || $('#guide').hidden || S.view !== 'grave') return; const g = $('#guide'), h = g.offsetHeight; g.style.setProperty('--gx', Math.round(S.kx0 + 74) + 'px'); g.style.setProperty('--gy', Math.round(clamp(ground(S.kx0 + S.cam) + rowGap() * 1.7 - 148 - h * .5, 76, S.H - h - 96)) + 'px'); }
 function paintStones() { const st = document.documentElement.style; st.setProperty('--stone', rampHex(STONE.map(s => s[0]), S.dawn)); st.setProperty('--stone2', rampHex(STONE.map(s => s[1]), S.dawn)); }
 function resize() {
   const d = Math.min(1.6, devicePixelRatio || 1); S.W = innerWidth; S.H = innerHeight;
@@ -229,16 +228,16 @@ function resize() {
 addEventListener('resize', resize);
 
 // ---------- walking: the wheel, a drag, the arrow keys, the ruler ----------
-const walkable = () => S.stage === 'walk' && !S.touring && !S.settingsOpen && !$('#list:not([hidden])') && !$('#scanner').open;
+const walkable = () => S.stage === 'walk' && S.view === 'grave' && !S.touring && !S.settingsOpen && !$('#scanner').open;
 const walkTo = x => { S.camT = clamp(x, 0, Math.max(0, S.worldW - S.W * .6)); };
-addEventListener('wheel', e => { if (walkable() && !e.target.closest('#card,#list')) { walkTo(S.camT + (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY) * 1.1); } }, { passive: true });
+addEventListener('wheel', e => { if (walkable() && !e.target.closest('#card,#report')) { walkTo(S.camT + (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY) * 1.1); } }, { passive: true });
 addEventListener('pointermove', e => { S.mouse.x = e.clientX; S.mouse.y = e.clientY; });
 let drag = null;
 $('#world').addEventListener('pointerdown', e => { if (walkable()) drag = { x: e.clientX, cam: S.camT, moved: 0 }; });
 addEventListener('pointermove', e => { if (drag) { drag.moved = Math.abs(e.clientX - drag.x); if (drag.moved > 5) walkTo(drag.cam - (e.clientX - drag.x) * 1.4); } });
 addEventListener('pointerup', () => { setTimeout(() => { drag = null; }, 0); });
 addEventListener('keydown', e => {
-  if (e.key === 'Escape') { if (S.settingsOpen) closeSettings(); else if (!$('#list').hidden) closeList(); else if (S.sel) closeCard(); }
+  if (e.key === 'Escape') { if (S.settingsOpen) closeSettings(); else if (S.sel) closeCard(); }
   if (walkable() && !S.sel && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { walkTo(S.camT + (e.key === 'ArrowRight' ? 260 : -260)); }
 });
 $('#world').addEventListener('click', e => {
@@ -268,16 +267,6 @@ function thumb() {
   r.addEventListener('pointerup', () => { on = false; });
 }
 
-// ---------- the list, for when you just want to get it done ----------
-function renderRows() {
-  const box = $('#rows'); if ($('#list').hidden) return;
-  box.innerHTML = [...S.ghosts].sort((a, b) => (a.state === 'gone') - (b.state === 'gone') || b.score - a.score).map(x => `<button class="row${x.state === 'gone' ? ' done' : ''}" data-k="${esc(x.key)}"><span><b>${esc(x.service)}</b><small>${esc(x.domain)}</small></span><span class="when"><small>since ${(x.joined || '').slice(0, 4)}</small></span><span class="flags">${x.breaches.length ? `<i class="flag h">Hacked ${x.breaches[0].date.slice(0, 4)}</i>` : ''}${x.money ? '<i class="flag m">Card?</i>' : ''}${(x.silent_years || 0) >= 3 ? `<i class="flag s">Silent ${Math.floor(x.silent_years)}y</i>` : ''}${x.state === 'alive' ? '<i class="flag a">Still using</i>' : ''}</span><small>${x.state === 'gone' ? 'at rest' : x.leave ? 'has a way out' : ''}</small></button>`).join('');
-}
-function closeList() { $('#list').hidden = true; guide(); }
-$('#listbtn').onclick = () => { closeCard(); $('#list').hidden = false; guide(); renderRows(); Snd.play('paper', .3); };
-$('#listx').onclick = closeList;
-$('#rows').addEventListener('click', e => { const r = e.target.closest('.row'); if (!r) return; const x = S.ghosts.find(q => q.key === r.dataset.k); closeList(); if (x && x.state !== 'gone') takeTo(x); });
-
 // ---------- story beats ----------
 let skipBeat = null;
 async function beat(html, ms) {
@@ -288,24 +277,12 @@ async function beat(html, ms) {
   b.classList.add('out'); await wait(280); b.hidden = true;
 }
 addEventListener('pointerdown', e => { if (!$('#beat').hidden && !e.target.closest('button')) skipBeat?.(); });
-function hopAll(pick) { let voices = 0; for (const x of S.ghosts.filter(pick)) if (x.vis && voices++ < 4) Snd.play('hoo', seed(x.key), .6, .1); for (const x of S.ghosts.filter(pick)) if (x.vis) x.el.querySelector('.gh svg').animate([{ transform: 'none' }, { transform: 'scale(1.1,.86)' }, { transform: 'translateY(-22px) scale(.92,1.12)' }, { transform: 'none' }], { duration: 560, delay: Math.random() * 180, easing: 'ease-out' }); }
+function hopAll(pick) { for (const x of S.ghosts.filter(pick)) if (x.vis) x.el.querySelector('.gh svg').animate([{ transform: 'none' }, { transform: 'scale(1.1,.86)' }, { transform: 'translateY(-22px) scale(.92,1.12)' }, { transform: 'none' }], { duration: 560, delay: Math.random() * 180, easing: 'ease-out' }); }
 async function reveal() {
   S.stage = 'reveal'; $('#scanbox').hidden = true;
-  const G = S.ghosts, oldest = G.find(x => x.joined), bad = G.filter(x => x.breaches.length).length, card = G.filter(x => x.money).length;
-  if (!G.length) { await beat('Nothing found. <em>Remarkable.</em>', 2600); return gateBack(); }
-  walkTo(0); await wait(500);
-  await beat(`Your oldest ghost: <em>${esc(oldest.service)}</em>, ${oldest.joined.slice(0, 4)}.`, 2200);
-  if (lastWords(oldest)) await beat(`Its last words to you: <em>${esc(lastWords(oldest))}</em>`, 2600);
-  walkTo(S.worldW - S.W * .95);
-  await beat(`Tonight there are <em>${G.length}</em> of them.`, 1900);
-  if (bad) { walkTo(0); hopAll(x => x.breaches.length); await beat(`<span class="pk">${bad}</span> ${bad === 1 ? 'was' : 'were'} hacked after you joined.`, 2000); }
-  if (card) await beat(`<em>${card}</em> may still have your card.`, 1700);
-  const sold = G.filter(x => x.lookup_saved?.fate?.fate === 'acquired').length;
-  if (sold) await beat(`<em>${sold}</em> now belong to someone else. Nobody asked you.`, 2400);
-  S.stage = 'walk';
-  $('#bar').hidden = false; $('#ruler').hidden = false; $('#samplenote').hidden = !S.sample; thumb();
-  tally(); applyFilter(false); walkTo(0);
-  maybeTour();
+  if (!S.ghosts.length) { await beat('No accounts found in this mailbox.', 2600); return gateBack(); }
+  S.stage = 'walk'; $('#bar').hidden = false; $('#ruler').hidden = false; walkTo(0);
+  tally(); applyFilter(false); setView(S.set.startIn || 'report', true); maybeTour();
 }
 
 // ---------- reading: a replay of the sample, or your real mailbox ----------
@@ -329,11 +306,11 @@ async function runSample() {
   const years = [...new Set(dated.map(x => x.joined.slice(0, 4)))]; for (let y = +years[0]; y <= new Date().getFullYear(); y++) { const p = document.createElement('div'); p.className = 'post'; p.dataset.y = y; p.innerHTML = `<svg viewBox="0 0 88 78" aria-hidden="true"><rect class="wood" x="38" y="26" width="12" height="52"/><path class="board" d="M6 6h68l10 13-10 13H6Z"/><text x="44" y="27">${y}</text></svg>`; $('#world').appendChild(p); } layout();
   const total = r.envelopes, t0 = performance.now(), read = 1300;
   S.cam = S.camT = 0;
-  while (performance.now() - t0 < read) { const t = (performance.now() - t0) / read; await setScan({ stage: 'a replay of the real scan · reading envelopes', num: Math.round(total * t), label: 'envelopes read', share: t * .2 }); await wait(40); }
+  while (performance.now() - t0 < read) { const t = (performance.now() - t0) / read; await setScan({ stage: 'Sample: a replay of a real scan', num: Math.round(total * t), label: 'emails read, senders and subjects only', share: t * .2 }); await wait(40); }
   const G = S.ghosts, each = Math.min(190, 6200 / G.length);
   for (let k = 0; k < G.length; k++) {
     const x = G[k]; walkTo(x.x - S.W * .55); spawn(x);
-    await setScan({ stage: `a replay of the real scan · ${r.model || 'gemma4:e2b'} on this laptop`, num: k + 1, label: k ? 'ghosts found' : 'ghost found', share: .2 + .8 * (k + 1) / G.length, now: `${x.service}, since ${x.joined?.slice(0, 4)}${x.breaches.length ? '. Hacked after you joined.' : ''}` });
+    await setScan({ stage: `Sample: a replay of a real scan, read by ${r.model || 'gemma4:e2b'}`, num: k + 1, label: k ? 'accounts found' : 'account found', share: .2 + .8 * (k + 1) / G.length, now: `${x.service}, since ${x.joined?.slice(0, 4)}${x.breaches.length ? '. Hacked after you joined.' : ''}` });
     await wait(each);
   }
   await wait(420);
@@ -347,9 +324,9 @@ async function watchReal() {
   while (true) {
     const p = await (await fetch('/api/progress')).json();
     if (p.stage === 'uploading') await setScan({ stage: 'opening your export, on this computer', num: Math.round((p.share || 0) * 100), label: '% opened', share: (p.share || 0) * .1 });
-    if (p.stage === 'reading') await setScan({ stage: 'reading envelopes only, never the messages', num: p.envelopes || 0, label: 'envelopes read', share: .15 });
+    if (p.stage === 'reading') await setScan({ stage: 'Reading senders and subjects only, never the messages', num: p.envelopes || 0, label: 'emails read, senders and subjects only', share: .15 });
     if (p.stage === 'asking') {
-      await setScan({ stage: p.model ? `${p.model}, running on this computer` : 'no local model found, so rules only', num: p.found_total || 0, label: 'ghosts found so far', share: .2 + .8 * p.done / (p.total || 1), now: `Sender ${p.done} of ${p.total}, from ${(p.envelopes || 0).toLocaleString('en-US')} envelopes` });
+      await setScan({ stage: p.model ? `${p.model}, running on this computer` : 'no local model found, so rules only', num: p.found_total || 0, label: 'accounts found so far', share: .2 + .8 * p.done / (p.total || 1), now: `Sender ${p.done} of ${p.total}, from ${(p.envelopes || 0).toLocaleString('en-US')} envelopes` });
       for (const f of p.recent || []) { const id = f.service + f.joined; if (!spawned.has(id)) { spawned.set(id, 1); earlyGrave(f, spawned.size); } }
     }
     if (p.stage === 'error') { $('#scanbox').hidden = true; say(`That didn't work: ${p.message}`, 7000); S.stage = 'gate'; gateBack(); return; }
@@ -364,7 +341,7 @@ async function reopen() {
   S.stage = 'scan'; await enter(false); S.stage = 'walk';
   S.ghosts = S.saved.ghosts.map(x => ({ ...x, state: x.state || 'ghost' })); buildWorld(false);
   S.dawn = S.dawnT; paintStones();
-  $('#bar').hidden = false; $('#ruler').hidden = false; thumb(); tally(); applyFilter(false); maybeTour();
+  $('#bar').hidden = false; $('#ruler').hidden = false; thumb(); tally(); applyFilter(false); setView(S.set.startIn || 'report', true); maybeTour();
 }
 function earlyGrave(f, k) {
   const x = { key: 'early' + k, service: f.service, joined: f.joined, domain: '', breaches: f.hacked ? [1] : [], money: null, silent_years: 0, state: 'ghost', x: S.W * .36 + k * 84, row: k % 3, s: .9 };
@@ -377,13 +354,13 @@ $('#walk').onclick = () => { Snd.wake(); runSample(); };
 // ---------- scanning your own: a local page offers it, the public site tells you how ----------
 const post = async (url, body) => { const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; };
 function scanFormHTML() {
-  if (!S.local) return `<h2>It only runs on your computer</h2><p>That's the point: a tool that reads your mailbox shouldn't live on someone else's server. It takes a couple of minutes to set up.</p>
+  if (!S.local) return `<h2>It runs on your own computer</h2><p>A tool that reads your mailbox shouldn't live on someone else's server, so this one doesn't. You need <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python</a> and <a href="https://ollama.com/download" target="_blank" rel="noopener">Ollama</a>, then:</p>
 <code class="cmd">git clone https://github.com/nirajkhetre/haunted-inbox
 cd haunted-inbox
 ollama pull gemma4:e2b
-python -m haunted serve</code><p style="font-size:15px">Then this same page opens on your machine, and nothing you drop on it leaves.</p><a class="stone go" style="width:100%" href="https://github.com/nirajkhetre/haunted-inbox" target="_blank" rel="noopener">Get it on GitHub</a>`;
-  return `<h2>Scan my own inbox</h2><p>Everything stays on this computer. Only envelopes are read: who, when, and the subject.</p>
-<label class="drop" id="drop"><input type="file" id="pick" accept=".mbox,.mbx,*/*" hidden><span>Drop your mail export here<small>A Google Takeout <b>.mbox</b> file. It can take a while to arrive, but it's the most complete.</small></span></label>
+python -m haunted serve</code><p style="font-size:15px">This same page then opens on your computer, and nothing you give it leaves.</p><a class="stone go" style="width:100%" href="https://github.com/nirajkhetre/haunted-inbox" target="_blank" rel="noopener">Get it on GitHub</a>`;
+  return `<h2>Scan your inbox</h2><p>Everything stays on this computer. Only the sender, date and subject of each email are read.</p>
+<label class="drop" id="drop"><input type="file" id="pick" accept=".mbox,.mbx,*/*" hidden><span>Drop your mail export here<small>A Google Takeout <b>.mbox</b> file. The most complete, though the export can take a while to arrive.</small></span></label>
 <p class="or">or, right now, with an app password</p>
 <form id="imap"><label class="field">Your email<input name="user" type="email" autocomplete="off" required></label><label class="field">App password (kept in memory only)<input name="password" type="password" autocomplete="off" required></label><button class="stone go" style="width:100%">Start reading</button><p class="err" id="err" hidden></p></form>`;
 }
@@ -406,9 +383,9 @@ $('#share').onclick = () => {
   const p = new Path2D(GPATH), o = open();
   x.fillStyle = '#0E0726'; x.beginPath(); x.moveTo(0, 630); x.lineTo(0, 520); x.bezierCurveTo(300, 470, 800, 570, 1200, 500); x.lineTo(1200, 630); x.fill();
   for (let k = 0; k < Math.min(o.length, 26); k++) { x.save(); x.translate(60 + (k % 13) * 86 + (k % 2) * 12, k < 13 ? 400 : 480); x.scale(1.2, 1.2); x.fillStyle = '#FFF8EC'; x.strokeStyle = '#160C2E'; x.lineWidth = 3.5; x.fill(p); x.stroke(p); x.fillStyle = '#160C2E'; x.beginPath(); x.roundRect(18, 25, 7, 14, 3.5); x.roundRect(35, 25, 7, 14, 3.5); x.fill(); x.restore(); }
-  x.fillStyle = '#FFF8EC'; x.font = '400 92px Bagel'; x.fillText(`${o.length} ghosts in my inbox.`, 60, 140);
-  x.fillStyle = '#FF7DB6'; x.font = '400 50px Bagel'; x.fillText(`${o.filter(q => q.breaches.length).length} were hacked after I joined.`, 60, 220);
-  x.fillStyle = '#FFC83D'; x.font = '400 34px Bagel'; x.fillText(S.sample ? 'A made-up inbox. How many are in yours?' : 'How many are in yours?', 60, 290);
+  x.fillStyle = '#FFF8EC'; x.font = '400 92px Serif'; x.fillText(`${o.length} ghosts in my inbox.`, 60, 140);
+  x.fillStyle = '#FF7DB6'; x.font = '400 50px Serif'; x.fillText(`${o.filter(q => q.breaches.length).length} were hacked after I joined.`, 60, 220);
+  x.fillStyle = '#FFC83D'; x.font = 'italic 400 34px Serif'; x.fillText(S.sample ? 'A made-up inbox. How many are in yours?' : 'How many are in yours?', 60, 290);
   x.fillStyle = '#BDAEEA'; x.font = '400 24px Fragment'; x.fillText('Haunted Inbox. Runs on your own computer.', 60, 590);
   const a = document.createElement('a'); a.download = 'my-ghosts.png'; a.href = c.toDataURL('image/png'); a.click();
   say('Saved. It shows only the numbers, no names.');
@@ -416,10 +393,10 @@ $('#share').onclick = () => {
 
 // ---------- start ----------
 async function start() {
-  splitHeadline(); applySettings(); resize(); paintStones(); requestAnimationFrame(frame);
+  applySettings(); resize(); paintStones(); requestAnimationFrame(frame);
   try { const r = await fetch('/api/report'); if (r.ok) { const j = await r.json(); S.local = true; S.web = j.web; S.model = j.model; S.saved = j.report; } } catch {}
-  if (S.saved?.ghosts?.length) { const b = document.createElement('button'); b.className = 'stone primary'; b.innerHTML = 'Back to my graveyard<small>Pick up where you left off</small>'; b.onclick = () => { Snd.wake(); reopen(); }; $('#cta').prepend(b); }
-  heroStones();
+  if (S.saved?.ghosts?.length) { const b = document.createElement('button'); b.className = 'stone primary'; b.innerHTML = 'Open my report<small>Pick up where you left off</small>'; b.onclick = () => { Snd.wake(); reopen(); }; $('#cta').prepend(b); }
+  heroPreview();
   if (QS.has('dawn')) { S.dawn = S.dawnT = +QS.get('dawn'); paintStones(); }
   else if (S.set.theme !== 'auto') { applySky(); S.dawn = S.dawnT; paintStones(); }
   if (QS.has('walk')) { document.body.classList.add('quick'); runSample(); }

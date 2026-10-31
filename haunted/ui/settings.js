@@ -1,9 +1,9 @@
 'use strict';
 // ---------- settings are carved on a big stone that comes up out of the ground ----------
 const SKIES = [
-  ['auto', 'Follows you', 'Night now, morning when you finish'],
-  ['night', 'Always night', 'Dark, with the lantern'],
-  ['day', 'Always day', 'Bright, with the sun out'],
+  ['auto', 'Follows progress', 'Night now, morning when you finish'],
+  ['night', 'Dark', 'Always night'],
+  ['day', 'Light', 'Always day'],
   ['device', 'Match my device', 'Whatever your computer is set to'],
 ];
 const seg = (name, value, options) => `<div class="seg" role="radiogroup" data-seg="${name}">${options.map(([v, label]) => `<button role="radio" aria-checked="${String(value) === String(v)}" data-v="${v}">${label}</button>`).join('')}</div>`;
@@ -13,24 +13,25 @@ const row = (title, hint, control) => `<div class="setrow"><div><b>${title}</b><
 function settingsHTML() {
   const s = S.set, local = S.local && !S.sample;
   return `<h2>Settings</h2>
-<h3>Sky</h3>
+<h3>Appearance</h3>
 <div class="skies">${SKIES.map(([k, t, h]) => `<button class="sky-tile ${k}${s.theme === k ? ' on' : ''}" data-sky="${k}" aria-pressed="${s.theme === k}"><span class="mini"><i class="orb"></i><i class="hillside"></i><svg viewBox="0 0 60 66"><path class="gbody" d="M7 34C7 14 17 4 30 4s23 10 23 30v27q-5.8 7-11.5 0t-11.5 0-11.5 0-11.5 0Z"/><rect x="18" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/><rect x="35" y="25" width="7" height="14" rx="3.5" fill="#160C2E"/></svg></span><b>${t}</b><small>${h}</small></button>`).join('')}</div>
 <h3>Sound</h3>
-${row('Sound', 'Ghost voices, footsteps, the stone going down', blob('sound', s.sound))}
+${row('Sound', 'Off by default', blob('sound', s.sound))}
 ${row('Volume', '', `<input type="range" id="vol" min="0" max="1" step=".05" value="${s.volume}" aria-label="Volume">`)}
-${row('Night air', 'Wind and a slow music box in the background', blob('music', s.music))}
-<h3>The graveyard</h3>
-${row('Who shows up', 'Most useful if many of yours still write to you', seg('quietOnly', s.quietOnly, [[0, 'Everyone'], [1, 'Quiet 1+ year'], [3, 'Quiet 3+ years']]))}
-${row('Press and hold', 'Off: one press lays a ghost to rest', blob('hold', s.hold))}
+${row('Background sound', 'Wind and a slow music box', blob('music', s.music))}
+<h3>Accounts</h3>
+${row('Open in', 'What you see first', seg('startIn', s.startIn, [['report', 'Report'], ['grave', 'Graveyard']]))}
+${row('Show accounts', 'Useful if many still write to you', seg('quietOnly', s.quietOnly, [[0, 'All'], [1, 'Silent 1+ year'], [3, 'Silent 3+ years']]))}
+${row('Press and hold in the graveyard', 'Off: one press marks it closed', blob('hold', s.hold))}
 ${row('Calm mode', 'Less movement, fewer effects', blob('calm', s.calm))}
 ${row('Text size', '', seg('size', s.size, [['s', 'Small'], ['m', 'Medium'], ['l', 'Large']]))}
 ${S.web || S.sample ? `<h3>The web</h3>${row('Ask the web', 'Only a company\'s public name is ever sent, and only when you press the button', blob('web', s.web))}` : ''}
 <h3>Your data</h3>
-<div class="setbtns"><button class="stone small" id="tourAgain">Show the walkthrough again</button><button class="stone small" id="saveCsv">Save my list as a file</button>${local ? '<button class="stone small warn" id="forget"><i class="fill"></i><span>Hold to forget everything here</span></button>' : ''}</div>
-${local ? `<p class="setnote">Your scan is kept only on this computer. ${esc(S.model ? `It was read by ${S.model}, running here.` : '')}</p>` : '<p class="setnote">This is a made-up inbox. To scan yours, it runs on your own computer.</p>'}`;
+<div class="setbtns"><button class="stone small" id="tourAgain">Show the tour again</button><button class="stone small" id="saveCsv">Export as CSV</button>${local ? '<button class="stone small warn" id="forget"><i class="fill"></i><span>Hold to delete all scan data</span></button>' : ''}</div>
+${local ? `<p class="setnote">Your scan is kept only on this computer. ${esc(S.model ? `It was read by ${S.model}, running here.` : '')}</p>` : '<p class="setnote">This is a sample with a made-up inbox. To scan yours, it runs on your own computer.</p>'}`;
 }
 
-function saveSettings() { store.set('settings', S.set); applySettings(); }
+function saveSettings() { store.set('settings2', S.set); applySettings(); }
 function applySettings() {
   const root = document.documentElement, s = S.set;
   root.dataset.size = s.size; if (s.calm) root.dataset.calm = '1'; else delete root.dataset.calm;
@@ -41,10 +42,9 @@ function applySettings() {
 function openSettings() {
   const box = $('#settings'), st = $('#settingsStone');
   $('#setbody').innerHTML = settingsHTML(); box.hidden = false; S.settingsOpen = true; document.body.classList.add('in-settings');
-  Snd.wake(); Snd.play('grind', .5); Snd.play('thump', .18);
+  Snd.play('grind', .5); Snd.play('thump', .18);
   if (!calm()) {
     st.animate([{ transform: 'translateY(105%) rotate(-3deg)' }, { transform: 'translateY(-14px) rotate(.6deg)', offset: .72 }, { transform: 'translateY(4px) rotate(-.2deg)', offset: .88 }, { transform: 'none' }], { duration: 680, easing: 'cubic-bezier(.2,.9,.3,1)' });
-    burst(S.cam + S.W / 2, S.H, 42, { c: ['#6B5A92', '#2D1A44', '#8D80B8', '#4FB07A'], a: -Math.PI / 2, spread: 2.6, v: 420, g: 760, r: 7, life: .9 });
     $$('#setbody>*').forEach((el, k) => el.animate([{ transform: 'translateY(18px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 300, delay: 220 + k * 22, easing: 'cubic-bezier(.2,1,.3,1)', fill: 'backwards' }));
   }
 }
@@ -64,8 +64,8 @@ $('#settings').addEventListener('click', e => {
   const sky = e.target.closest('[data-sky]');
   if (sky) { S.set.theme = sky.dataset.sky; $$('.sky-tile').forEach(n => { const on = n === sky; n.classList.toggle('on', on); n.setAttribute('aria-pressed', on); }); saveSettings(); Snd.play('tine', 78, .18); return; }
   const v = e.target.closest('[data-seg] button');
-  if (v) { const g = v.closest('[data-seg]'), k = g.dataset.seg; S.set[k] = k === 'quietOnly' ? +v.dataset.v : v.dataset.v; g.querySelectorAll('button').forEach(b => b.setAttribute('aria-checked', b === v)); saveSettings(); Snd.play('tine', 74, .14); return; }
-  if (e.target.closest('#tourAgain')) { closeSettings(); store.set('toured', false); if (S.stage === 'walk') setTimeout(startTour, 420); return; }
+  if (v) { const g = v.closest('[data-seg]'), k = g.dataset.seg; S.set[k] = k === 'quietOnly' ? +v.dataset.v : v.dataset.v; if (k === 'startIn' && S.stage === 'walk') setView(S.set.startIn, true); g.querySelectorAll('button').forEach(b => b.setAttribute('aria-checked', b === v)); saveSettings(); Snd.play('tine', 74, .14); return; }
+  if (e.target.closest('#tourAgain')) { closeSettings(); store.set('toured2', false); if (S.stage === 'walk') setTimeout(startTour, 420); else maybeTour(); return; }
   if (e.target.closest('#saveCsv')) return saveCsv();
 });
 // point at a sky and the real sky behind the stone changes, before you commit to anything
@@ -79,11 +79,11 @@ $('#settings').addEventListener('pointerdown', e => {
   const fill = b.querySelector('.fill'), a = fill.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 1600, fill: 'forwards' });
   const stop = () => { if (a.playState !== 'finished') a.cancel(); removeEventListener('pointerup', stop); };
   addEventListener('pointerup', stop);
-  a.onfinish = async () => { await post('/api/forget', {}).catch(() => {}); store.set('toured', false); location.href = location.pathname; };
+  a.onfinish = async () => { await post('/api/forget', {}).catch(() => {}); store.set('toured2', false); location.href = location.pathname; };
 });
 function saveCsv() {
   const q = v => `"${String(v ?? '').replace(/"/g, '""')}"`, rows = [['Service', 'Website', 'Joined', 'Last heard from', 'Silent years', 'Hacked after joining', 'May have card', 'How to leave', 'Status']];
-  for (const x of S.ghosts) rows.push([x.service, x.domain, x.joined, x.last_heard, x.silent_years, x.breaches.map(b => b.name).join('; '), x.money ? 'yes' : '', x.leave?.url || x.lookup?.delete?.url || '', x.state === 'gone' ? 'at rest' : x.state === 'alive' ? 'still using' : 'ghost']);
+  for (const x of S.ghosts) rows.push([x.service, x.domain, x.joined, x.last_heard, x.silent_years, x.breaches.map(b => b.name).join('; '), x.money ? 'yes' : '', x.leave?.url || x.lookup?.delete?.url || '', x.state === 'gone' ? 'closed' : x.state === 'alive' ? 'still using' : 'to review']);
   const a = document.createElement('a'); a.download = 'my-ghosts.csv'; a.href = URL.createObjectURL(new Blob([rows.map(r => r.map(q).join(',')).join('\n')], { type: 'text/csv' })); a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
