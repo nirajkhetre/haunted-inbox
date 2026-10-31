@@ -1,0 +1,627 @@
+{
+ "result": {
+  "reader": "trick",
+  "cards": 102,
+  "seconds_per_card": 0.0,
+  "accounts_found": "13/56",
+  "false_alarms": "15/46",
+  "precision": 0.464,
+  "recall": 0.232,
+  "keywordless": "0/14",
+  "other languages": "0/22"
+ },
+ "rows": [
+  {
+   "name": "Strava",
+   "truth": "account",
+   "said": "account",
+   "service": "Strava"
+  },
+  {
+   "name": "Airbnb",
+   "truth": "account",
+   "said": "account",
+   "service": "Airbnb"
+  },
+  {
+   "name": "Notion Labs",
+   "truth": "account",
+   "said": "account",
+   "service": "Notion Labs"
+  },
+  {
+   "name": "Booking.com",
+   "truth": "account",
+   "said": "other",
+   "service": "Booking.com"
+  },
+  {
+   "name": "Wise",
+   "truth": "account",
+   "said": "account",
+   "service": "Wise"
+  },
+  {
+   "name": "Shopify",
+   "truth": "account",
+   "said": "account",
+   "service": "Shopify"
+  },
+  {
+   "name": "GitHub",
+   "truth": "account",
+   "said": "account",
+   "service": "GitHub"
+  },
+  {
+   "name": "Kindle",
+   "truth": "account",
+   "said": "other",
+   "service": "Kindle"
+  },
+  {
+   "name": "Audible",
+   "truth": "account",
+   "said": "account",
+   "service": "Audible"
+  },
+  {
+   "name": "Asana",
+   "truth": "account",
+   "said": "other",
+   "service": "Asana"
+  },
+  {
+   "name": "Revolut",
+   "truth": "account",
+   "said": "other",
+   "service": "Revolut"
+  },
+  {
+   "name": "Lyft",
+   "truth": "account",
+   "said": "account",
+   "service": "Lyft"
+  },
+  {
+   "name": "Bumble",
+   "truth": "account",
+   "said": "other",
+   "service": "Bumble"
+  },
+  {
+   "name": "Zillow",
+   "truth": "account",
+   "said": "account",
+   "service": "Zillow"
+  },
+  {
+   "name": "Roblox",
+   "truth": "account",
+   "said": "account",
+   "service": "Roblox"
+  },
+  {
+   "name": "Hulu",
+   "truth": "account",
+   "said": "other",
+   "service": "Hulu"
+  },
+  {
+   "name": "Goodreads",
+   "truth": "account",
+   "said": "other",
+   "service": "Goodreads"
+  },
+  {
+   "name": "Letterboxd",
+   "truth": "account",
+   "said": "other",
+   "service": "Letterboxd"
+  },
+  {
+   "name": "Yelp",
+   "truth": "account",
+   "said": "other",
+   "service": "Yelp"
+  },
+  {
+   "name": "Meetup",
+   "truth": "account",
+   "said": "other",
+   "service": "Meetup"
+  },
+  {
+   "name": "Fitbit",
+   "truth": "account",
+   "said": "other",
+   "service": "Fitbit"
+  },
+  {
+   "name": "Nextdoor",
+   "truth": "account",
+   "said": "other",
+   "service": "Nextdoor"
+  },
+  {
+   "name": "Tinder",
+   "truth": "account",
+   "said": "other",
+   "service": "Tinder"
+  },
+  {
+   "name": "Mint",
+   "truth": "account",
+   "said": "other",
+   "service": "Mint"
+  },
+  {
+   "name": "Ancestry",
+   "truth": "account",
+   "said": "other",
+   "service": "Ancestry"
+  },
+  {
+   "name": "Vinted",
+   "truth": "account",
+   "said": "other",
+   "service": "Vinted"
+  },
+  {
+   "name": "Trainline",
+   "truth": "account",
+   "said": "other",
+   "service": "Trainline"
+  },
+  {
+   "name": "Headspace",
+   "truth": "account",
+   "said": "other",
+   "service": "Headspace"
+  },
+  {
+   "name": "Hinge",
+   "truth": "account",
+   "said": "other",
+   "service": "Hinge"
+  },
+  {
+   "name": "Skype",
+   "truth": "account",
+   "said": "other",
+   "service": "Skype"
+  },
+  {
+   "name": "Rappi",
+   "truth": "account",
+   "said": "other",
+   "service": "Rappi"
+  },
+  {
+   "name": "Mercado Libre",
+   "truth": "account",
+   "said": "other",
+   "service": "Mercado Libre"
+  },
+  {
+   "name": "Glovo",
+   "truth": "account",
+   "said": "other",
+   "service": "Glovo"
+  },
+  {
+   "name": "Leboncoin",
+   "truth": "account",
+   "said": "other",
+   "service": "Leboncoin"
+  },
+  {
+   "name": "Doctolib",
+   "truth": "account",
+   "said": "other",
+   "service": "Doctolib"
+  },
+  {
+   "name": "Blablacar",
+   "truth": "account",
+   "said": "other",
+   "service": "Blablacar"
+  },
+  {
+   "name": "Zalando",
+   "truth": "account",
+   "said": "other",
+   "service": "Zalando"
+  },
+  {
+   "name": "Kleinanzeigen",
+   "truth": "account",
+   "said": "other",
+   "service": "Kleinanzeigen"
+  },
+  {
+   "name": "iFood",
+   "truth": "account",
+   "said": "other",
+   "service": "iFood"
+  },
+  {
+   "name": "Nubank",
+   "truth": "account",
+   "said": "other",
+   "service": "Nubank"
+  },
+  {
+   "name": "Rakuten",
+   "truth": "account",
+   "said": "other",
+   "service": "Rakuten"
+  },
+  {
+   "name": "LINE",
+   "truth": "account",
+   "said": "other",
+   "service": "LINE"
+  },
+  {
+   "name": "Coupang",
+   "truth": "account",
+   "said": "other",
+   "service": "Coupang"
+  },
+  {
+   "name": "Naver",
+   "truth": "account",
+   "said": "other",
+   "service": "Naver"
+  },
+  {
+   "name": "Yandex",
+   "truth": "account",
+   "said": "other",
+   "service": "Yandex"
+  },
+  {
+   "name": "Avito",
+   "truth": "account",
+   "said": "other",
+   "service": "Avito"
+  },
+  {
+   "name": "Paytm",
+   "truth": "account",
+   "said": "other",
+   "service": "Paytm"
+  },
+  {
+   "name": "Noon",
+   "truth": "account",
+   "said": "other",
+   "service": "Noon"
+  },
+  {
+   "name": "Trendyol",
+   "truth": "account",
+   "said": "other",
+   "service": "Trendyol"
+  },
+  {
+   "name": "Tokopedia",
+   "truth": "account",
+   "said": "other",
+   "service": "Tokopedia"
+  },
+  {
+   "name": "Taobao",
+   "truth": "account",
+   "said": "other",
+   "service": "Taobao"
+  },
+  {
+   "name": "Allegro",
+   "truth": "account",
+   "said": "other",
+   "service": "Allegro"
+  },
+  {
+   "name": "Sephora",
+   "truth": "account",
+   "said": "account",
+   "service": "Sephora"
+  },
+  {
+   "name": "H&M",
+   "truth": "account",
+   "said": "account",
+   "service": "H&M"
+  },
+  {
+   "name": "Starbucks",
+   "truth": "account",
+   "said": "account",
+   "service": "Starbucks"
+  },
+  {
+   "name": "IKEA",
+   "truth": "account",
+   "said": "other",
+   "service": "IKEA"
+  },
+  {
+   "name": "The Marginalian",
+   "truth": "list",
+   "said": "other",
+   "service": "The Marginalian"
+  },
+  {
+   "name": "Stratechery",
+   "truth": "list",
+   "said": "other",
+   "service": "Stratechery"
+  },
+  {
+   "name": "Axios",
+   "truth": "list",
+   "said": "other",
+   "service": "Axios"
+  },
+  {
+   "name": "The Economist",
+   "truth": "list",
+   "said": "other",
+   "service": "The Economist"
+  },
+  {
+   "name": "Ars Technica",
+   "truth": "list",
+   "said": "other",
+   "service": "Ars Technica"
+  },
+  {
+   "name": "Nautilus",
+   "truth": "list",
+   "said": "other",
+   "service": "Nautilus"
+  },
+  {
+   "name": "Brain Food",
+   "truth": "list",
+   "said": "other",
+   "service": "Brain Food"
+  },
+  {
+   "name": "Le Monde",
+   "truth": "list",
+   "said": "other",
+   "service": "Le Monde"
+  },
+  {
+   "name": "El País",
+   "truth": "list",
+   "said": "other",
+   "service": "El País"
+  },
+  {
+   "name": "Der Spiegel",
+   "truth": "list",
+   "said": "other",
+   "service": "Der Spiegel"
+  },
+  {
+   "name": "BuzzFeed",
+   "truth": "list",
+   "said": "other",
+   "service": "BuzzFeed"
+  },
+  {
+   "name": "Gumroad Weekly",
+   "truth": "list",
+   "said": "other",
+   "service": "Gumroad Weekly"
+  },
+  {
+   "name": "Wired",
+   "truth": "list",
+   "said": "account",
+   "service": "Wired"
+  },
+  {
+   "name": "The Hustle",
+   "truth": "list",
+   "said": "account",
+   "service": "The Hustle"
+  },
+  {
+   "name": "Bloomberg",
+   "truth": "list",
+   "said": "other",
+   "service": "Bloomberg"
+  },
+  {
+   "name": "Marketing Brew",
+   "truth": "list",
+   "said": "account",
+   "service": "Marketing Brew"
+  },
+  {
+   "name": "Lifehacker",
+   "truth": "list",
+   "said": "account",
+   "service": "Lifehacker"
+  },
+  {
+   "name": "TechCrunch",
+   "truth": "list",
+   "said": "account",
+   "service": "TechCrunch"
+  },
+  {
+   "name": "Ness Labs",
+   "truth": "list",
+   "said": "account",
+   "service": "Ness Labs"
+  },
+  {
+   "name": "Sifted",
+   "truth": "list",
+   "said": "other",
+   "service": "Sifted"
+  },
+  {
+   "name": "Vox",
+   "truth": "list",
+   "said": "account",
+   "service": "Vox"
+  },
+  {
+   "name": "Kottke",
+   "truth": "list",
+   "said": "account",
+   "service": "Kottke"
+  },
+  {
+   "name": "Ana Ruiz",
+   "truth": "person",
+   "said": "other",
+   "service": "Ana Ruiz"
+  },
+  {
+   "name": "Tom Hale",
+   "truth": "person",
+   "said": "account",
+   "service": "Tom Hale"
+  },
+  {
+   "name": "Kenji Sato",
+   "truth": "person",
+   "said": "other",
+   "service": "Kenji Sato"
+  },
+  {
+   "name": "Marie Dubois",
+   "truth": "person",
+   "said": "other",
+   "service": "Marie Dubois"
+  },
+  {
+   "name": "Uncle Raj",
+   "truth": "person",
+   "said": "account",
+   "service": "Uncle Raj"
+  },
+  {
+   "name": "Ola Nowak",
+   "truth": "person",
+   "said": "other",
+   "service": "Ola Nowak"
+  },
+  {
+   "name": "Felix Weber",
+   "truth": "person",
+   "said": "other",
+   "service": "Felix Weber"
+  },
+  {
+   "name": "Sara Lindqvist",
+   "truth": "person",
+   "said": "account",
+   "service": "Sara Lindqvist"
+  },
+  {
+   "name": "Coach Mike",
+   "truth": "person",
+   "said": "other",
+   "service": "Coach Mike"
+  },
+  {
+   "name": "Dr. Amara Obi",
+   "truth": "person",
+   "said": "other",
+   "service": "Dr. Amara Obi"
+  },
+  {
+   "name": "Leo Marin",
+   "truth": "person",
+   "said": "account",
+   "service": "Leo Marin"
+  },
+  {
+   "name": "Yuna Park",
+   "truth": "person",
+   "said": "other",
+   "service": "Yuna Park"
+  },
+  {
+   "name": "Account Team",
+   "truth": "other",
+   "said": "account",
+   "service": "Account Team"
+  },
+  {
+   "name": "Mail Admin",
+   "truth": "other",
+   "said": "account",
+   "service": "Mail Admin"
+  },
+  {
+   "name": "Billing",
+   "truth": "other",
+   "said": "other",
+   "service": "Billing"
+  },
+  {
+   "name": "Prize Office",
+   "truth": "other",
+   "said": "other",
+   "service": "Prize Office"
+  },
+  {
+   "name": "Security",
+   "truth": "other",
+   "said": "account",
+   "service": "Security"
+  },
+  {
+   "name": "Crypto Desk",
+   "truth": "other",
+   "said": "other",
+   "service": "Crypto Desk"
+  },
+  {
+   "name": "Oak Hill School",
+   "truth": "other",
+   "said": "other",
+   "service": "Oak Hill School"
+  },
+  {
+   "name": "City of Lund",
+   "truth": "other",
+   "said": "other",
+   "service": "City of Lund"
+  },
+  {
+   "name": "Riverside Dental",
+   "truth": "other",
+   "said": "other",
+   "service": "Riverside Dental"
+  },
+  {
+   "name": "Parkview Residents",
+   "truth": "other",
+   "said": "other",
+   "service": "Parkview Residents"
+  },
+  {
+   "name": "University Registrar",
+   "truth": "other",
+   "said": "other",
+   "service": "University Registrar"
+  },
+  {
+   "name": "St Mary Parish",
+   "truth": "other",
+   "said": "other",
+   "service": "St Mary Parish"
+  }
+ ]
+}

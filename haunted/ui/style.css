@@ -1,7 +1,7 @@
 [hidden]{display:none!important}
-@font-face{font-family:"Bagel";src:url(fonts/BagelFatOne.ttf);font-display:swap}
-@font-face{font-family:"Instrument";src:url(fonts/InstrumentSans.ttf);font-weight:400 700;font-stretch:75% 100%;font-display:swap}
-@font-face{font-family:"Fragment";src:url(fonts/FragmentMono.ttf);font-display:swap}
+@font-face{font-family:"Bagel";src:url(fonts/BagelFatOne.woff2);font-display:swap}
+@font-face{font-family:"Instrument";src:url(fonts/InstrumentSans.woff2);font-weight:400 700;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Fragment";src:url(fonts/FragmentMono.woff2);font-display:swap}
 :root{--ink:#160C2E;--milk:#FFF8EC;--pink:#FF4F9A;--pinkd:#B8135F;--gold:#FFC83D;--mint:#7CF2B6;--lilac:#BDAEEA;--plum:#2A1650;--paper:#FFF3DE;
   --out:cubic-bezier(.05,.7,.1,1);--spring:cubic-bezier(.175,.885,.32,1.275);--in:cubic-bezier(.3,0,1,1);--io:cubic-bezier(.4,0,.2,1);
   --lift:4px 4px 0 var(--ink);--stone:#8D80B8;--stone2:#6E6299;--text:#FFF8EC}

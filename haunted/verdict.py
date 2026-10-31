@@ -10,6 +10,8 @@ DATA = Path(__file__).parent / 'data'
 # what shows an account best, strongest first. The model only has to find the account; code picks the proof you see
 PROOF = [re.compile(p, re.I) for p in (r'\b(welcome|thanks for (joining|signing)|registered|registration)\b', r'\b(verify|verification|confirm your|activate)\b',
                                        r'\b(password|sign[- ]?in|log[- ]?in|new device|your .{0,20}account|security alert)\b', r'\b(receipt|invoice|your order|order confirmation|payment|subscription)\b')]
+# ponytail: a short list of the domain endings scammers rent cheaply. The real defence is the mail provider's spam filter, whose folder we already skip
+THROWAWAY = {'xyz', 'top', 'click', 'buzz', 'icu', 'online', 'loan', 'work', 'rest', 'monster', 'cyou', 'cfd', 'sbs'}
 
 
 def load_lists():
@@ -26,16 +28,17 @@ def years_since(day, today):
 
 
 def decide(card, read, lists, today=None):
-    """One ghost, or None. The model's "account" only counts if the subject it points at really is on the card."""
+    """One ghost, or None. The model says what a sender is; only code chooses the words you get shown, so they are always words from your own mail."""
     if card['personal'] or read.get('kind') != 'account':
         return None
     today = today or date.today()
-    n = read.get('proof') or 0
-    if not 1 <= n <= len(card['subjects']):
-        return None  # it pointed at nothing: no proof, no ghost
+    if not card['subjects']:
+        return None  # nothing anyone can point at: no proof, no ghost
+    if card['domain'].rsplit('.', 1)[-1] in THROWAWAY and card['count'] < 10:
+        return None  # a stranger on a throwaway domain, whatever the model thought of its wording
     strongest = next((s for p in PROOF for s in card['subjects'] if p.search(s['text'])), None)
-    # nothing plain to point at, like a foreign-language subject: keep the model's pick, but say we're less sure
-    proof, confident = (strongest, True) if strongest else (card['subjects'][n - 1], False)
+    # with nothing plain to point at, like a subject in another language, show the first thing they ever sent, and say we're less sure
+    proof, confident = (strongest, True) if strongest else (card['subjects'][0], False)
     breaches, sites = lists
     joined = card['first']
     # a breach only touched you if you were already there

@@ -190,6 +190,51 @@
    "score": 3.27
   },
   {
+   "key": "adobe.com",
+   "service": "Adobe",
+   "domain": "adobe.com",
+   "joined": "2013-08-19",
+   "last_heard": "2026-05-31",
+   "emails": 77,
+   "silent_years": 0.4,
+   "proof": {
+    "date": "2013-08-19",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": {
+    "date": "2013-11-12",
+    "text": "Your Adobe receipt"
+   },
+   "breaches": [
+    {
+     "name": "Adobe",
+     "date": "2013-10-04",
+     "count": 152445165,
+     "data": [
+      "Email addresses",
+      "Password hints",
+      "Passwords",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Adobe"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Password hints",
+    "Passwords",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://account.adobe.com/privacy/delete-account",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 7.13
+  },
+  {
    "key": "quizlet.com",
    "service": "Quizlet",
    "domain": "quizlet.com",
@@ -212,6 +257,86 @@
     "email": null
    },
    "score": 2
+  },
+  {
+   "key": "wattpad.com",
+   "service": "Wattpad",
+   "domain": "wattpad.com",
+   "joined": "2013-09-06",
+   "last_heard": "2017-08-30",
+   "emails": 41,
+   "silent_years": 9.2,
+   "proof": {
+    "date": "2013-09-06",
+    "text": "Activate your Wattpad account"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [
+    {
+     "name": "Wattpad",
+     "date": "2020-06-29",
+     "count": 268765495,
+     "data": [
+      "Bios",
+      "Dates of birth",
+      "Email addresses",
+      "Genders",
+      "Geographic locations",
+      "IP addresses",
+      "Names",
+      "Passwords",
+      "Social media profiles",
+      "User website URLs",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Wattpad"
+    }
+   ],
+   "leaked": [
+    "Bios",
+    "Dates of birth",
+    "Email addresses",
+    "Genders",
+    "Geographic locations",
+    "IP addresses",
+    "Names",
+    "Passwords",
+    "Social media profiles",
+    "User website URLs",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://www.wattpad.com/settings",
+    "difficulty": "easy",
+    "notes": "Closed accounts are deleted after six months.",
+    "email": null
+   },
+   "score": 7
+  },
+  {
+   "key": "dropbox.com",
+   "service": "Dropbox",
+   "domain": "dropbox.com",
+   "joined": "2013-11-10",
+   "last_heard": "2026-06-07",
+   "emails": 65,
+   "silent_years": 0.4,
+   "proof": {
+    "date": "2013-11-10",
+    "text": "Your Dropbox account is ready"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.dropbox.com/account/delete",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 0.13
   },
   {
    "key": "evernote.com",
@@ -376,6 +501,55 @@
    "score": 2.9
   },
   {
+   "key": "chegg.com",
+   "service": "Chegg",
+   "domain": "chegg.com",
+   "joined": "2015-05-11",
+   "last_heard": "2019-03-27",
+   "emails": 39,
+   "silent_years": 7.6,
+   "proof": {
+    "date": "2015-05-11",
+    "text": "Verify your Chegg account"
+   },
+   "confident": true,
+   "money": {
+    "date": "2016-01-15",
+    "text": "Payment received, thank you"
+   },
+   "breaches": [
+    {
+     "name": "Chegg",
+     "date": "2018-04-28",
+     "count": 39721127,
+     "data": [
+      "Email addresses",
+      "Names",
+      "Passwords",
+      "Phone numbers",
+      "Physical addresses",
+      "Usernames"
+     ],
+     "url": "https://haveibeenpwned.com/Breach/Chegg"
+    }
+   ],
+   "leaked": [
+    "Email addresses",
+    "Names",
+    "Passwords",
+    "Phone numbers",
+    "Physical addresses",
+    "Usernames"
+   ],
+   "leave": {
+    "url": "https://www.chegg.com/contactus",
+    "difficulty": "hard",
+    "notes": "To close your account, contact support with the email listed, call/message (408)-351-0942, or request assistance via their twitter [@CheggHelp](https://twitter.com/chegghelp). For data deletion, click [here](https://privacyportal-cdn.onetrust.com/dsarwebform/a21a74f4-2f93-44a2-a887-302a9213c997/06b040b7-49eb-464a-b19a-ea35c85c79fc.html).",
+    "email": "closemyaccount@chegg.com"
+   },
+   "score": 9
+  },
+  {
    "key": "zynga.com",
    "service": "Zynga",
    "domain": "zynga.com",
@@ -508,6 +682,33 @@
    ],
    "leave": null,
    "score": 7
+  },
+  {
+   "key": "uber.com",
+   "service": "Uber",
+   "domain": "uber.com",
+   "joined": "2016-03-13",
+   "last_heard": "2026-02-09",
+   "emails": 107,
+   "silent_years": 0.7,
+   "proof": {
+    "date": "2016-03-13",
+    "text": "Your Uber account is ready"
+   },
+   "confident": true,
+   "money": {
+    "date": "2017-03-19",
+    "text": "Your Uber receipt"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://myprivacy.uber.com/privacy/deleteyouraccount",
+    "difficulty": "impossible",
+    "notes": "You can select a reason and supposedly wait 30 days for the account to be deleted, but it never happens.",
+    "email": null
+   },
+   "score": 2.23
   },
   {
    "key": "spotify.com",
@@ -745,6 +946,33 @@
    "score": 2.03
   },
   {
+   "key": "ebay.com",
+   "service": "eBay",
+   "domain": "ebay.com",
+   "joined": "2017-11-25",
+   "last_heard": "2026-10-26",
+   "emails": 75,
+   "silent_years": 0.0,
+   "proof": {
+    "date": "2017-11-25",
+    "text": "Your eBay account is ready"
+   },
+   "confident": true,
+   "money": {
+    "date": "2018-02-05",
+    "text": "Your eBay subscription renews soon"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://accountsettings.ebay.com/uas",
+    "difficulty": "medium",
+    "notes": "Hover over name on top left, click 'Account settings', click 'Close account' under the Account preferences column, then scroll down and click 'Close account and delete my data'. Select why you are leaving from drop down and continue. Click on checkmark and then click the left button to close your account. If you want an extra safety measure, replace all of your personal info with fake info before closing the account.",
+    "email": null
+   },
+   "score": 2.0
+  },
+  {
    "key": "steampowered.com",
    "service": "Steam",
    "domain": "steampowered.com",
@@ -796,6 +1024,33 @@
    "score": 0.23
   },
   {
+   "key": "grammarly.com",
+   "service": "Grammarly",
+   "domain": "grammarly.com",
+   "joined": "2018-03-24",
+   "last_heard": "2023-02-23",
+   "emails": 83,
+   "silent_years": 3.7,
+   "proof": {
+    "date": "2018-03-24",
+    "text": "Your Grammarly account is ready"
+   },
+   "confident": true,
+   "money": {
+    "date": "2018-06-22",
+    "text": "Your order confirmation"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://app.grammarly.com/profile/account",
+    "difficulty": "easy",
+    "notes": null,
+    "email": null
+   },
+   "score": 3.23
+  },
+  {
    "key": "twitch.tv",
    "service": "Twitch",
    "domain": "twitch.tv",
@@ -821,6 +1076,33 @@
     "email": null
    },
    "score": 2.5
+  },
+  {
+   "key": "epicgames.com",
+   "service": "Epic Games",
+   "domain": "epicgames.com",
+   "joined": "2018-06-12",
+   "last_heard": "2024-06-01",
+   "emails": 65,
+   "silent_years": 2.4,
+   "proof": {
+    "date": "2018-06-12",
+    "text": "Thanks for joining Epic Games"
+   },
+   "confident": true,
+   "money": {
+    "date": "2018-07-09",
+    "text": "Your Epic Games subscription renews soon"
+   },
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.epicgames.com/help/en-US/epic-accounts-c74/general-support-c79/how-do-i-delete-my-epic-games-account-a3636",
+    "difficulty": "medium",
+    "notes": "Log in to your account. On the \"General Info\" page, scroll to the \"Delete Account\" section, request deletion and follow the steps.",
+    "email": null
+   },
+   "score": 2.8
   },
   {
    "key": "trello.com",
@@ -960,6 +1242,30 @@
    "score": 3.47
   },
   {
+   "key": "figma.com",
+   "service": "Figma",
+   "domain": "figma.com",
+   "joined": "2020-10-16",
+   "last_heard": "2026-09-28",
+   "emails": 20,
+   "silent_years": 0.1,
+   "proof": {
+    "date": "2020-10-16",
+    "text": "Your Figma account is ready"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://www.figma.com/",
+    "difficulty": "easy",
+    "notes": "Log in, click on your profile picture in the top right of the header, click on 'Settings', scroll down to the account section, click on 'Delete account', re-enter your account password, type 'delete my account' into the dialog box, and click on 'Delete account'.",
+    "email": null
+   },
+   "score": 0.03
+  },
+  {
    "key": "gonitro.com",
    "service": "Nitro PDF",
    "domain": "gonitro.com",
@@ -1037,6 +1343,30 @@
     "email": null
    },
    "score": 0.77
+  },
+  {
+   "key": "replit.com",
+   "service": "Replit",
+   "domain": "replit.com",
+   "joined": "2022-05-01",
+   "last_heard": "2024-03-28",
+   "emails": 13,
+   "silent_years": 2.6,
+   "proof": {
+    "date": "2022-05-01",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://replit.com/account/additional-billing-settings",
+    "difficulty": "easy",
+    "notes": "On the linked page click \"Request account deletion\", then \"Yes, Delete my Account\"",
+    "email": null
+   },
+   "score": 0.87
   },
   {
    "key": "vercel.com",
