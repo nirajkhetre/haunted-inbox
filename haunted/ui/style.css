@@ -438,7 +438,8 @@ h1{font:800 clamp(42px,4.9vw,80px)/1.02 "Display",Georgia,serif;letter-spacing:-
 .pvtiles div:first-child b{color:#B3125F}.pvtiles div:nth-child(2) b{color:#8A5F00}.pvtiles div:nth-child(3) b{color:#54468A}
 .pvrow{position:relative;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:7px 0 8px;border-bottom:1px solid #CFC4AC}
 .pvrow:last-child{border-bottom:0}
-.pvrow b{font:700 15.5px/1.1 "Body"}.pvrow small{display:block;font:400 12.5px/1.25 "Typed";color:#6A6152}
+.pvrow b{font:700 15.5px/1.1 "Body"}.pvrow small{display:block;font:400 12.5px/1.25 "Typed";color:#6A6152;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pvrow>span:nth-child(2){min-width:0}#preview header b,#preview header span{white-space:nowrap}#preview header span{font-size:12px!important}
 .pvrow .no{position:absolute;left:-36px;top:9px;width:26px;text-align:right;font:400 12.5px/1 "Typed";color:#6A6152}
 /* rubber stamps. The roughness is a filter, so it looks inked rather than drawn */
 .stamp{display:inline-block;padding:1px 6px;border:1.5px solid currentColor;font:700 11.5px/1.25 "Typed";text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;filter:url(#inked);rotate:-1.4deg}

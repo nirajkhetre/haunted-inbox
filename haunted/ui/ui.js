@@ -141,7 +141,7 @@ function wireHold(x) {
 }
 async function banish(x, candles) {
   if (S.view === 'report' && !calm()) { const c = $('#card'), st = document.createElement('div'); st.className = 'bigstamp'; st.textContent = 'Closed'; c.appendChild(st); await st.animate([{ transform: 'translate(-50%,-50%) rotate(-11deg) scale(2.6)', opacity: 0 }, { transform: 'translate(-50%,-50%) rotate(-11deg) scale(.96)', opacity: 1, offset: .75 }, { transform: 'translate(-50%,-50%) rotate(-11deg) scale(1)', opacity: 1 }], { duration: 190, easing: 'cubic-bezier(.5,0,.9,.6)' }).finished; Snd.play('thump', .3); c.animate([{ transform: 'none' }, { transform: 'translate(2px,3px) rotate(.3deg)' }, { transform: 'none' }], { duration: 170 }); await wait(520); st.remove(); }
-  closeCard(); $('#card').hidden = true;
+  S.inBeats = true; closeCard(); $('#card').hidden = true;
   const gh = x.el.querySelector('.gh'), st = x.el.querySelector('.st'), nm = x.el.querySelector('.nm'), svg = gh.querySelector('svg'), sd = seed(x.key);
   gh.style.animation = 'none'; svg.getAnimations().forEach(a => a.cancel()); nm.style.opacity = 0;
   const steps = 14, path = Array.from({ length: steps + 1 }, (_, k) => { const t = k / steps; return { transform: `translate(${Math.sin(t * 9) * 56 * (1 - t * .3)}px,${-t * t * 620}px) rotate(${t * 540}deg) scale(${1 - t * .82},${1 + Math.sin(t * 9) * .12 - t * .82})`, opacity: t > .86 ? (1 - t) * 7 : 1 }; });
@@ -163,7 +163,7 @@ async function banish(x, candles) {
   await wait(250);
   fly.cancel(); candles.forEach(c => c.remove());
   x.state = 'gone'; x.el.classList.add('gone'); x.el.insertAdjacentHTML('beforeend', FLOWERS);
-  x.eyes = null;
+  x.eyes = null; S.inBeats = false;
   saveState(x); tally(true); buildRuler(); renderRows();
   const left = open().length;
   showUndo(x);
