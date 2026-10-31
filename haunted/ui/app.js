@@ -49,7 +49,7 @@ function drawSky(now) {
   if (d < .7) for (const s of STARS) { g.globalAlpha = (1 - d / .7) * (.55 + .45 * Math.sin(now / 900 + s.t)); g.fillStyle = '#FFF8EC'; g.fillRect((s.x * W * 1.2 - cam * .02) % (W * 1.2), s.y * H, s.r, s.r); }
   g.globalAlpha = 1;
   // the moon sets as the sun comes up over the same hill
-  const mx = W * .82 - cam * .012, my = H * (.17 + d * .55), sy = H * (.74 - d * .62), sx = W * .24 - cam * .012;
+  const mx = W * .82 - cam * .012, my = H * ((S.stage === 'gate' && W <= 760 ? .06 : .17) + d * .55), sy = H * (.74 - d * .62), sx = W * .24 - cam * .012;
   const face = (cx, cy, r, sleepy) => { const lx = clamp((S.mouse.x - cx) / 600, -1, 1) * r * .06, ly = clamp((S.mouse.y - cy) / 500, -1, 1) * r * .05; g.fillStyle = "#160C2E"; for (const dx of [-.3, .3]) { g.beginPath(); g.roundRect(cx + dx * r - r * .075 + lx, cy - r * .22 + ly + sleepy * r * .14, r * .15, r * .34 * (1 - sleepy * .8), r * .075); g.fill(); } g.fillStyle = "#FFB3CF"; for (const dx of [-.56, .56]) { g.beginPath(); g.arc(cx + dx * r, cy + r * .24, r * .1, 0, 7); g.fill(); } };
   if (d < .75) { const r = Math.min(W, H) * .075; g.globalAlpha = 1 - d / .75; g.fillStyle = "#FFF2C7"; g.strokeStyle = "#160C2E"; g.lineWidth = 4; g.beginPath(); g.arc(mx, my, r, 0, 7); g.fill(); g.stroke(); g.fillStyle = "#EFDFA6"; for (const [a, b, c] of [[-.45, -.5, .16], [.5, -.38, .11], [.42, .5, .14]]) { g.beginPath(); g.arc(mx + a * r, my + b * r, c * r, 0, 7); g.fill(); } face(mx, my, r, clamp(d * 1.8, 0, 1)); g.globalAlpha = 1; }
   if (d > .12) { const r = Math.min(W, H) * .1, gl = g.createRadialGradient(sx, sy, r * .4, sx, sy, r * 3.6); gl.addColorStop(0, `rgba(255,214,120,${Math.min(.7, d)})`); gl.addColorStop(1, "rgba(255,214,120,0)"); g.fillStyle = gl; g.fillRect(sx - r * 4, sy - r * 4, r * 8, r * 8); g.fillStyle = "#FFD25E"; g.strokeStyle = "#160C2E"; g.lineWidth = 4; g.beginPath(); g.arc(sx, sy, r, 0, 7); g.fill(); g.stroke(); face(sx, sy, r, clamp(1 - d * 1.6, 0, 1)); }
@@ -75,11 +75,11 @@ function hole(x, y, r, a = 1) {
 }
 function drawNight(now) {
   const { W, H, dawn: d } = S; n.clearRect(0, 0, W, H);
-  const dark = S.stage === 'gate' ? .18 : .62 * Math.pow(1 - d, 1.25);
+  const dark = S.stage === 'gate' ? .18 : .46 * Math.pow(1 - d, 1.25);
   if (dark > .01) {
     n.fillStyle = `rgba(7,3,22,${dark})`; n.fillRect(0, 0, W, H);
     n.globalCompositeOperation = 'destination-out';
-    if (S.stage !== 'gate') hole(S.lantern.x, S.lantern.y, 360 + 16 * Math.sin(now / 240), .96);
+    if (S.stage !== 'gate') hole(S.lantern.x, S.lantern.y, Math.max(360, S.W * .3) + 16 * Math.sin(now / 240), .96);
     hole(S.mouse.x, S.mouse.y, 170, .78);
     if (S.sel) hole(S.sel.x - S.cam, S.sel.y - 50, 300, .98);
     n.globalCompositeOperation = 'source-over';

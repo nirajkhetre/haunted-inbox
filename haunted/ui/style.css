@@ -75,7 +75,7 @@ body:not(.at-gate) #keeper{opacity:1}
 #gate{position:fixed;inset:0;z-index:6;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(20px,7vw,110px) 12vh;pointer-events:none}
 #gate>*{pointer-events:auto;max-width:980px}
 .kick{font:400 15px "Fragment",monospace;color:var(--gold);margin-bottom:12px;animation:up .7s var(--out) both}
-h1{font:400 clamp(44px,8.6vw,124px)/.98 "Bagel","Instrument";letter-spacing:-.005em;margin-bottom:22px;text-shadow:0 5px 0 var(--ink)}
+h1{max-width:none!important;font:400 clamp(44px,6.5vw,108px)/.98 "Bagel","Instrument";letter-spacing:-.005em;margin-bottom:22px;text-shadow:0 5px 0 var(--ink)}
 .ln{display:block}.ln .c{display:inline-block;animation:hover 3.6s ease-in-out infinite alternate,chin .75s var(--spring) both;animation-delay:calc(var(--i) * 45ms),calc(var(--i) * 22ms)}
 #l2{color:var(--lilac)}
 @keyframes chin{from{transform:translateY(.6em) scale(.7);opacity:0}}
@@ -215,7 +215,7 @@ dialog::backdrop{background:rgb(9 4 26 / .66);backdrop-filter:blur(3px)}
   #card{left:0;right:0;top:auto;bottom:0;width:100%;height:min(76vh,640px);border-radius:90px 90px 0 0/56px 56px 0 0;border-width:4px 0 0;box-shadow:none;animation-name:cardup}
   @keyframes cardup{from{transform:translateY(100%)}}
   #card.out{transform:translateY(100%);opacity:1}
-  #cardbody{padding-top:30px}
+  #cardbody{padding-top:50px}
   #card .x{left:auto;margin-left:0;right:16px;top:14px}
   #list{inset:8px}
   .row{grid-template-columns:minmax(0,1fr) auto;padding:10px 14px}.row .when{display:none}.row .flags{grid-column:1/-1;grid-row:2}

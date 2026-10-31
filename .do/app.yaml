@@ -1,0 +1,12 @@
+name: haunted-inbox
+static_sites:
+  - name: site
+    github:
+      repo: nirajkhetre/haunted-inbox
+      branch: main
+      deploy_on_push: true
+    source_dir: haunted/ui
+    index_document: index.html
+domains:
+  - domain: haunted.celebrable.tech
+    type: PRIMARY
