@@ -17,6 +17,7 @@
   <linearGradient id="gStone" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A99DD0"/><stop offset="1" stop-color="#6E6299"/></linearGradient>
   <radialGradient id="gBox" cx=".34" cy=".2" r="1"><stop offset="0" stop-color="#8E6BE0"/><stop offset=".55" stop-color="#5E3DB3"/><stop offset="1" stop-color="#3A2470"/></radialGradient>
   <linearGradient id="gCloak" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5A3AA8"/><stop offset="1" stop-color="#2E1B5E"/></linearGradient>
+  <filter id="inked" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.5" result="d"/><feComponentTransfer in="n" result="w"><feFuncA type="discrete" tableValues="1 1 1 .55 1 1 .7 1"/></feComponentTransfer><feComposite in="d" in2="w" operator="in"/></filter>
 </defs></svg>
 <div id="scene">
 <canvas id="sky" aria-hidden="true"></canvas>
@@ -62,9 +63,9 @@
         <rect id="mbSlot" x="88" y="128" width="244" height="104" rx="52" fill="#0B0620" stroke="#160C2E" stroke-width="7"/>
         <g id="mbEyes"><rect x="162" y="146" width="28" height="68" rx="14" fill="#FFF8EC"/><rect x="230" y="146" width="28" height="68" rx="14" fill="#FFF8EC"/></g>
         <rect id="mbLid" x="88" y="128" width="244" height="52" rx="26" fill="#5A43A0" stroke="#160C2E" stroke-width="7" opacity="0"/>
-        <text x="210" y="352" text-anchor="middle" font-family="Serif" font-size="58" fill="#FFF8EC">Inbox</text>
+        <text x="210" y="352" text-anchor="middle" font-family="Display" font-weight="800" font-size="56" fill="#FFF8EC">Inbox</text>
         <path d="M58 450v-26q12-18 28-8 12-14 30 0 18-4 22 34Z" fill="#3E8C63" stroke="#160C2E" stroke-width="5" stroke-linejoin="round"/>
-        <g id="mbFlag"><rect x="356" y="208" width="14" height="118" rx="7" fill="#FFF8EC" stroke="#160C2E" stroke-width="5"/><path d="M366 212h44q6 0 6 6v40q0 6-6 6h-44Z" fill="#FFC83D" stroke="#160C2E" stroke-width="6" stroke-linejoin="round"/></g>
+        <g id="mbFlag"><rect x="356" y="208" width="14" height="118" rx="7" fill="#FFF8EC" stroke="#160C2E" stroke-width="5"/><path d="M366 212h44q6 0 6 6v40q0 6-6 6h-44Z" fill="#E4B64F" stroke="#160C2E" stroke-width="6" stroke-linejoin="round"/></g>
       </g>
     </svg>
     <div id="fence" aria-hidden="true"></div>

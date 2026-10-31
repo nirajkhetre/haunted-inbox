@@ -64,7 +64,8 @@ function cardHTML(x) {
   const fate = u.fate ? `<div class="note fate"><h4>${u.fate.fate === 'acquired' ? `Sold${u.fate.by ? ` to ${esc(u.fate.by)}` : ' to another company'}` : 'The company shut down'}</h4><q>${esc(u.fate.quote)}</q><small><a href="${safe(u.fate.url)}" target="_blank" rel="noopener">${esc(u.fate.source)}</a>. Found by web search, so check it. Where did your data go?</small></div>` : '';
   const silent = x.silent_years == null ? '' : x.silent_years < 1 ? 'still writing to you' : `silent for ${x.silent_years} years`, canAsk = (S.web && S.set.web || S.sample) && !x.lookup && url;
   return `<p class="lies">${S.view === 'grave' ? 'here lies your account at' : 'Your account at'} ${esc(x.domain)}</p><h2 class="gname">${esc(x.service)}</h2>
-<p class="dates">${fmtDay(x.joined)} to ${fmtMonth(x.last_heard)}</p><p class="small">${plural(x.emails, 'email')}${silent ? `, ${silent}` : ''}</p>
+<div class="fields"><div><span>Joined</span><b>${fmtDay(x.joined)}</b></div><div><span>Last heard from</span><b>${fmtMonth(x.last_heard)}</b></div><div><span>Emails</span><b>${x.emails}</b></div><div><span>Status</span><b>${esc(silent ? silent[0].toUpperCase() + silent.slice(1) : 'Unknown')}</b></div></div>
+<div class="stamps">${stamps(x)}</div>
 ${lastWords(x) ? `<p class="words"><small>${S.view === 'grave' ? 'its last words to you' : 'the last message it sent you'}</small><q>${esc(lastWords(x))}</q></p>` : ''}
 ${leak}${fate}
 ${x.money ? `<div class="note card2"><h4>May still have your card</h4><q>${esc(x.money.text)}</q> <small>${fmtDay(x.money.date)}</small></div>` : ''}
@@ -100,7 +101,7 @@ function openCard(x) {
   Snd.play('hoo', seed(x.key), .6, .16);
   if (calm()) return;
   const a = x.el.querySelector('.st').getBoundingClientRect(), b = c.getBoundingClientRect();
-  if (!wasOpen && a.width) c.animate([{ transform: `translate(${a.left - b.left}px,${a.top - b.top}px) scale(${a.width / b.width},${a.height / b.height})`, offset: 0 }, { transform: 'translate(0,-8px) scale(1.012)', offset: .78 }, { transform: 'none' }], { duration: 620, easing: 'cubic-bezier(.22,.9,.3,1)' });
+  if (!wasOpen) { if (S.view === 'grave' && a.width) c.animate([{ transform: `translate(${a.left - b.left}px,${a.top - b.top}px) scale(${a.width / b.width},${a.height / b.height})`, offset: 0 }, { transform: 'translate(0,-8px) scale(1.012)', offset: .78 }, { transform: 'none' }], { duration: 620, easing: 'cubic-bezier(.22,.9,.3,1)' }); else c.animate([{ transform: 'translateX(112%) rotate(3deg)' }, { transform: 'translateX(-10px) rotate(-.4deg)', offset: .72 }, { transform: 'none' }], { duration: 480, easing: 'cubic-bezier(.2,.9,.3,1)' }); }
   $$('#cardbody>*').slice(0, 7).forEach((el, k) => el.animate([{ transform: 'translateY(16px) scale(.97)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 340, delay: (wasOpen ? 40 : 240) + k * 34, easing: 'cubic-bezier(.2,1,.3,1)', fill: 'backwards' }));
   c.querySelector('.acts').animate([{ transform: 'translateY(100%)' }, { transform: 'none' }], { duration: 420, delay: wasOpen ? 0 : 300, easing: 'cubic-bezier(.2,1.2,.3,1)', fill: 'backwards' });
 }
@@ -139,6 +140,7 @@ function wireHold(x) {
   b.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') stop(); });
 }
 async function banish(x, candles) {
+  if (S.view === 'report' && !calm()) { const c = $('#card'), st = document.createElement('div'); st.className = 'bigstamp'; st.textContent = 'Closed'; c.appendChild(st); await st.animate([{ transform: 'translate(-50%,-50%) rotate(-11deg) scale(2.6)', opacity: 0 }, { transform: 'translate(-50%,-50%) rotate(-11deg) scale(.96)', opacity: 1, offset: .75 }, { transform: 'translate(-50%,-50%) rotate(-11deg) scale(1)', opacity: 1 }], { duration: 190, easing: 'cubic-bezier(.5,0,.9,.6)' }).finished; Snd.play('thump', .3); c.animate([{ transform: 'none' }, { transform: 'translate(2px,3px) rotate(.3deg)' }, { transform: 'none' }], { duration: 170 }); await wait(520); st.remove(); }
   closeCard(); $('#card').hidden = true;
   const gh = x.el.querySelector('.gh'), st = x.el.querySelector('.st'), nm = x.el.querySelector('.nm'), svg = gh.querySelector('svg'), sd = seed(x.key);
   gh.style.animation = 'none'; svg.getAnimations().forEach(a => a.cancel()); nm.style.opacity = 0;

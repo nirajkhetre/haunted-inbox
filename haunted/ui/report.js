@@ -2,6 +2,7 @@
 // ---------- the plain view: what was found, the riskiest first, and what to do. The graveyard is the same data, one click away ----------
 const TILES = [['all', 'Accounts to review'], ['hacked', 'Hacked after you joined'], ['card', 'May still have your card'], ['quiet', 'Silent for 3+ years']];
 const sev = x => x.breaches.length ? 'hacked' : x.money ? 'card' : 'quiet';
+const stamps = x => (x.breaches.length ? `<i class="stamp h">Hacked ${x.breaches[0].date.slice(0, 4)}</i>` : '') + (x.leaked?.includes('Passwords') ? '<i class="stamp h">Passwords</i>' : '') + (x.money ? '<i class="stamp m">Card on file?</i>' : '') + (!x.breaches.length && !x.money ? ((x.silent_years || 0) >= 3 ? `<i class="stamp q">Silent ${Math.floor(x.silent_years)} yrs</i>` : '<i class="stamp n">Nothing found</i>') : '');
 
 function setView(v, quiet) {
   S.view = v; document.body.dataset.view = v; $('#report').hidden = false;
@@ -28,13 +29,13 @@ function renderRows() {
   if (!S.ghosts.length) return;
   const o = open(), n = nextGhost();
   $('#repTiles').innerHTML = TILES.map(([k, label]) => `<button class="tile ${k}${S.filter === k ? ' on' : ''}" data-f="${k}" aria-pressed="${S.filter === k}"><b>${o.filter(MATCH[k]).length}</b><span>${label}</span></button>`).join('');
-  $('#repNext').innerHTML = (S.sample ? '<p class="repnote">Sample report. This is a made-up person\'s inbox. The companies and the hacks are real, from public lists.</p>' : '') + (n
+  $('#repNext').innerHTML = (S.sample ? '<p class="repnote">Sample report. A made-up person\'s inbox. The companies and the hacks are real, from public lists.</p>' : '') + (n
     ? `<div class="nextrow"><p><small>${S.ghosts.length === o.length ? 'Start here' : 'Next'}</small><b>${esc(n.service)}</b> ${esc(why(n))}.</p><button class="stone primary small" id="repGo">Review</button></div>`
-    : `<div class="nextrow"><p><b>${o.length ? 'Nothing here matches that filter.' : 'You\'ve dealt with everything here.'}</b> ${o.length ? 'Pick another number above.' : 'Run it again in a year to catch anything new.'}</p></div>`);
+    : `<div class="nextrow"><p><b>${o.length ? 'Nothing here matches that tab.' : 'You\'ve dealt with everything here.'}</b> ${o.length ? 'Pick another one above.' : 'Run it again in a year to catch anything new.'}</p></div>`);
   const go = $('#repGo'); if (go) go.onclick = () => { Snd.wake(); openCard(n); };
   const rows = S.ghosts.filter(inView).sort((a, b) => (a.state !== 'ghost' && a.state ? 1 : 0) - (b.state !== 'ghost' && b.state ? 1 : 0) || b.score - a.score);
   const quiet = x => x.silent_years == null ? '' : x.silent_years < 1 ? 'This year' : `${Math.floor(x.silent_years)} year${Math.floor(x.silent_years) === 1 ? '' : 's'} ago`;
-  $('#repTable').innerHTML = `<div class="rowhead" aria-hidden="true"><span></span><span>Account</span><span class="when">Joined</span><span class="when">Last heard</span><span>What we found</span><span></span></div>` + rows.map(x => `<button class="row${x.state === 'gone' || x.state === 'alive' ? ' done' : ''}" data-k="${esc(x.key)}"><span class="dot ${sev(x)}"></span><span class="who"><b>${esc(x.service)}</b><small>${esc(x.domain)}</small></span><span class="when">${(x.joined || '').slice(0, 4)}</span><span class="when">${quiet(x)}</span><span class="flags">${x.breaches.length ? `<i class="flag h">Hacked ${x.breaches[0].date.slice(0, 4)}</i>` : ''}${x.leaked?.includes('Passwords') ? '<i class="flag h">Passwords</i>' : ''}${x.money ? '<i class="flag m">Your card?</i>' : ''}${!x.breaches.length && !x.money ? '<i class="flag">No problems found</i>' : ''}</span><span class="state">${x.state === 'gone' ? 'Closed' : x.state === 'alive' ? 'Still using' : 'Review'}</span></button>`).join('');
+  $('#repTable').innerHTML = `<div class="rowhead" aria-hidden="true"><span>No.</span><span>Account</span><span class="when">Joined</span><span class="when">Last heard</span><span>What we found</span><span></span></div>` + rows.map((x, k) => `<button class="row${x.state === 'gone' || x.state === 'alive' ? ' done' : ''}" data-k="${esc(x.key)}"><span class="no">${String(k + 1).padStart(2, '0')}</span><span class="who"><b>${esc(x.service)}</b><small>${esc(x.domain)}</small></span><span class="when">${(x.joined || '').slice(0, 4)}</span><span class="when">${quiet(x)}</span><span class="flags">${stamps(x)}</span><span class="state">${x.state === 'gone' ? 'Closed' : x.state === 'alive' ? 'Still using' : 'Review'}</span></button>`).join('');
 }
 $('#repTiles').addEventListener('click', e => { const b = e.target.closest('.tile'); if (!b) return; S.filter = b.dataset.f; closeCard(); tally(); applyFilter(); });
 $('#repTable').addEventListener('click', e => { const r = e.target.closest('.row'); if (!r) return; const x = S.ghosts.find(q => q.key === r.dataset.k); if (!x) return; Snd.wake(); if (x.state === 'gone' || x.state === 'alive') return showUndo(x); openCard(x); });

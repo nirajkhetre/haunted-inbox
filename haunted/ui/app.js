@@ -383,10 +383,10 @@ $('#share').onclick = () => {
   const p = new Path2D(GPATH), o = open();
   x.fillStyle = '#0E0726'; x.beginPath(); x.moveTo(0, 630); x.lineTo(0, 520); x.bezierCurveTo(300, 470, 800, 570, 1200, 500); x.lineTo(1200, 630); x.fill();
   for (let k = 0; k < Math.min(o.length, 26); k++) { x.save(); x.translate(60 + (k % 13) * 86 + (k % 2) * 12, k < 13 ? 400 : 480); x.scale(1.2, 1.2); x.fillStyle = '#FFF8EC'; x.strokeStyle = '#160C2E'; x.lineWidth = 3.5; x.fill(p); x.stroke(p); x.fillStyle = '#160C2E'; x.beginPath(); x.roundRect(18, 25, 7, 14, 3.5); x.roundRect(35, 25, 7, 14, 3.5); x.fill(); x.restore(); }
-  x.fillStyle = '#FFF8EC'; x.font = '400 92px Serif'; x.fillText(`${o.length} ghosts in my inbox.`, 60, 140);
-  x.fillStyle = '#FF7DB6'; x.font = '400 50px Serif'; x.fillText(`${o.filter(q => q.breaches.length).length} were hacked after I joined.`, 60, 220);
-  x.fillStyle = '#FFC83D'; x.font = 'italic 400 34px Serif'; x.fillText(S.sample ? 'A made-up inbox. How many are in yours?' : 'How many are in yours?', 60, 290);
-  x.fillStyle = '#BDAEEA'; x.font = '400 24px Fragment'; x.fillText('Haunted Inbox. Runs on your own computer.', 60, 590);
+  x.fillStyle = '#FFF8EC'; x.font = '800 84px Display'; x.fillText(`${o.length} ghosts in my inbox.`, 60, 140);
+  x.fillStyle = '#FF7DB6'; x.font = '800 46px Display'; x.fillText(`${o.filter(q => q.breaches.length).length} were hacked after I joined.`, 60, 220);
+  x.fillStyle = '#FFC83D'; x.font = 'italic 600 32px Display'; x.fillText(S.sample ? 'A made-up inbox. How many are in yours?' : 'How many are in yours?', 60, 290);
+  x.fillStyle = '#BDAEEA'; x.font = '400 22px Typed'; x.fillText('Haunted Inbox. Runs on your own computer.', 60, 590);
   const a = document.createElement('a'); a.download = 'my-ghosts.png'; a.href = c.toDataURL('image/png'); a.click();
   say('Saved. It shows only the numbers, no names.');
 };

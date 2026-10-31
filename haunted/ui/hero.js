@@ -7,10 +7,10 @@ async function heroPreview() {
   let r; try { r = await (await fetch('sample.json')).json(); } catch { return; }
   if (Hero.gone) return;
   const G = r.ghosts, top = [...G].sort((a, b) => b.score - a.score).slice(0, S.H < 760 ? 3 : 4);
-  const count = f => G.filter(f).length, what = x => [x.breaches[0] && `Hacked ${x.breaches[0].date.slice(0, 4)}`, x.leaked?.includes('Passwords') && 'passwords leaked', x.money && 'may have your card'].filter(Boolean).join(', ');
+  const count = f => G.filter(f).length, what = x => `joined ${(x.joined || '').slice(0, 4)}, ${x.domain}`;
   $('#preview').innerHTML = `<header><b>Sample report</b><span>${G.length} accounts in ${r.envelopes.toLocaleString('en-US')} emails</span></header>
 <div class="pvtiles"><div><b>${count(MATCH.hacked)}</b>Hacked after joining</div><div><b>${count(MATCH.card)}</b>May have your card</div><div><b>${count(MATCH.quiet)}</b>Silent 3+ years</div></div>
-${top.map(x => `<div class="pvrow"><span class="dot ${sev(x)}"></span><span><b>${esc(x.service)}</b><small>${esc(what(x) || 'No problems found')}</small></span><i>Review</i></div>`).join('')}`;
+${top.map((x, k) => `<div class="pvrow"><span class="no">${String(k + 1).padStart(2, '0')}</span><span><b>${esc(x.service)}</b><small>${esc(what(x))}</small></span><span class="flags">${stamps(x).split('</i>').slice(0, 2).join('</i>')}</i></span></div>`).join('')}`;
   if (!calm()) $$('#preview>*').forEach((el, k) => el.animate([{ transform: 'translateY(14px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 420, delay: 220 + k * 60, easing: 'cubic-bezier(.2,1,.3,1)', fill: 'backwards' }));
 }
 

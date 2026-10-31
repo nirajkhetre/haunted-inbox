@@ -34,6 +34,7 @@ ${local ? `<p class="setnote">Your scan is kept only on this computer. ${esc(S.m
 function saveSettings() { store.set('settings2', S.set); applySettings(); }
 function applySettings() {
   const root = document.documentElement, s = S.set;
+  root.dataset.sheet = s.theme === 'night' || (s.theme === 'device' && matchMedia('(prefers-color-scheme: dark)').matches) ? 'carbon' : 'paper';
   root.dataset.size = s.size; if (s.calm) root.dataset.calm = '1'; else delete root.dataset.calm;
   Snd.apply();
   applySky();

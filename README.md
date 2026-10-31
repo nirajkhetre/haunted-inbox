@@ -4,7 +4,7 @@
 
 Every account your past self made is still out there, holding your name, your email, sometimes your card. Haunted Inbox finds them from your own mail, on your own computer, and lays them out as a graveyard you can walk through: one stone for every account, on the day you signed up, with a ghost above it.
 
-Each stone tells you what that account still knows, whether it was hacked after you joined, and what its **last words** to you were. Go and delete it, hold the button to lay it to rest, and the sky gets a little lighter. Clear the graveyard and it's morning.
+You get a plain report first: what it found, the riskiest account, and a link to where you can delete each one. The graveyard is the same accounts, one click away: each stone tells you what that account still knows, whether it was hacked after you joined, and what its **last words** to you were. Lay one to rest and the sky gets a little lighter. Clear the graveyard and it's morning.
 
 Walk through a sample, no install: **https://haunted.celebrable.tech**
 
@@ -100,6 +100,6 @@ python -m unittest tests.test_core
 
 - Breach list: [Have I Been Pwned](https://haveibeenpwned.com/) (CC BY 4.0). Delete links: [JustDeleteMe](https://github.com/jdm-contrib/jdm) (MIT). Details in [`haunted/data/SOURCES.md`](haunted/data/SOURCES.md).
 - Model: [Gemma](https://ai.google.dev/gemma), run with [Ollama](https://ollama.com).
-- Fonts: Instrument Serif, Instrument Sans, Fragment Mono (SIL Open Font License), in `haunted/ui/fonts`.
+- Fonts: Piazzolla, Atkinson Hyperlegible Next, Courier Prime (SIL Open Font License), in `haunted/ui/fonts`.
 
 MIT licensed.
