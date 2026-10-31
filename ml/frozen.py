@@ -1,5 +1,4 @@
-"""The test nothing gets to practise on. Written by hand before any training, then frozen in git; these names are kept out of the training data.
-Made up, in the style of mail these kinds of sender send. No one's real mail."""
+"""The test nothing gets to practise on. Written by hand, then frozen in git. Made up, in the style of mail these kinds of sender send. No one's real mail."""
 
 FROZEN = [
     # accounts, the plain kind

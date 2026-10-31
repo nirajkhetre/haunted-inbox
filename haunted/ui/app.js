@@ -265,18 +265,17 @@ const DIFF = { easy: 'Easy to leave', medium: 'Takes a few steps', hard: 'Hard t
 function cardHTML(x) {
   const leak = x.breaches.map(b => `<div class="note hack"><h4>Hacked after you joined</h4><b>${esc(b.name)}, ${fmtMonth(b.date)}</b>, ${(b.count || 0).toLocaleString('en-US')} accounts.<div class="leaks">${b.data.slice(0, 8).map(d => `<span${/password|credit|bank|phone/i.test(d) ? ' class="bad"' : ''}>${esc(d)}</span>`).join('')}</div><small>From the public <a href="${safe(b.url)}" target="_blank" rel="noopener">Have I Been Pwned</a> list. It doesn't prove your own data was in it.</small></div>`).join('');
   const u = x.lookup || {};
-  const fate = u.fate ? `<div class="note fate"><h4>The company ${esc(u.fate.fate)}${u.fate.by ? ` by ${esc(u.fate.by)}` : ''}</h4><q>${esc(u.fate.quote)}</q><small><a href="${safe(u.fate.url)}" target="_blank" rel="noopener">${esc(u.fate.source)}</a>. Where did your data go?</small></div>` : '';
-  const news = u.news ? `<div class="note hack"><h4>A leak in the news</h4><q>${esc(u.news.quote)}</q><small><a href="${safe(u.news.url)}" target="_blank" rel="noopener">${esc(u.news.source)}</a>. Found by web search, so check it.</small></div>` : '';
+  const fate = u.fate ? `<div class="note fate"><h4>${u.fate.fate === 'acquired' ? `Sold${u.fate.by ? ` to ${esc(u.fate.by)}` : ' to another company'}` : 'The company shut down'}</h4><q>${esc(u.fate.quote)}</q><small><a href="${safe(u.fate.url)}" target="_blank" rel="noopener">${esc(u.fate.source)}</a>. Found by web search, so check it. Where did your data go?</small></div>` : '';
   const url = x.leave?.url || u.delete?.url, diff = x.leave?.difficulty;
   const silent = x.silent_years == null ? '' : x.silent_years < 1 ? 'still writing to you' : `silent for ${x.silent_years} years`;
   return `<p class="lies">here lies your account at ${esc(x.domain)}</p><h2 class="gname">${esc(x.service)}</h2>
 <p class="dates">${fmtDay(x.joined)} to ${fmtMonth(x.last_heard)}</p><p class="small">${plural(x.emails, 'email')}${silent ? `, ${silent}` : ''}</p>
 ${lastWords(x) ? `<p class="words"><small>its last words to you</small><q>${esc(lastWords(x))}</q></p>` : ''}
 <div class="note"><h4>${x.confident ? 'How we know' : 'The first thing they sent you (we are less sure about this one)'}</h4><q>${esc(x.proof.text)}</q> <small>${fmtDay(x.proof.date)}</small></div>
-${leak}${news}${fate}
+${leak}${fate}
 ${x.money ? `<div class="note card2"><h4>May still have your card</h4><q>${esc(x.money.text)}</q> <small>${fmtDay(x.money.date)}</small></div>` : ''}
 ${x.leave?.notes ? `<div class="note"><h4>How to leave ${diff ? `<span class="diff ${esc(diff)}">${esc(DIFF[diff] || diff)}</span>` : ''}</h4>${esc(x.leave.notes.slice(0, 280))}</div>` : ''}
-${u.delete && !x.leave ? `<div class="note"><h4>Found by web search${u.delete.own_site ? ', on their own site' : ', not on their own site, so be careful'}</h4>${esc(u.delete.title)}</div>` : ''}
+${u.delete && !x.leave ? `<div class="note"><h4>Found on their own site</h4>${esc(u.delete.title)}</div>` : ''}
 <div id="asked"></div>`;
 }
 const lastWords = x => (x.silent_years || 0) >= 1 ? x.last_words?.text : null;
@@ -312,7 +311,7 @@ async function askWeb(x, b) {
   try {
     x.lookup = S.sample ? (x.lookup_saved || { none: true }) : await post('/api/lookup', { key: x.key });
     if (S.sel === x) openCard(x);
-    if (!x.lookup.fate && !x.lookup.news && !x.lookup.delete) { const a = $('#asked'); if (a) a.innerHTML = '<div class="note">The web had nothing clear to say about this one, so we say nothing.</div>'; }
+    if (!x.lookup.fate && !x.lookup.delete) { const a = $('#asked'); if (a) a.innerHTML = '<div class="note">The web had nothing clear to say about this one, so we say nothing.</div>'; }
   } catch (e) { b.textContent = "Couldn't reach the web"; }
 }
 
@@ -438,6 +437,8 @@ async function reveal() {
   await beat(`Tonight there are <em>${G.length}</em> of them.`, 1900);
   if (bad) { walkTo(0); hopAll(x => x.breaches.length); await beat(`<span class="pk">${bad}</span> ${bad === 1 ? 'was' : 'were'} hacked after you joined.`, 2000); }
   if (card) await beat(`<em>${card}</em> may still have your card.`, 1700);
+  const sold = G.filter(x => x.lookup_saved?.fate?.fate === 'acquired').length;
+  if (sold) await beat(`<em>${sold}</em> now belong to someone else. Nobody asked you.`, 2400);
   S.stage = 'walk';
   $('#bar').hidden = false; $('#ruler').hidden = false; $('#samplenote').hidden = !S.sample; thumb();
   say('Scroll to walk. Pick a ghost to see what it knows.', 4200);

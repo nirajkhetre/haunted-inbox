@@ -60,7 +60,8 @@ def read_mbox(path, on_progress=None, me=None):
 
 def read_imap(host, user, password, on_progress=None):
     """Your mail server, read-only, asking for envelopes alone. The password is only ever held in memory."""
-    box = imaplib.IMAP4_SSL(host)
+    imaplib._MAXLINE = 50_000_000  # the list of every message in a big mailbox comes back as one very long line
+    box = imaplib.IMAP4_SSL(host, timeout=120)
     box.login(user, password)
     try:
         folder = 'INBOX'

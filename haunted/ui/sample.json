@@ -57,7 +57,12 @@
     "notes": "Send an email to the support@neopets.com stating you wish to delete your account.",
     "email": "support@neopets.com"
    },
-   "score": 7
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "tumblr.com",
@@ -99,7 +104,18 @@
     "notes": null,
     "email": null
    },
-   "score": 7
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Automattic",
+     "quote": "Automattic, the makers of WordPress.com, purchased Tumblr from Verizon for ~$3 million, compared to the staggering $1.1 billion Yahoo!",
+     "url": "https://poststatus.com/automattic-has-purchased-tumblr/",
+     "source": "poststatus.com"
+    }
+   }
   },
   {
    "key": "last.fm",
@@ -127,7 +143,18 @@
     "notes": "Scroll to the bottom of the page and click delete user account. On the following page, enter your password. Your account will then be deleted after 14 days.",
     "email": null
    },
-   "score": 2
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "CBS Corporation",
+     "quote": "CBS Corporation has acquired Last.fm for $280 million dollars in cash.",
+     "url": "https://www.billhartzer.com/social-media/cbs-corporation-acquires-lastfm/",
+     "source": "Bill Hartzer"
+    }
+   }
   },
   {
    "key": "linkedin.com",
@@ -179,7 +206,18 @@
     "notes": "There are reports that LinkedIn continues to email people with a closed account. You may need to contact customer services to delete account instead of just closing it.",
     "email": null
    },
-   "score": 3.27
+   "score": 3.27,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Microsoft",
+     "quote": "Microsoft bought LinkedIn for $26.2 billion in 2016, paying $196 per share in an all-cash deal.",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESeQHrOzAVsCJsgl4n4oDD3rV2MZsdkI1YNYJqwa31nlKN1Zzk-Xr7LJ5M8Q8HEU_T7JsC8g3J8R5M4USqFqvO9Ncs4vMyIhPLja7Q_7XiIj0R-1c51EDP_9g9BLztKyRzUwLyhJ6E7hsXwiXOuzShzqq3ZkfrgMWDBqI&ved=2ahUKEwj-p-XQ5uSXAxXs1fACHS5uB94QFnoECDkQAQ&uoh=1",
+     "source": "Facebook"
+    }
+   }
   },
   {
    "key": "adobe.com",
@@ -228,7 +266,12 @@
     "notes": null,
     "email": null
    },
-   "score": 7.13
+   "score": 7.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "quizlet.com",
@@ -256,7 +299,12 @@
     "notes": null,
     "email": null
    },
-   "score": 2
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "wattpad.com",
@@ -316,7 +364,18 @@
     "notes": "Closed accounts are deleted after six months.",
     "email": null
    },
-   "score": 7
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Naver Corp",
+     "quote": "Wattpad has been sold to Naver Corp.",
+     "url": "https://www.facebook.com/iPhoneinCanadaFans/posts/toronto-based-startup-wattpad-has-been-acquired-by-the-south-korean-online-platf/4363623563653950/",
+     "source": "Facebook · iPhoneinCanada.ca"
+    }
+   }
   },
   {
    "key": "dropbox.com",
@@ -344,7 +403,12 @@
     "notes": null,
     "email": null
    },
-   "score": 0.13
+   "score": 0.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "evernote.com",
@@ -375,7 +439,18 @@
     "notes": "Sign in to account settings, click 'Account Status', click 'Close your Evernote Account', read carefully and accept.",
     "email": null
    },
-   "score": 4
+   "score": 4,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Bending Spoons",
+     "quote": "Bending Spoons acquires Evernote, marking the end of an era https://techcrunch.com.",
+     "url": "https://www.linkedin.com/posts/aonetti_bending-spoons-acquires-evernote-marking-activity-6998895127347777537-g8z3",
+     "source": "LinkedIn · Alberto Onetti"
+    }
+   }
   },
   {
    "key": "imgur.com",
@@ -403,7 +478,12 @@
     "notes": null,
     "email": null
    },
-   "score": 2
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "myfitnesspal.com",
@@ -449,7 +529,18 @@
     "notes": "Just login and head to the account settings to click on delete account.",
     "email": null
    },
-   "score": 7
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "",
+     "quote": "said it acquired the nutrition-tracking platform MyFitnessPal for $475 million, expanding the athletic-gear maker's ...",
+     "url": "https://www.wsj.com/articles/under-armour-to-acquire-myfitnesspal-for-475-million-1423086478",
+     "source": "WSJ"
+    }
+   }
   },
   {
    "key": "duolingo.com",
@@ -495,7 +586,12 @@
     "notes": "Scroll down and click \"ERASE PERSONAL DATA\". You will receive an e-mail in which you have to click the link after \"Delete my data link:\". This confirms the erasure of your personal data and account. On Android, just tap your profile then delete account and confirm after 4 seconds",
     "email": null
    },
-   "score": 3.0
+   "score": 3.0,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "kickstarter.com",
@@ -526,7 +622,12 @@
     "notes": null,
     "email": null
    },
-   "score": 2.9
+   "score": 2.9,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "chegg.com",
@@ -579,7 +680,12 @@
     "notes": "To close your account, contact support with the email listed, call/message (408)-351-0942, or request assistance via their twitter [@CheggHelp](https://twitter.com/chegghelp). For data deletion, click [here](https://privacyportal-cdn.onetrust.com/dsarwebform/a21a74f4-2f93-44a2-a887-302a9213c997/06b040b7-49eb-464a-b19a-ea35c85c79fc.html).",
     "email": "closemyaccount@chegg.com"
    },
-   "score": 9
+   "score": 9,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "zynga.com",
@@ -625,7 +731,18 @@
     "notes": "Select the game you want to delete your account from (if you want to delete the entire account choose zyngagames.com). Log in. Click on the FAQ tab on the top navigation bar. Then click “Go here to request account deletion”. Click the box indicating your understanding and then click Continue. To confirm deletion, click the box, select a reason, and then click Delete My Account. Your account deletion request is now pending. Expect the deletion request to be completed within 30 days of the request.",
     "email": null
    },
-   "score": 7
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Take-Two",
+     "quote": "'Grand Theft Auto' Owner Take-Two Acquires Zynga for $12.7 Billion in Video Game Mega-Merger.",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESiAEB6zswFdOBhap2Y6O9AI7-rZLk0QQqpn5ecXA_CEfzH4ii8w50jBZkpMOSu8GiQqioVhU5hDzyYWyoACRmBKGZtT03S0u_Aui3M4iysW1fbsYONKGHXhLc4uBI1DWdrHyds7nt1PicQO6M8rCOmUEaNgavHiuBTgz5Yf7vulrslto8Yj-5wuOH&ved=2ahUKEwjMroz75-SXAxXlDEQIHd5uOSYQFnoECEUQAQ&uoh=1",
+     "source": "Media Play News"
+    }
+   }
   },
   {
    "key": "patreon.com",
@@ -678,7 +795,12 @@
     "notes": "Log in, and open the link. Click 'Erase', and proceed to press buttons. Deletion is delayed by 14 days. Data about the deletion is shared with Transcend Inc.",
     "email": null
    },
-   "score": 8.13
+   "score": 8.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "dubsmash.com",
@@ -725,7 +847,18 @@
     "Usernames"
    ],
    "leave": null,
-   "score": 7
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Reddit",
+     "quote": "Reddit has acquired short-form video app Dubsmash in an undisclosed cash-and-stock deal to accelerate its video strategy.",
+     "url": "https://www.privsource.com/acquisitions/deal/reddit-acquires-dubsmash-ane_mwSgL8",
+     "source": "PrivSource"
+    }
+   }
   },
   {
    "key": "pinterest.com",
@@ -753,7 +886,12 @@
     "notes": "On the Account Settings, click 'Delete Account', state reason and click 'Next', then 'Send email'. You need to check the e-mail and confirm the deletion.",
     "email": null
    },
-   "score": 0.93
+   "score": 0.93,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "uber.com",
@@ -784,7 +922,12 @@
     "notes": "You can select a reason and supposedly wait 30 days for the account to be deleted, but it never happens.",
     "email": null
    },
-   "score": 2.23
+   "score": 2.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "spotify.com",
@@ -815,7 +958,12 @@
     "notes": "1. Cancel your subscription at https://www.spotify.com/us/account/subscription/ 2. Public playlists will be anonymised, delete any playlists you want. 3. Go to the provided link, Account ⮕ I want to close my account and follow the instructions. The account can still be restored within 7 days of the request.",
     "email": null
    },
-   "score": 2.23
+   "score": 2.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "netflix.com",
@@ -846,7 +994,12 @@
     "notes": "To delete your account, cancel your active membership, click on the provided link, and scroll down to the 'Delete Account' button. Enter the confirmation code, and your account will be deleted automatically on the day your subscription ends. Accounts without a membership will be deleted automatically after 10 months.",
     "email": null
    },
-   "score": 2.2
+   "score": 2.2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "snapchat.com",
@@ -874,7 +1027,12 @@
     "notes": "Enter username and password and click 'Delete'.",
     "email": null
    },
-   "score": 2
+   "score": 2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "edmodo.com",
@@ -913,7 +1071,18 @@
     "Usernames"
    ],
    "leave": null,
-   "score": 7
+   "score": 7,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "NetDragon",
+     "quote": "In April 2018, Edmodo was acquired by NetDragon for $137.5 million, with the goal of creating a larger global learning community.",
+     "url": "https://www.linkedin.com/pulse/key-players-education-technology-edtech-smart-edmodo-ruci-m-a-m-ed-6qgse",
+     "source": "LinkedIn · Armand Ruci"
+    }
+   }
   },
   {
    "key": "udemy.com",
@@ -968,7 +1137,18 @@
     "notes": "Click 'Close account' and confirm with the 6-digit code sent by email.",
     "email": null
    },
-   "score": 6.33
+   "score": 6.33,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "",
+     "quote": "(NYSE:COUR) announced Monday it has completed its acquisition of Udemy Inc., creating a combined online learning ...",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESnwEB6zswFStF4mMvrjZ0U-jiit-fZhheQlsw5u75RN4zpZLAIjwGUJXKCBFgTU6mIOjz9hJaLbVkAmRsmAT5aovK1T3kiyDmynAdMBYf4cTLh-_Yp_iwDLy2Y8elw2lJWEVVaHv4xzxfgO9iTPbfk5bawi756NRmVuwqvWu0uzhMP4Ml3fCbS9rXiMevrqvP5bhtV5bPotSeIoekWYeZyT4&ved=2ahUKEwj5j9WC5-SXAxV_GFkFHdbAHFwQFnoECEsQAQ&uoh=1",
+     "source": "Investing.com UK"
+    }
+   }
   },
   {
    "key": "canva.com",
@@ -1016,7 +1196,12 @@
     "notes": "At the bottom of the page click on the button that says 'Delete account.' There will be a 14 day waiting period, after this period, all your account data will be deleted.",
     "email": null
    },
-   "score": 5.13
+   "score": 5.13,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "coursera.org",
@@ -1047,7 +1232,12 @@
     "notes": "Delete account button is at the bottom of the account settings page.",
     "email": null
    },
-   "score": 2.03
+   "score": 2.03,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "ebay.com",
@@ -1078,7 +1268,12 @@
     "notes": "Hover over name on top left, click 'Account settings', click 'Close account' under the Account preferences column, then scroll down and click 'Close account and delete my data'. Select why you are leaving from drop down and continue. Click on checkmark and then click the left button to close your account. If you want an extra safety measure, replace all of your personal info with fake info before closing the account.",
     "email": null
    },
-   "score": 2.0
+   "score": 2.0,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "steampowered.com",
@@ -1109,7 +1304,12 @@
     "notes": "First you must verify ownership of the account, then Steam Support will respond to confirm your identification. After it is confirmed your account will be locked and then deleted in 30 days. You can cancel the deletion by contacting Steam Support during the 30 days. You can't reuse your account name.",
     "email": null
    },
-   "score": 2.3
+   "score": 2.3,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "discord.com",
@@ -1137,7 +1337,12 @@
     "notes": "While account deletion will go through, it will NOT delete your messages, which you must do manually, or by following this tutorial to ask for deletion of your messages, which requires that you first request your data package: [discorch.org](https://discorch.org). Your account must stay active while awaiting Discord's response. NOTE: Discord will only delete any of your messages in servers and group DMs that you are not a member of; 1-1 DMs must be manually deleted, or automated through same the link above. If you are an owner of any servers, you must either [delete it](https://support.discord.com/hc/articles/213595197), or [transfer ownership](https://support.discord.com/hc/articles/216273938) before you are able to delete your account.",
     "email": null
    },
-   "score": 0.23
+   "score": 0.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "grammarly.com",
@@ -1168,7 +1373,12 @@
     "notes": null,
     "email": null
    },
-   "score": 3.23
+   "score": 3.23,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "twitch.tv",
@@ -1199,7 +1409,18 @@
     "notes": null,
     "email": null
    },
-   "score": 2.5
+   "score": 2.5,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Amazon.com",
+     "quote": "Recently, Amazon.com (NASDAQ: AMZN), the web retailer and cloud computing company, bought Twitch.tv for $970 million.",
+     "url": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESkwEB6zswFejrjdHE0Z_RymIAN6dUyuzUndUvaK8QVSg4w4nj8qvr9j-ENb2SoGMc5_oZuHWARWNeE2LTZQ6_nu-RhT58Ln3PmWmadySn4Zbqqva0tsj0HyELHUxu2kg1hqWeHZJtV7cJC1pRPLkk2VftEFoMcqTOR7wcPYPefowE3Aulu77vy_7nYQgNVUCf3Tyzf9o&ved=2ahUKEwiI-ZaT5-SXAxWRMWIAHQjYOp8QFnoECDsQAQ&uoh=1",
+     "source": "Consultingcase101"
+    }
+   }
   },
   {
    "key": "epicgames.com",
@@ -1230,7 +1451,12 @@
     "notes": "Log in to your account. On the \"General Info\" page, scroll to the \"Delete Account\" section, request deletion and follow the steps.",
     "email": null
    },
-   "score": 2.8
+   "score": 2.8,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "trello.com",
@@ -1274,7 +1500,18 @@
     "notes": "Select 'Delete your account?' option to delete your account",
     "email": null
    },
-   "score": 3.8
+   "score": 3.8,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": {
+     "fate": "acquired",
+     "by": "Atlassian",
+     "quote": "Back in January, Atlassian announced its acquisition of Trello for $425 million, the latest and largest in a series of significant acquisitions ...",
+     "url": "https://www.automation-consultants.com/atlassian-trello-combination-a-summary/",
+     "source": "Automation Consultants"
+    }
+   }
   },
   {
    "key": "zoom.us",
@@ -1302,7 +1539,12 @@
     "notes": "Login to your account, go to 'Account Profile', click 'Terminate my account'. Enter password in dialog box and confirm.",
     "email": null
    },
-   "score": 0.07
+   "score": 0.07,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "notion.so",
@@ -1330,7 +1572,12 @@
     "notes": "Go to \"Settings & members\", then \"My account\", and click \"Delete my account\", type your email address and confirm.",
     "email": null
    },
-   "score": 0.1
+   "score": 0.1,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "dominos.com",
@@ -1356,7 +1603,12 @@
    "breaches": [],
    "leaked": [],
    "leave": null,
-   "score": 3.3
+   "score": 3.3,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "shein.com",
@@ -1387,7 +1639,12 @@
     "notes": "Click on the link, then click on \"Contact Agent\", select \"Unsubscribe and delete\". Finally fill in the various fields and then press \"Submit\". ⚠️ It is imperative to give a reason for deleting an account for it to work.",
     "email": null
    },
-   "score": 3.47
+   "score": 3.47,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "figma.com",
@@ -1415,7 +1672,12 @@
     "notes": "Log in, click on your profile picture in the top right of the header, click on 'Settings', scroll down to the account section, click on 'Delete account', re-enter your account password, type 'delete my account' into the dialog box, and click on 'Delete account'.",
     "email": null
    },
-   "score": 0.03
+   "score": 0.03,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "gonitro.com",
@@ -1438,7 +1700,15 @@
    "breaches": [],
    "leaked": [],
    "leave": null,
-   "score": 1.83
+   "score": 1.83,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": {
+     "url": "https://community.gonitro.com/topic/19128-how-to-delete-my-nitro-account/",
+     "title": "How to delete my Nitro account?"
+    },
+    "fate": null
+   }
   },
   {
    "key": "robinhood.com",
@@ -1478,7 +1748,12 @@
     "notes": "Support will not disable / delete your login. Individual brokerage or crypto accounts can be deleted, as well as marketing information through self-service option.",
     "email": null
    },
-   "score": 4.17
+   "score": 4.17,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "coinbase.com",
@@ -1506,7 +1781,12 @@
     "notes": "Sign in then visit [their website](https://www.coinbase.com/settings/privacy-rights) and request the deletion of all of your data. You will then be directed to [their account activity page](https://www.coinbase.com/settings/account_activity) where you must close your account after withdrawing all funds.",
     "email": null
    },
-   "score": 0.77
+   "score": 0.77,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "replit.com",
@@ -1534,7 +1814,12 @@
     "notes": "On the linked page click \"Request account deletion\", then \"Yes, Delete my Account\"",
     "email": null
    },
-   "score": 0.87
+   "score": 0.87,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "vercel.com",
@@ -1562,7 +1847,12 @@
     "notes": "In the dashboard, click your profile picture on the top right, click \"Settings\", scroll down and then click \"Delete Personal Account\".",
     "email": null
    },
-   "score": 0.2
+   "score": 0.2,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   },
   {
    "key": "perplexity.ai",
@@ -1590,7 +1880,12 @@
     "notes": "In the \"System\" field, select \"Delete Account\" and confirm the action. All data will be permanently deleted 30 days after the account is deleted.",
     "email": null
    },
-   "score": 0.63
+   "score": 0.63,
+   "lookup": {
+    "asked": "2026-10-31",
+    "delete": null,
+    "fate": null
+   }
   }
  ]
 }

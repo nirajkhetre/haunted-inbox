@@ -93,6 +93,27 @@ class Reader(unittest.TestCase):
         self.assertEqual(trick(card(['Issue 40']))['kind'], 'other')
 
 
+class Lookups(unittest.TestCase):
+    def test_a_quote_is_always_a_real_sentence_that_names_the_service(self):
+        from haunted.lookups import sentences, was_sold
+        rows = [{'link': 'https://news.example/a', 'snippet': 'Nothing here about it. Automattic acquired Tumblr from Verizon in 2019. Other news.'},
+                {'link': 'https://www.google.com/goto?x=1', 'snippet': 'Yahoo acquired Tumblr for a billion dollars.'},
+                {'link': '/goto?url=abc', 'snippet': 'Verizon sold Tumblr to a smaller company.'},
+                {'link': 'https://news.example/b', 'snippet': 'Someone acquired something else entirely.'}]
+        self.assertEqual([f['quote'] for f in sentences(rows, 'Tumblr', was_sold)], ['Automattic acquired Tumblr from Verizon in 2019.'])
+
+    def test_who_bought_whom_runs_the_right_way_round(self):
+        from haunted.lookups import was_closed, was_sold
+        for yes, name in [('Microsoft bought LinkedIn for $26.2 billion in 2016.', 'LinkedIn'), ('Wattpad has been sold to Naver Corp.', 'Wattpad'), ('In April 2018, Edmodo was acquired by NetDragon.', 'Edmodo'),
+                          ('Reddit has acquired short-form video app Dubsmash in a deal.', 'Dubsmash'), ('Back in January, Atlassian announced its acquisition of Trello for $425 million.', 'Trello')]:
+            self.assertTrue(was_sold(yes, name), yes)
+        for no, name in [('Dropbox acquired Reclaim.ai for $40.2M.', 'Dropbox'), ('Grammarly has announced its acquisition of startup Superhuman.', 'Grammarly'), ('Robinhood has acquired trading platform Cove Markets.', 'Robinhood'),
+                         ('Zoom Communications (Zoom Rooms) was acquired by Appspace.', 'Zoom')]:
+            self.assertFalse(was_sold(no, name), no)
+        self.assertTrue(was_closed('Dubsmash has officially shut down.', 'Dubsmash'))
+        self.assertFalse(was_closed('Zynga has shut down, pulled from the app store its worst game.', 'Zynga'))
+
+
 class Sample(unittest.TestCase):
     def test_every_made_up_account_lands_in_the_mailbox(self):
         with tempfile.TemporaryDirectory() as d:

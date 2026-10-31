@@ -52,7 +52,7 @@ The model reads, plain code decides.
 
 ## Does it work?
 
-A hand-written test of 102 senders, frozen in git ([`ml/frozen.py`](ml/frozen.py)) and kept out of the training data. It's deliberately hard: 14 accounts whose mail has no keyword at all, 22 accounts in other languages, 10 newsletters that use words like "password" and "order", and 6 scams.
+A hand-written test of 102 senders, frozen in git ([`ml/frozen.py`](ml/frozen.py)). It's deliberately hard: 14 accounts whose mail has no keyword at all, 22 accounts in other languages, 10 newsletters that use words like "password" and "order", and 6 scams.
 
 | Reader | Accounts found | False alarms | Accounts with no keyword | Other languages |
 |---|---:|---:|---:|---:|
@@ -63,6 +63,8 @@ A hand-written test of 102 senders, frozen in git ([`ml/frozen.py`](ml/frozen.py
 The third row is flattered: I changed the prompt after seeing what the second row got wrong, on this same test. The first two rows scored the model's answer alone; the third scores the whole path to a ghost.
 
 On the made-up sample mailbox (3,951 emails), it finds 44 of the 46 real accounts with no false alarms.
+
+**"What became of this company?"** uses [SerpApi](https://serpapi.com) for live search. Code finds a sentence in the results that names the company and says it was sold or closed, the right way round, and the local model only confirms it. On the sample's 44 ghosts this cost 124 searches and found 13 sales. I checked them by hand: 12 look right, including Microsoft buying LinkedIn and Bending Spoons buying Evernote, and 1 was the wrong Notion, a different company with the same name. It also missed sales it should have found, like Neopets. So the card says "found by web search, so check it", and that wrong one is left out of the demo.
 
 Run it yourself:
 
@@ -77,6 +79,7 @@ python -m unittest tests.test_core
 - It can't delete anything for you. It takes you to the door.
 - "Hacked after you joined" doesn't prove your data was in the leak. It says the place you were in was hit.
 - The joined date is the first email in *this* mailbox, so it can be later than the real one.
+- A company's name can belong to someone else: web search can confuse two companies called the same thing.
 - Scams are the weakest spot: it still let 3 of the 6 in the test through. Your mail provider's spam filter does most of that work, and the spam folder is skipped.
 
 ## Credits
