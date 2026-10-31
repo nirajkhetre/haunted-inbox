@@ -122,7 +122,7 @@ body.leaving #gate>*{transition:transform .55s var(--in),opacity .45s var(--in);
 
 /* ---- story beats ---- */
 #beat{position:fixed;inset:0;z-index:6;display:grid;place-items:center;padding:0 24px 16vh;pointer-events:none}
-#beattext{max-width:900px;text-align:center;font:400 clamp(32px,5.4vw,74px)/1.06 "Bagel";text-shadow:0 4px 0 var(--ink)}
+#beattext{max-width:900px;text-align:center;font:400 clamp(32px,5.4vw,74px)/1.06 "Bagel";text-shadow:0 4px 0 var(--ink);-webkit-text-stroke:6px var(--ink);paint-order:stroke fill}
 #beattext .w{display:inline-block;animation:chin .55s var(--spring) both;animation-delay:calc(var(--i) * 45ms)}
 #beattext em{font-style:normal;color:var(--gold)}#beattext .pk{color:var(--pink)}
 #beat.out #beattext{transition:transform .3s var(--in),opacity .3s var(--in);transform:translateY(-22px);opacity:0}

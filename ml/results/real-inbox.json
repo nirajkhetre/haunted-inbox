@@ -1,0 +1,41 @@
+{
+ "note": "Totals from one person's inbox, marked by hand on haunted/ui/check.html. No names, domains or subjects.",
+ "emails": 7556,
+ "senders": 311,
+ "seconds": 129.3,
+ "ghosts": 199,
+ "hacked_after_joining": 4,
+ "may_have_card": 33,
+ "silent_over_1_year": 57,
+ "silent_over_3_years": 9,
+ "longest_silent_years": 7.8,
+ "median_silent_years": 0.4,
+ "marked": {
+  "account": 159,
+  "not_account": 7,
+  "skipped": 34
+ },
+ "keyword_search": {
+  "found": 65,
+  "false_alarms": 3
+ },
+ "gemma": {
+  "found": 101,
+  "false_alarms": 3
+ },
+ "disagreements": {
+  "gemma_right": 45,
+  "keyword_right": 9,
+  "mcnemar_exact_p": 7.3e-7
+ },
+ "gemma_misses": {
+  "total": 58,
+  "called_a_newsletter": 53,
+  "called_a_person": 1,
+  "called_other": 4
+ },
+ "if_either_says_yes": {
+  "found": 109,
+  "false_alarms": 4
+ }
+}

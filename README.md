@@ -8,6 +8,10 @@ Each stone tells you what that account still knows, whether it was hacked after 
 
 Walk through a sample, no install: **https://haunted.celebrable.tech**
 
+![The graveyard at night: a hooded keeper with a lantern walks past ghosts rising over gravestones](docs/post/walk.gif)
+
+![Holding the button: candles light, the ghost spirals away, the stone sinks and flowers grow](docs/post/banish.gif)
+
 ## Run it on your own mail
 
 You need [Python 3.12](https://www.python.org/downloads/) and [Ollama](https://ollama.com/download). Nothing else to install.
@@ -64,7 +68,16 @@ The third row is flattered: I changed the prompt after seeing what the second ro
 
 On the made-up sample mailbox (3,951 emails), it finds 44 of the 46 real accounts with no false alarms.
 
-**"What became of this company?"** uses [SerpApi](https://serpapi.com) for live search. Code finds a sentence in the results that names the company and says it was sold or closed, the right way round, and the local model only confirms it. On the sample's 44 ghosts this cost 124 searches and found 13 sales. I checked them by hand: 12 look right, including Microsoft buying LinkedIn and Bending Spoons buying Evernote, and 1 was the wrong Notion, a different company with the same name. It also missed sales it should have found, like Neopets. So the card says "found by web search, so check it", and that wrong one is left out of the demo.
+**On a real inbox it does worse, and that's the number to trust.** I scanned my own mail (7,556 emails, 311 senders, 129 seconds), then marked 200 senders by hand on a page that hides what the model said. I skipped 34 I couldn't remember, leaving 166.
+
+| Reader | Accounts found | False alarms |
+|---|---:|---:|
+| Searching for keywords | 65 / 159 | 3 / 7 |
+| Gemma | 101 / 159 | 3 / 7 |
+
+Where they disagreed, Gemma was right 45 times and keyword search 9 (McNemar p < 0.001). But Gemma found 64% of the accounts here against 93% on the frozen test. Of its 58 misses, it called 53 a newsletter, and I had marked those as "yes, I signed up". With only 7 senders marked "no", the false alarm numbers say very little. It's one person's inbox, marked by that person. Totals are in [`ml/results/real-inbox.json`](ml/results/real-inbox.json); nothing from the mailbox itself is in this repo.
+
+**"What became of this company?"** uses [SerpApi](https://serpapi.com) for live search. Code finds a sentence in the results that names the company and says it was sold or closed, the right way round, and the local model only confirms it. On the sample's 44 ghosts it found 13 sales, for 124 searches in all, my failed first attempts included. I read all 13: 12 look right, including Microsoft buying LinkedIn and Bending Spoons buying Evernote, and 1 was the wrong Notion, a different company with the same name. It also missed sales it should have found, like Neopets. So the card says "found by web search, so check it", and that wrong one is left out of the demo.
 
 Run it yourself:
 
@@ -75,6 +88,7 @@ python -m unittest tests.test_core
 
 ## Limits
 
+- A newsletter you signed up for often gets read as "just a newsletter", not an account. That was most of its misses on my own mail.
 - It finds accounts that **emailed you**. One you signed up for with a different address, or one that never wrote, stays hidden.
 - It can't delete anything for you. It takes you to the door.
 - "Hacked after you joined" doesn't prove your data was in the leak. It says the place you were in was hit.
