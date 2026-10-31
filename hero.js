@@ -11,8 +11,17 @@ async function heroPreview() {
   $('#preview').innerHTML = `<header><b>Sample report</b><span>${G.length} accounts in ${r.envelopes.toLocaleString('en-US')} emails</span></header>
 <div class="pvtiles"><div><b>${count(MATCH.hacked)}</b>Hacked after joining</div><div><b>${count(MATCH.card)}</b>May have your card</div><div><b>${count(MATCH.quiet)}</b>Silent 3+ years</div></div>
 ${top.map((x, k) => `<div class="pvrow"><span class="no">${String(k + 1).padStart(2, '0')}</span><span><b>${esc(x.service)}</b><small>${esc(what(x))}</small></span><span class="flags">${stamps(x).split('</i>').slice(0, 2).join('</i>')}</i></span></div>`).join('')}`;
+  fitMailbox();
   if (!calm()) $$('#preview>*').forEach((el, k) => el.animate([{ transform: 'translateY(14px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 420, delay: 220 + k * 60, easing: 'cubic-bezier(.2,1,.3,1)', fill: 'backwards' }));
 }
+
+// the mailbox stands in whatever room the report page leaves, so the two never overlap on any screen
+function fitMailbox() {
+  const box = $('#mailbox'); if (Hero.gone || getComputedStyle(box).display === 'none') return;
+  const free = $('#heroWrap').getBoundingClientRect().bottom - $('#preview').getBoundingClientRect().bottom - 10;
+  box.style.height = clamp(free, 170, 500) + 'px';
+}
+addEventListener('resize', fitMailbox);
 
 function heroEyes(now) {
   const box = $('#mailbox'); if (box.clientHeight === 0) return;
