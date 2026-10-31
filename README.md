@@ -2,6 +2,12 @@
 
 **You forgot them. They didn't forget you.**
 
+### Watch the 90-second film, sound on
+
+https://github.com/user-attachments/assets/edec918d-d892-4906-b201-afbe3ec1aaac
+
+Also on [YouTube](https://youtu.be/gjNyufcCXqI). The inbox in the opening is an animation of made-up mail, and the graveyard is the public sample. The report near the end is a real one, with the names blurred.
+
 Every account your past self made is still out there, holding your name, your email, sometimes your card. Haunted Inbox finds them from your own mail, on your own computer, and lays them out as a graveyard you can walk through: one stone for every account, on the day you signed up, with a ghost above it.
 
 You get a plain report first: what it found, the riskiest account, and a link to where you can delete each one. The graveyard is the same accounts, one click away: each stone tells you what that account still knows, whether it was hacked after you joined, and what its **last words** to you were. Lay one to rest and the sky gets a little lighter. Clear the graveyard and it's morning.
