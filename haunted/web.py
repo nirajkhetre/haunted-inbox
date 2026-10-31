@@ -1,6 +1,7 @@
 """The graveyard on this computer: 127.0.0.1 only, JSON only, and it refuses other sites. Your mail and your password never leave this process."""
 import json
 import mimetypes
+import random
 import threading
 import traceback
 import webbrowser
@@ -32,6 +33,15 @@ def report():
         for g in r['ghosts']:
             g['state'] = states.get(g['key'], 'ghost')
     return r
+
+
+def check_list(size=200):
+    """Senders to mark by hand, in an order that doesn't give away what the model said."""
+    cards = [c for c in _load('last-cards.json', []) if not c['personal']]
+    random.Random(2026).shuffle(cards)
+    labels = _load('labels.json', {})
+    picked = cards[:size]
+    return {'done': sum(c['key'] in labels for c in picked), 'cards': [{'key': c['key'], 'name': c['name'], 'domain': c['domain'], 'count': c['count'], 'subjects': [s['text'] for s in c['subjects']]} for c in picked if c['key'] not in labels]}
 
 
 def _run(source):
@@ -77,6 +87,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({'report': report(), 'model': MODEL if available() else None, 'web': lookups.available()})
         if path == '/api/progress':
             return self._json(progress)
+        if path == '/api/check':
+            return self._json(check_list())
         file = (UI / ('index.html' if path == '/' else path.lstrip('/'))).resolve()
         if not file.is_file() or UI.resolve() not in file.parents:
             return self._json({'error': 'not found'}, 404)
@@ -119,6 +131,11 @@ class Handler(BaseHTTPRequestHandler):
             HOME.mkdir(parents=True, exist_ok=True)
             (HOME / 'states.json').write_text(json.dumps(states), 'utf-8')
             return self._json({'ok': True})
+        if self.path == '/api/check':
+            labels = _load('labels.json', {})
+            labels[body['key']] = body['truth']
+            (HOME / 'labels.json').write_text(json.dumps(labels), 'utf-8')
+            return self._json({'ok': True, 'done': len(labels)})
         if self.path == '/api/lookup':
             r = report()
             ghost = next((g for g in (r or {}).get('ghosts', []) if g['key'] == body.get('key')), None)

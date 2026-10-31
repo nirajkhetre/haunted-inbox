@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check by hand</title>
+<link rel="stylesheet" href="style.css">
+<style>
+html,body{overflow:auto;background:#FFF3DE;color:var(--ink)}
+main{max-width:640px;margin:0 auto;padding:28px 16px}
+h1{font-size:34px;text-shadow:none;margin:0 0 4px}
+#left{font:400 14px "Fragment",monospace;color:#6B5A92;margin-bottom:18px}
+#who{padding:18px 20px;border:4px solid var(--ink);border-radius:20px;background:#fff;box-shadow:6px 6px 0 var(--ink)}
+#who b{font:400 26px/1.1 "Bagel";display:block;overflow-wrap:anywhere}
+#who small{font:400 13px "Fragment",monospace;color:#6B5A92}
+#who li{margin:4px 0 0 18px;font-size:15.5px}
+.keys{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.keys .btn{min-height:64px}
+.yes{background:var(--gold)!important;font:400 19px "Bagel"!important}
+</style>
+</head>
+<body>
+<main>
+  <h1>Do you have an account here?</h1>
+  <p id="left"></p>
+  <div id="who"></div>
+  <div class="keys">
+    <button class="btn yes" id="yes">Yes, I signed up (A)</button>
+    <button class="btn" id="no">No (N)</button>
+    <button class="btn" id="unsure" style="grid-column:1/-1;min-height:44px">Can't remember, skip it (S)</button>
+  </div>
+</main>
+<script>
+const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let cards = [], done = 0;
+function show() {
+  const c = cards[0];
+  $('#left').textContent = `${done} marked, ${cards.length} to go. Stays on this computer.`;
+  if (!c) { $('#who').innerHTML = '<b>All done.</b> Run: python ml/evaluate_real.py trick gemma4:e2b'; return; }
+  $('#who').innerHTML = `<b>${esc(c.name)}</b><small>${esc(c.domain)}, ${c.count} emails</small><ul>${c.subjects.map(s => `<li>${esc(s)}</li>`).join('')}</ul>`;
+}
+async function mark(truth) {
+  const c = cards.shift(); if (!c) return; done++; show();
+  await fetch('/api/check', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: c.key, truth }) });
+}
+$('#yes').onclick = () => mark('account'); $('#no').onclick = () => mark('not'); $('#unsure').onclick = () => mark('unsure');
+addEventListener('keydown', e => { const k = e.key.toLowerCase(); if (k === 'a') mark('account'); if (k === 'n') mark('not'); if (k === 's') mark('unsure'); });
+fetch('/api/check').then(r => r.json()).then(j => { cards = j.cards; done = j.done; show(); });
+</script>
+</body>
+</html>

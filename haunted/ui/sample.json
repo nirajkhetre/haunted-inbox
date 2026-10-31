@@ -1,6 +1,6 @@
 {
  "made": "2026-10-31",
- "seconds": 0.4,
+ "seconds": 17.3,
  "envelopes": 3951,
  "senders": 65,
  "model": "gemma4:e2b",
@@ -13,6 +13,10 @@
    "last_heard": "2014-12-08",
    "emails": 15,
    "silent_years": 11.9,
+   "last_words": {
+    "date": "2014-12-08",
+    "text": "We miss you, Sam"
+   },
    "proof": {
     "date": "2012-02-12",
     "text": "Confirm your email address"
@@ -63,6 +67,10 @@
    "last_heard": "2020-03-11",
    "emails": 126,
    "silent_years": 6.6,
+   "last_words": {
+    "date": "2020-03-11",
+    "text": "Your weekly summary"
+   },
    "proof": {
     "date": "2012-06-12",
     "text": "Verify your Tumblr account"
@@ -94,30 +102,6 @@
    "score": 7
   },
   {
-   "key": "myspace.com",
-   "service": "MySpace",
-   "domain": "myspace.com",
-   "joined": "2012-11-26",
-   "last_heard": "2014-10-27",
-   "emails": 5,
-   "silent_years": 12.0,
-   "proof": {
-    "date": "2012-11-26",
-    "text": "Activate your MySpace account"
-   },
-   "confident": true,
-   "money": null,
-   "breaches": [],
-   "leaked": [],
-   "leave": {
-    "url": "https://myspace.com/settings/profile",
-    "difficulty": "easy",
-    "notes": null,
-    "email": null
-   },
-   "score": 2
-  },
-  {
    "key": "last.fm",
    "service": "Last.fm",
    "domain": "last.fm",
@@ -125,6 +109,10 @@
    "last_heard": "2016-10-04",
    "emails": 29,
    "silent_years": 10.1,
+   "last_words": {
+    "date": "2016-10-04",
+    "text": "Updates to our Terms of Service"
+   },
    "proof": {
     "date": "2012-12-27",
     "text": "Thanks for joining Last.fm"
@@ -149,6 +137,10 @@
    "last_heard": "2026-01-19",
    "emails": 410,
    "silent_years": 0.8,
+   "last_words": {
+    "date": "2026-01-19",
+    "text": "Your weekly summary"
+   },
    "proof": {
     "date": "2013-02-13",
     "text": "Thanks for joining LinkedIn"
@@ -197,6 +189,10 @@
    "last_heard": "2026-05-31",
    "emails": 77,
    "silent_years": 0.4,
+   "last_words": {
+    "date": "2026-05-31",
+    "text": "Updates to our Terms of Service"
+   },
    "proof": {
     "date": "2013-08-19",
     "text": "Confirm your email address"
@@ -242,6 +238,10 @@
    "last_heard": "2019-07-02",
    "emails": 18,
    "silent_years": 7.3,
+   "last_words": {
+    "date": "2019-07-02",
+    "text": "Your 2019 year in review"
+   },
    "proof": {
     "date": "2013-09-03",
     "text": "Confirm your email address"
@@ -266,6 +266,10 @@
    "last_heard": "2017-08-30",
    "emails": 41,
    "silent_years": 9.2,
+   "last_words": {
+    "date": "2017-08-30",
+    "text": "Recommended for you"
+   },
    "proof": {
     "date": "2013-09-06",
     "text": "Activate your Wattpad account"
@@ -322,6 +326,10 @@
    "last_heard": "2026-06-07",
    "emails": 65,
    "silent_years": 0.4,
+   "last_words": {
+    "date": "2026-06-07",
+    "text": "People you may know"
+   },
    "proof": {
     "date": "2013-11-10",
     "text": "Your Dropbox account is ready"
@@ -346,6 +354,10 @@
    "last_heard": "2020-08-28",
    "emails": 27,
    "silent_years": 6.2,
+   "last_words": {
+    "date": "2020-08-28",
+    "text": "Updates to our Terms of Service"
+   },
    "proof": {
     "date": "2014-02-06",
     "text": "Thanks for joining Evernote"
@@ -373,6 +385,10 @@
    "last_heard": "2018-02-06",
    "emails": 6,
    "silent_years": 8.7,
+   "last_words": {
+    "date": "2018-02-06",
+    "text": "Your account security matters"
+   },
    "proof": {
     "date": "2014-04-08",
     "text": "Activate your Imgur account"
@@ -397,6 +413,10 @@
    "last_heard": "2017-07-16",
    "emails": 34,
    "silent_years": 9.3,
+   "last_words": {
+    "date": "2017-07-16",
+    "text": "People you may know"
+   },
    "proof": {
     "date": "2014-07-25",
     "text": "Thanks for joining MyFitnessPal"
@@ -439,6 +459,10 @@
    "last_heard": "2026-10-19",
    "emails": 290,
    "silent_years": 0.0,
+   "last_words": {
+    "date": "2026-10-19",
+    "text": "What you missed this week"
+   },
    "proof": {
     "date": "2014-12-28",
     "text": "Thanks for joining Duolingo"
@@ -481,6 +505,10 @@
    "last_heard": "2024-02-10",
    "emails": 43,
    "silent_years": 2.7,
+   "last_words": {
+    "date": "2024-02-10",
+    "text": "A new sign-in to your Kickstarter account"
+   },
    "proof": {
     "date": "2015-11-18",
     "text": "Your account security matters"
@@ -508,6 +536,10 @@
    "last_heard": "2019-03-27",
    "emails": 39,
    "silent_years": 7.6,
+   "last_words": {
+    "date": "2019-03-27",
+    "text": "Reset your Chegg password"
+   },
    "proof": {
     "date": "2015-05-11",
     "text": "Verify your Chegg account"
@@ -557,6 +589,10 @@
    "last_heard": "2018-04-22",
    "emails": 31,
    "silent_years": 8.5,
+   "last_words": {
+    "date": "2018-04-22",
+    "text": "Updates to our Terms of Service"
+   },
    "proof": {
     "date": "2015-05-16",
     "text": "Confirm your email address"
@@ -599,6 +635,10 @@
    "last_heard": "2023-05-27",
    "emails": 46,
    "silent_years": 3.4,
+   "last_words": {
+    "date": "2023-05-27",
+    "text": "We miss you, Sam"
+   },
    "proof": {
     "date": "2015-07-17",
     "text": "Confirm your email address"
@@ -648,6 +688,10 @@
    "last_heard": "2017-03-30",
    "emails": 6,
    "silent_years": 9.6,
+   "last_words": {
+    "date": "2017-03-30",
+    "text": "Reset your Dubsmash password"
+   },
    "proof": {
     "date": "2015-11-02",
     "text": "Welcome to Dubsmash!"
@@ -684,6 +728,34 @@
    "score": 7
   },
   {
+   "key": "pinterest.com",
+   "service": "Pinterest",
+   "domain": "pinterest.com",
+   "joined": "2016-02-23",
+   "last_heard": "2024-01-22",
+   "emails": 143,
+   "silent_years": 2.8,
+   "last_words": {
+    "date": "2024-01-22",
+    "text": "New in Pinterest: a better way to explore"
+   },
+   "proof": {
+    "date": "2016-02-23",
+    "text": "Confirm your email address"
+   },
+   "confident": true,
+   "money": null,
+   "breaches": [],
+   "leaked": [],
+   "leave": {
+    "url": "https://pinterest.com/settings/account-settings/",
+    "difficulty": "medium",
+    "notes": "On the Account Settings, click 'Delete Account', state reason and click 'Next', then 'Send email'. You need to check the e-mail and confirm the deletion.",
+    "email": null
+   },
+   "score": 0.93
+  },
+  {
    "key": "uber.com",
    "service": "Uber",
    "domain": "uber.com",
@@ -691,6 +763,10 @@
    "last_heard": "2026-02-09",
    "emails": 107,
    "silent_years": 0.7,
+   "last_words": {
+    "date": "2026-02-09",
+    "text": "People you may know"
+   },
    "proof": {
     "date": "2016-03-13",
     "text": "Your Uber account is ready"
@@ -718,6 +794,10 @@
    "last_heard": "2026-02-14",
    "emails": 132,
    "silent_years": 0.7,
+   "last_words": {
+    "date": "2026-02-14",
+    "text": "Your Spotify receipt"
+   },
    "proof": {
     "date": "2016-03-26",
     "text": "Welcome to Spotify!"
@@ -745,6 +825,10 @@
    "last_heard": "2026-03-13",
    "emails": 93,
    "silent_years": 0.6,
+   "last_words": {
+    "date": "2026-03-13",
+    "text": "Reset your Netflix password"
+   },
    "proof": {
     "date": "2016-04-16",
     "text": "Thanks for joining Netflix"
@@ -772,6 +856,10 @@
    "last_heard": "2019-02-18",
    "emails": 7,
    "silent_years": 7.7,
+   "last_words": {
+    "date": "2019-02-18",
+    "text": "Your weekly summary"
+   },
    "proof": {
     "date": "2016-07-23",
     "text": "Verify your Snapchat account"
@@ -796,6 +884,10 @@
    "last_heard": "2020-02-01",
    "emails": 32,
    "silent_years": 6.7,
+   "last_words": {
+    "date": "2020-02-01",
+    "text": "We miss you, Sam"
+   },
    "proof": {
     "date": "2017-03-20",
     "text": "Confirm your email address"
@@ -831,6 +923,10 @@
    "last_heard": "2022-11-18",
    "emails": 87,
    "silent_years": 4.0,
+   "last_words": {
+    "date": "2022-11-18",
+    "text": "Your weekly summary"
+   },
    "proof": {
     "date": "2017-04-17",
     "text": "Activate your Udemy account"
@@ -882,6 +978,10 @@
    "last_heard": "2026-06-12",
    "emails": 61,
    "silent_years": 0.4,
+   "last_words": {
+    "date": "2026-06-12",
+    "text": "Your account security matters"
+   },
    "proof": {
     "date": "2017-09-04",
     "text": "Thanks for joining Canva"
@@ -926,6 +1026,10 @@
    "last_heard": "2026-09-10",
    "emails": 85,
    "silent_years": 0.1,
+   "last_words": {
+    "date": "2026-09-10",
+    "text": "A new sign-in to your Coursera account"
+   },
    "proof": {
     "date": "2017-09-25",
     "text": "Confirm your email address"
@@ -953,6 +1057,10 @@
    "last_heard": "2026-10-26",
    "emails": 75,
    "silent_years": 0.0,
+   "last_words": {
+    "date": "2026-10-26",
+    "text": "Payment received, thank you"
+   },
    "proof": {
     "date": "2017-11-25",
     "text": "Your eBay account is ready"
@@ -980,6 +1088,10 @@
    "last_heard": "2025-11-22",
    "emails": 60,
    "silent_years": 0.9,
+   "last_words": {
+    "date": "2025-11-22",
+    "text": "Your Steam subscription renews soon"
+   },
    "proof": {
     "date": "2018-02-19",
     "text": "Thanks for joining Steam"
@@ -1007,6 +1119,10 @@
    "last_heard": "2026-02-10",
    "emails": 41,
    "silent_years": 0.7,
+   "last_words": {
+    "date": "2026-02-10",
+    "text": "What you missed this week"
+   },
    "proof": {
     "date": "2018-02-22",
     "text": "Verify your Discord account"
@@ -1031,6 +1147,10 @@
    "last_heard": "2023-02-23",
    "emails": 83,
    "silent_years": 3.7,
+   "last_words": {
+    "date": "2023-02-23",
+    "text": "Reset your Grammarly password"
+   },
    "proof": {
     "date": "2018-03-24",
     "text": "Your Grammarly account is ready"
@@ -1058,6 +1178,10 @@
    "last_heard": "2025-04-23",
    "emails": 66,
    "silent_years": 1.5,
+   "last_words": {
+    "date": "2025-04-23",
+    "text": "Invoice for your Twitch order"
+   },
    "proof": {
     "date": "2018-05-15",
     "text": "Activate your Twitch account"
@@ -1085,6 +1209,10 @@
    "last_heard": "2024-06-01",
    "emails": 65,
    "silent_years": 2.4,
+   "last_words": {
+    "date": "2024-06-01",
+    "text": "We miss you, Sam"
+   },
    "proof": {
     "date": "2018-06-12",
     "text": "Thanks for joining Epic Games"
@@ -1112,6 +1240,10 @@
    "last_heard": "2024-06-20",
    "emails": 22,
    "silent_years": 2.4,
+   "last_words": {
+    "date": "2024-06-20",
+    "text": "Your account security matters"
+   },
    "proof": {
     "date": "2019-08-20",
     "text": "Welcome to Trello!"
@@ -1152,6 +1284,10 @@
    "last_heard": "2026-08-20",
    "emails": 30,
    "silent_years": 0.2,
+   "last_words": {
+    "date": "2026-08-20",
+    "text": "Your weekly summary"
+   },
    "proof": {
     "date": "2020-08-17",
     "text": "A new sign-in to your Zoom account"
@@ -1176,6 +1312,10 @@
    "last_heard": "2026-07-13",
    "emails": 24,
    "silent_years": 0.3,
+   "last_words": {
+    "date": "2026-07-13",
+    "text": "Updates to our Terms of Service"
+   },
    "proof": {
     "date": "2019-12-26",
     "text": "Verify your Notion account"
@@ -1200,6 +1340,10 @@
    "last_heard": "2022-12-01",
    "emails": 23,
    "silent_years": 3.9,
+   "last_words": {
+    "date": "2022-12-01",
+    "text": "Reset your Domino's password"
+   },
    "proof": {
     "date": "2020-01-12",
     "text": "Welcome to Domino's!"
@@ -1222,6 +1366,10 @@
    "last_heard": "2022-06-16",
    "emails": 35,
    "silent_years": 4.4,
+   "last_words": {
+    "date": "2022-06-16",
+    "text": "New in Shein: a better way to explore"
+   },
    "proof": {
     "date": "2020-06-19",
     "text": "Thanks for joining Shein"
@@ -1249,6 +1397,10 @@
    "last_heard": "2026-09-28",
    "emails": 20,
    "silent_years": 0.1,
+   "last_words": {
+    "date": "2026-09-28",
+    "text": "Your account security matters"
+   },
    "proof": {
     "date": "2020-10-16",
     "text": "Your Figma account is ready"
@@ -1273,6 +1425,10 @@
    "last_heard": "2021-04-24",
    "emails": 2,
    "silent_years": 5.5,
+   "last_words": {
+    "date": "2021-04-24",
+    "text": "Your weekly summary"
+   },
    "proof": {
     "date": "2021-04-22",
     "text": "Thanks for joining Nitro PDF"
@@ -1292,6 +1448,10 @@
    "last_heard": "2023-05-15",
    "emails": 12,
    "silent_years": 3.5,
+   "last_words": {
+    "date": "2023-05-15",
+    "text": "People you may know"
+   },
    "proof": {
     "date": "2021-07-12",
     "text": "Confirm your email address"
@@ -1328,6 +1488,10 @@
    "last_heard": "2024-07-07",
    "emails": 14,
    "silent_years": 2.3,
+   "last_words": {
+    "date": "2024-07-07",
+    "text": "Your 2024 year in review"
+   },
    "proof": {
     "date": "2021-08-05",
     "text": "Welcome to Coinbase!"
@@ -1352,6 +1516,10 @@
    "last_heard": "2024-03-28",
    "emails": 13,
    "silent_years": 2.6,
+   "last_words": {
+    "date": "2024-03-28",
+    "text": "We miss you, Sam"
+   },
    "proof": {
     "date": "2022-05-01",
     "text": "Confirm your email address"
@@ -1376,6 +1544,10 @@
    "last_heard": "2026-04-06",
    "emails": 14,
    "silent_years": 0.6,
+   "last_words": {
+    "date": "2026-04-06",
+    "text": "Your weekly summary"
+   },
    "proof": {
     "date": "2024-01-26",
     "text": "A new sign-in to your Vercel account"
@@ -1400,6 +1572,10 @@
    "last_heard": "2024-11-30",
    "emails": 4,
    "silent_years": 1.9,
+   "last_words": {
+    "date": "2024-11-30",
+    "text": "We miss you, Sam"
+   },
    "proof": {
     "date": "2024-02-19",
     "text": "Thanks for joining Perplexity"

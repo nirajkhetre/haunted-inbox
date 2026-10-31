@@ -142,6 +142,9 @@ body.leaving #gate>*{transition:transform .55s var(--in),opacity .45s var(--in);
 .gname{font:400 clamp(30px,3.2vw,40px)/1.04 "Bagel";text-align:center;margin:4px 0 2px;overflow-wrap:anywhere}
 .dates{text-align:center;font-weight:600;font-size:16px}
 .small{text-align:center;font-size:14.5px;color:#6B5A92;margin-bottom:14px}
+.words{margin:2px 0 14px;text-align:center}
+.words small{display:block;font:400 12.5px "Fragment",monospace;color:#7A6A9B}
+.words q{display:block;font:400 clamp(19px,2vw,23px)/1.15 "Bagel";color:var(--pinkd);overflow-wrap:anywhere}
 .note{margin-top:10px;padding:9px 12px 11px;border:3px solid var(--ink);border-radius:13px;background:#fff;font-size:15px;line-height:1.38}
 .note h4{font:700 12.5px/1.2 "Instrument";letter-spacing:.01em;margin-bottom:4px}
 .note q,.note .q{font:400 14px/1.4 "Fragment",monospace;quotes:"\201C" "\201D"}

@@ -58,4 +58,5 @@ def _card(g):
     return {'key': g['key'], 'domain': g['domain'], 'name': g['names'].most_common(1)[0][0], 'count': len(rows),
             'first': dated[0][0] if dated else None, 'last': dated[-1][0] if dated else None, 'list_share': round(g['lists'] / len(rows), 2),
             'personal': g['domain'] in PERSONAL, 'subjects': [{'date': d, 'text': s} for d, s in subjects],
-            'money': {'date': money[0], 'text': money[1]} if money else None}
+            'money': {'date': money[0], 'text': money[1]} if money else None,
+            'last_words': next(({'date': d, 'text': s} for d, s in reversed(dated) if s), None)}

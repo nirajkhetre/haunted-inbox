@@ -75,7 +75,7 @@ def fill(t, s, me, rnd):
 
 
 def dates(rnd, n):
-    start = rnd.randint(2009, 2024)
+    start = rnd.randint(2009, 2021)
     return sorted(f'{start + rnd.randint(0, 4)}-{rnd.randint(1, 12):02d}-{rnd.randint(1, 28):02d}' for _ in range(n))
 
 

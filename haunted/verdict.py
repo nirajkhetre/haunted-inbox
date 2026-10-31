@@ -49,7 +49,7 @@ def decide(card, read, lists, today=None):
     score = (5 if 'Passwords' in leaked else 3 if hits else 0) + (2 if card['money'] else 0) + min(2, (silent or 0) / 3)
     service = (read.get('service') or '').strip() or card['name']
     return {'key': card['key'], 'service': service[:40], 'domain': card['domain'], 'joined': joined, 'last_heard': card['last'], 'emails': card['count'],
-            'silent_years': silent, 'proof': proof, 'confident': confident, 'money': card['money'],
+            'silent_years': silent, 'last_words': card.get('last_words'), 'proof': proof, 'confident': confident, 'money': card['money'],
             'breaches': [{'name': b['name'], 'date': b['date'], 'count': b['count'], 'data': b['data'], 'url': b.get('url')} for b in hits], 'leaked': leaked,
             'leave': site and {'url': site['url'], 'difficulty': site.get('difficulty'), 'notes': site.get('notes'), 'email': site.get('email')},
             'score': round(score, 2)}

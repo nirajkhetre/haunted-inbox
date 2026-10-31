@@ -33,5 +33,6 @@ def scan(envelopes, on_event=lambda e: None, model=None, today=None):
     report = {'made': (today or date.today()).isoformat(), 'seconds': round(time.time() - t0, 1), 'envelopes': total, 'senders': len(cards), 'model': model if use_model else None, 'ghosts': ghosts}
     HOME.mkdir(parents=True, exist_ok=True)
     (HOME / 'last-scan.json').write_text(json.dumps(report, ensure_ascii=False), 'utf-8')
+    (HOME / 'last-cards.json').write_text(json.dumps(cards, ensure_ascii=False), 'utf-8')  # for checking the results by hand. Stays here, like everything else
     on_event({'stage': 'done', 'envelopes': total, 'senders': len(cards), 'ghosts': len(ghosts)})
     return report

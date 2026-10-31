@@ -271,6 +271,7 @@ function cardHTML(x) {
   const silent = x.silent_years == null ? '' : x.silent_years < 1 ? 'still writing to you' : `silent for ${x.silent_years} years`;
   return `<p class="lies">here lies your account at ${esc(x.domain)}</p><h2 class="gname">${esc(x.service)}</h2>
 <p class="dates">${fmtDay(x.joined)} to ${fmtMonth(x.last_heard)}</p><p class="small">${plural(x.emails, 'email')}${silent ? `, ${silent}` : ''}</p>
+${lastWords(x) ? `<p class="words"><small>its last words to you</small><q>${esc(lastWords(x))}</q></p>` : ''}
 <div class="note"><h4>${x.confident ? 'How we know' : 'The first thing they sent you (we are less sure about this one)'}</h4><q>${esc(x.proof.text)}</q> <small>${fmtDay(x.proof.date)}</small></div>
 ${leak}${news}${fate}
 ${x.money ? `<div class="note card2"><h4>May still have your card</h4><q>${esc(x.money.text)}</q> <small>${fmtDay(x.money.date)}</small></div>` : ''}
@@ -278,6 +279,7 @@ ${x.leave?.notes ? `<div class="note"><h4>How to leave ${diff ? `<span class="di
 ${u.delete && !x.leave ? `<div class="note"><h4>Found by web search${u.delete.own_site ? ', on their own site' : ', not on their own site, so be careful'}</h4>${esc(u.delete.title)}</div>` : ''}
 <div id="asked"></div>`;
 }
+const lastWords = x => (x.silent_years || 0) >= 1 ? x.last_words?.text : null;
 function actionsHTML(x) {
   const url = x.leave?.url || x.lookup?.delete?.url, canAsk = (S.web || S.sample) && !x.lookup;
   return `${url ? `<a class="btn go" href="${safe(url)}" target="_blank" rel="noopener">Go and delete it</a>` : `<button class="btn go" id="ask2">Find the way out</button>`}
@@ -431,6 +433,7 @@ async function reveal() {
   if (!G.length) { await beat('Nothing found. <em>Remarkable.</em>', 2600); return gateBack(); }
   walkTo(0); await wait(500);
   await beat(`Your oldest ghost: <em>${esc(oldest.service)}</em>, ${oldest.joined.slice(0, 4)}.`, 2200);
+  if (lastWords(oldest)) await beat(`Its last words to you: <em>${esc(lastWords(oldest))}</em>`, 2600);
   walkTo(S.worldW - S.W * .95);
   await beat(`Tonight there are <em>${G.length}</em> of them.`, 1900);
   if (bad) { walkTo(0); hopAll(x => x.breaches.length); await beat(`<span class="pk">${bad}</span> ${bad === 1 ? 'was' : 'were'} hacked after you joined.`, 2000); }
