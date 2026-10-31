@@ -1,0 +1,11 @@
+.env
+mail/
+*.private.mbox
+__pycache__/
+*.pyc
+.venv/
+ml/runs/
+ml/private/
+site/dist/
+
+.claude/

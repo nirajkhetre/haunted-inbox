@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haunted Inbox: the accounts you forgot</title>
+<meta name="description" content="Find every account your past self signed up for, on your own computer, and lay them to rest.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 66'%3E%3Cpath d='M8 32C8 13 18 4 30 4s22 9 22 28v26q-5.5 7-11 0t-11 0-11 0-11 0Z' fill='%23FFF8EC' stroke='%23160C2E' stroke-width='4'/%3E%3Crect x='19' y='23' width='6' height='13' rx='3' fill='%23160C2E'/%3E%3Crect x='35' y='23' width='6' height='13' rx='3' fill='%23160C2E'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="at-gate">
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="world" aria-label="Your graveyard, one stone for each account"></div>
+<canvas id="night" aria-hidden="true"></canvas>
+<svg id="keeper" viewBox="0 0 150 170" aria-hidden="true"></svg>
+
+<header id="bar" hidden>
+  <button class="mark" id="home" aria-label="Back to the start"><svg viewBox="0 0 60 66" aria-hidden="true"><path d="M8 32C8 13 18 4 30 4s22 9 22 28v26q-5.5 7-11 0t-11 0-11 0-11 0Z"/><rect x="19" y="23" width="6" height="13" rx="3"/><rect x="35" y="23" width="6" height="13" rx="3"/></svg><span>Haunted Inbox</span></button>
+  <div class="tally" id="tally"></div>
+  <div class="tools">
+    <button class="chip" id="worst">Worst first</button>
+    <button class="chip" id="listbtn">List</button>
+    <button class="chip" id="share">Share</button>
+    <button class="chip icon" id="sound" aria-label="Sound" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5Z"/><path class="wave" d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11"/></svg></button>
+  </div>
+</header>
+
+<section id="gate">
+  <p class="kick">For anyone who has ever signed up for anything</p>
+  <h1><span class="ln" id="l1">You forgot them.</span><span class="ln" id="l2">They didn't forget you.</span></h1>
+  <p class="lede">Every account your past self made is still out there, holding your name, your email, sometimes your card. Haunted Inbox finds them on your own computer, and helps you lay them to rest.</p>
+  <div class="cta">
+    <button class="big primary" id="walk">Walk through a sample</button>
+    <button class="big" id="own">Scan my own inbox</button>
+  </div>
+  <p class="fine">Only the envelope of each email is read: who, when, and the subject. Never the message.</p>
+</section>
+
+<section id="scanbox" hidden aria-live="polite">
+  <p class="stage" id="stage"></p>
+  <p class="count"><b id="cnum">0</b> <span id="clabel">envelopes read</span></p>
+  <div class="track" aria-hidden="true"><i id="cbar"></i></div>
+  <p class="now" id="cnow"></p>
+</section>
+
+<section id="beat" hidden aria-live="polite"><p id="beattext"></p></section>
+<p id="whisper" hidden></p>
+
+<aside id="card" hidden aria-label="About this account"><button class="x" id="cardx" aria-label="Close">
+  <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div id="cardbody"></div></aside>
+
+<section id="list" hidden aria-label="All your ghosts as a list"><header><h2>Every ghost, worst first</h2><button class="x" id="listx" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header><div id="rows"></div></section>
+
+<nav id="ruler" hidden aria-label="Walk through the years"><div id="years"></div><i id="thumb"></i></nav>
+
+<dialog id="scanner">
+  <button class="x" id="scanx" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div id="scanform"></div>
+</dialog>
+
+<p id="samplenote" hidden>A made-up person's inbox. Every hack shown really happened, from a public list.</p>
+<script src="app.js"></script>
+</body>
+</html>
