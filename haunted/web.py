@@ -17,6 +17,7 @@ UI = Path(__file__).parent / 'ui'
 BOXES = {'gmail.com': 'imap.gmail.com', 'googlemail.com': 'imap.gmail.com', 'yahoo.com': 'imap.mail.yahoo.com', 'icloud.com': 'imap.mail.me.com', 'me.com': 'imap.mail.me.com', 'fastmail.com': 'imap.fastmail.com', 'aol.com': 'imap.aol.com', 'zoho.com': 'imap.zoho.com'}
 progress = {'stage': 'idle'}
 lock = threading.Lock()
+KEPT = ('last-scan.json', 'last-cards.json', 'labels.json', 'states.json', 'read-memory.json', 'lookups.json', 'incoming.mbox')
 
 
 def _load(name, default):
@@ -136,6 +137,11 @@ class Handler(BaseHTTPRequestHandler):
             labels[body['key']] = body['truth']
             (HOME / 'labels.json').write_text(json.dumps(labels), 'utf-8')
             return self._json({'ok': True, 'done': len(labels)})
+        if self.path == '/api/forget':
+            for name in KEPT:
+                (HOME / name).unlink(missing_ok=True)
+            progress = {'stage': 'idle'}
+            return self._json({'ok': True})
         if self.path == '/api/lookup':
             r = report()
             ghost = next((g for g in (r or {}).get('ghosts', []) if g['key'] == body.get('key')), None)

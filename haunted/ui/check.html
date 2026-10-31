@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-ui="day">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +15,8 @@ h1{font-size:34px;text-shadow:none;margin:0 0 4px}
 #who small{font:400 13px "Fragment",monospace;color:#6B5A92}
 #who li{margin:4px 0 0 18px;font-size:15.5px}
 .keys{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-.keys .btn{min-height:64px}
-.yes{background:var(--gold)!important;font:400 19px "Bagel"!important}
+.keys .stone{min-height:64px}
+.yes{background:var(--gold)!important}
 </style>
 </head>
 <body>
@@ -25,9 +25,9 @@ h1{font-size:34px;text-shadow:none;margin:0 0 4px}
   <p id="left"></p>
   <div id="who"></div>
   <div class="keys">
-    <button class="btn yes" id="yes">Yes, I signed up (A)</button>
-    <button class="btn" id="no">No (N)</button>
-    <button class="btn" id="unsure" style="grid-column:1/-1;min-height:44px">Can't remember, skip it (S)</button>
+    <button class="stone yes" id="yes">Yes, I signed up (A)</button>
+    <button class="stone" id="no">No (N)</button>
+    <button class="stone small" id="unsure" style="grid-column:1/-1;min-height:44px">Can't remember, skip it (S)</button>
   </div>
 </main>
 <script>
